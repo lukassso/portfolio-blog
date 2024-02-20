@@ -33,7 +33,7 @@ import Card from '../components/Card.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+		<h1 class="title mb-6 ml-10">Welcome to <span class="text-gradient">Astro</span></h1>
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
@@ -82,13 +82,13 @@ import Card from '../components/Card.astro';
 		height: auto;
 		z-index: -1;
 	}
-	h1 {
+	/* h1 {
 		font-size: 4rem;
 		font-weight: 700;
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;
-	}
+	} */
 	.text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;

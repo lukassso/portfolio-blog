@@ -5,7 +5,7 @@ module.exports = {
 	singleQuote: false,
 	tabWidth: 2,
 	useTabs: true,
-	plugins: ["prettier-plugin-astro"],
+	plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
 	overrides: [
 		{
 			files: "*.astro",
