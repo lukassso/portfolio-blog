@@ -1,52 +1,28 @@
 ---
-import '../styles/global.css';
+import type {SiteMeta} from '@/types';
+import Footer from '@/components/layout/Footer.astro';
+import Header from '@/components/layout/Header.astro';
+import BaseHead from '@/components/BaseHead.astro';
+
 interface Props {
-	title: string;
+	meta: SiteMeta;
 }
 
-const { title } = Astro.props;
----
+const {
+	meta: {articleDate, description, ogImage, title},
+} = Astro.props
 
+---
 <!doctype html>
-<html lang="en">
+<html lang={'en'}>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
 	<body>
-		<slot />
+		<Header />
+		<main id="main">
+			<div>main layout</div>
+		</main>
+		<Footer />
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
