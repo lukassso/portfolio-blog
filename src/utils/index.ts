@@ -1,0 +1,1 @@
+export {toggleClass} from './domElement'
