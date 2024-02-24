@@ -1,5 +1,6 @@
 ---
 import { menuLinks } from "@/site-config";
+import ThemeToggle from '../ThemeToggle.astro';
 
 const url = new URL(Astro.request.url);
 ---
@@ -36,6 +37,7 @@ const url = new URL(Astro.request.url);
 			}
 		</nav>
 	</div>
+  <ThemeToggle/>
 	<mobile-button>
 		<button
 			aria-expanded="false"
@@ -79,7 +81,7 @@ const url = new URL(Astro.request.url);
 
 <script>
   import { toggleClass } from "@/utils"
-  
+
 	class MobileNavBtn extends HTMLElement {
 		private headerEl: HTMLElement;
 		private menuOpen: boolean;

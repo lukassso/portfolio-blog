@@ -3,6 +3,7 @@ import type {SiteMeta} from '@/types';
 import Footer from '@/components/layout/Footer.astro';
 import Header from '@/components/layout/Header.astro';
 import BaseHead from '@/components/BaseHead.astro';
+import ThemeProvider from "@/components/ThemeProvider.astro";
 
 interface Props {
 	meta: SiteMeta;
@@ -19,6 +20,7 @@ const {
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
 	<body>
+		<ThemeProvider/>
 		<Header />
 		<main id="main">
 			<slot/>

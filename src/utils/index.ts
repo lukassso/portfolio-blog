@@ -1,1 +1,1 @@
-export {toggleClass} from './domElement'
+export {toggleClass, rootInDarkMode} from './domElement'
