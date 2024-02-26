@@ -1,0 +1,42 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import PostPreview from "@/components/blog/PostPreview.astro";
+import type { GetStaticPaths, Page } from "astro";
+import { getAllPosts, sortMDByDate } from "@/utils";
+import type { CollectionEntry } from "astro:content";
+
+export const getStaticPaths = (async ({ paginate }) => {
+	const allPosts = await getAllPosts();
+	const allPostsByDate = sortMDByDate(allPosts);
+	return paginate(allPostsByDate, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+const meta = {
+	description: "Collection of posts",
+	title: "Blog posts",
+};
+
+interface Props {
+	page: Page<CollectionEntry<"post">>;
+}
+
+const { page } = Astro.props;
+---
+
+<PageLayout meta={meta}>
+  <h1 class="title mb-6">Posts</h1>
+	<div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8">
+		<section aria-label="Blog post list">
+			<ul class="space-y-8 text-start">
+				{
+					page.data.map((p) => (
+						<li class="flex flex-col flex-wrap gap-2 sm:flex-row [&_q]:basis-full">
+							<PostPreview as="h2" post={p} withDesc />
+						</li>
+					))
+				}
+			</ul>
+		</section>
+		
+	</div>
+</PageLayout>
