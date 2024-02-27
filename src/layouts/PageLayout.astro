@@ -4,18 +4,19 @@ import Footer from '@/components/layout/Footer.astro';
 import Header from '@/components/layout/Header.astro';
 import BaseHead from '@/components/BaseHead.astro';
 import ThemeProvider from "@/components/ThemeProvider.astro";
+import {siteConfig} from '@/site-config';
 
 interface Props {
 	meta: SiteMeta;
 }
 
 const {
-	meta: {articleDate, description, ogImage, title},
+	meta: {articleDate, description = siteConfig.description, ogImage, title},
 } = Astro.props
 
 ---
-<!doctype html>
-<html lang={'en'}>
+
+<html lang={siteConfig.lang}>
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
