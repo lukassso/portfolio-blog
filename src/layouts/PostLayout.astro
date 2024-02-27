@@ -1,0 +1,26 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro"; 
+
+
+const { post } = Astro.props;
+const {
+	data: { description, ogImage, publishDate, title, updatedDate },
+	slug,
+} = post;
+
+const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
+const socialImage = ogImage ?? `/og-image/${slug}.png`;
+---
+
+<PageLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
+	<div class="gap-x-10 lg:flex lg:items-start">
+		<article class="flex-grow break-words" data-pagefind-body>
+			<div
+				class="prose prose-sm mt-12 prose-headings:font-semibold prose-headings:text-accent-2 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent prose-headings:before:content-['#'] prose-th:before:content-none"
+			>
+				<slot />
+			</div>
+		</article>
+	</div>
+	
+</PageLayout>
