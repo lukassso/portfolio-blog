@@ -1,7 +1,6 @@
 ---
-import PageLayout from "./PageLayout.astro"; 
+import PageLayout from "./PageLayout.astro";
 import type { CollectionEntry } from "astro:content";
-
 
 interface Props {
 	post: CollectionEntry<"post">;
@@ -21,11 +20,10 @@ const socialImage = ogImage ?? `/og-image/${slug}.png`;
 	<div class="gap-x-10 lg:flex lg:items-start">
 		<article class="flex-grow break-words" data-pagefind-body>
 			<div
-				class="prose-sm prose-cactus mt-12 prose-headings:font-semibold prose-headings:text-accent-2 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent prose-headings:before:content-['#'] prose-th:before:content-none"
+				class="prose-cactus prose-headings:text-accent-2 prose-headings:before:text-accent prose-sm mt-12 prose-headings:font-semibold prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:content-['#'] prose-th:before:content-none"
 			>
 				<slot />
 			</div>
 		</article>
 	</div>
-	
 </PageLayout>

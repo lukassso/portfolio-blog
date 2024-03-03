@@ -5,17 +5,18 @@
 Made with ❤️ to programming
 
 ### Philosophy
+
 - Minimal code
 - SEO friendly
 - 🚀 Production-ready
 
 ### Requirements
+
 - Node.js and pnpm
 
-### Deploy to Netlify 
+### Deploy to Netlify
+
 [![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://zetkolek.netlify.app)
-
-
 
 ## 🚀 Project Structure
 
@@ -57,5 +58,3 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-

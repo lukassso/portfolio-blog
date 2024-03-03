@@ -1,19 +1,18 @@
 ---
-import type {SiteMeta} from '@/types';
-import Footer from '@/components/layout/Footer.astro';
-import Header from '@/components/layout/Header.astro';
-import BaseHead from '@/components/BaseHead.astro';
+import type { SiteMeta } from "@/types";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import BaseHead from "@/components/BaseHead.astro";
 import ThemeProvider from "@/components/ThemeProvider.astro";
-import {siteConfig} from '@/site-config';
+import { siteConfig, menuLinks } from "@/site-config";
 
 interface Props {
 	meta: SiteMeta;
 }
 
 const {
-	meta: {articleDate, description = siteConfig.description, ogImage, title},
-} = Astro.props
-
+	meta: { articleDate, description = siteConfig.description, ogImage, title },
+} = Astro.props;
 ---
 
 <html lang={siteConfig.lang}>
@@ -21,13 +20,12 @@ const {
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
 	<body
-	class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
-	
+		class="h-full overflow-x-hidden bg-default text-base text-default selection:bg-secondary selection:text-white"
 	>
-		<ThemeProvider/>
-		<Header />
+		<ThemeProvider />
+		<Header menuLinks={menuLinks} />
 		<main>
-			<slot/>
+			<slot />
 		</main>
 		<Footer />
 	</body>

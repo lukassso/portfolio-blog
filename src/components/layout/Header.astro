@@ -1,29 +1,56 @@
 ---
-import { menuLinks } from "@/site-config";
-import ThemeToggle from '../ThemeToggle.astro';
+// import { menuLinks } from "@/site-config";
+import ThemeToggle from "../ThemeToggle.astro";
+import { getPermalink } from "../../utils/permalinks";
 
 const url = new URL(Astro.request.url);
+
+const { menuLinks } = Astro.props;
 ---
-<header class="group relative mb-28 flex items-center sm:ps-[4.5rem]" id="main-header">
+
+<header class="group relative flex items-center ps-[2rem] sm:ps-[4.5rem]" id="main-header">
+	<a class="flex items-center" href="/">
+		<svg
+			class="me-3 h-10 w-6 sm:me-0 sm:h-20 sm:w-12"
+			width="192"
+			height="192"
+			viewBox="0 0 192 192"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				d="M151.484 161.204C144.005 167.683 135.912 172.908 126.738 176.288C119.677 178.89 112.407 180.51 104.914 181.129C101.133 181.441 97.3634 181.587 93.5666 181.446C84.8032 181.121 76.2777 179.509 68.0385 176.522C51.8781 170.664 38.5325 160.809 28.1706 146.863C19.8469 135.661 14.6461 123.09 12.8165 109.171C11.3103 97.7129 11.8813 86.3148 14.5848 75.057C14.9286 73.6254 15.3545 72.2522 16.58 71.2863C19.5627 68.9353 23.4748 70.1638 24.6511 74.0294C26.603 80.4436 30.7247 85.1913 35.7816 89.1392C42.4039 94.3091 50.13 95.8518 58.3301 95.849C68.2189 95.8455 77.4198 93.0795 86.3542 89.1094C94.1561 85.6425 101.448 81.1521 109.058 77.2973C115.255 74.1581 121.537 71.1524 128.267 69.4345C136.073 67.4423 144.007 66.8682 152.011 68.3067C155.151 68.8711 158.171 69.7999 161.114 71.0294C161.523 71.2006 161.92 71.485 162.507 71.3534C162.416 69.9966 161.73 68.8885 161.197 67.7455C155.659 55.8728 147.522 46.2891 136.728 39.0505C135.831 38.4486 134.951 37.8104 134.116 37.1221C131.804 35.2153 131.127 32.1249 132.408 29.5212C133.541 27.2175 136.558 25.8611 139.231 26.4406C141.08 26.8413 142.644 27.8384 144.176 28.887C161.665 40.8598 172.847 57.2869 177.823 78.1257C179.602 85.576 180.304 93.1373 179.88 100.756C178.816 119.885 172.729 137.087 160.467 151.845C157.713 155.159 154.676 158.177 151.484 161.204ZM96.5637 102.361C90.3669 105.014 84.3514 108.025 78.6778 111.713C72.2287 115.905 66.4498 120.865 62.1178 127.345C56.4895 135.764 54.8801 144.697 59.3689 154.214C61.5102 158.753 64.634 162.261 69.5307 163.801C70.0027 163.949 70.4568 164.281 71.2499 163.771C71.2499 161.706 71.0028 159.441 71.2905 157.25C72.9784 144.393 79.1983 134.076 89.2222 126.325C99.8049 118.143 111.886 114.672 125.245 115.706C134.841 116.449 143.223 119.906 150.416 126.345C151.747 127.537 153.17 128.767 153.759 130.575C153.197 130.991 152.793 130.77 152.41 130.692C146.635 129.512 141.002 129.96 135.546 132.252C130.792 134.249 127.033 137.563 123.741 141.515C118.272 148.078 115.724 155.701 115.703 164.237C115.698 166.399 116.186 166.71 118.225 166.073C124.241 164.194 129.873 161.44 135.109 157.923C148.464 148.955 157.835 136.744 163.324 121.46C163.82 120.08 164.504 118.712 163.914 117.09C160.785 108.484 155.122 102.245 146.961 98.4346C137.509 94.0216 127.618 94.0677 117.622 95.8513C110.428 97.1352 103.572 99.6017 96.5637 102.361Z"
+				fill="#31D095"></path>
+			<path
+				d="M116.05 14.0589C117.095 12.7322 118.062 11.4806 119.11 10.125C120.098 11.4545 120.287 12.918 120.583 14.2959C122.792 24.5828 122.238 34.7306 118.48 44.5491C113.014 58.8336 103.343 69.1495 89.4377 75.1589C84.307 77.3761 78.7979 78.0716 73.2636 78.4528C70.5084 78.6426 67.7539 78.8476 65.002 79.0812C63.7954 79.1837 63.2454 78.892 63.0708 77.4578C62.2341 70.5851 62.0736 63.7252 63.5894 56.9534C65.2942 49.3371 68.8604 42.6828 74.1361 36.9534C80.6039 29.9294 88.7947 26.1058 97.6818 23.524C102.62 22.0893 107.454 20.4227 111.844 17.6228C113.381 16.6427 114.638 15.3468 116.05 14.0589Z"
+				fill="#31D095"></path>
+			<path
+				d="M28.3653 60.6205C24.2084 50.5344 24.7299 40.7107 29.3851 31.0817C32.425 24.7939 36.7236 19.5621 42.482 15.64C43.7835 14.7536 45.1154 13.9172 46.6153 13.5197C47.0442 14.1127 46.8058 14.5858 46.69 15.0029C45.3321 19.8929 46.3956 24.4954 48.3247 28.9674C49.7648 32.3058 51.404 35.5561 52.8159 38.9062C55.6901 45.7261 55.8722 52.8445 54.9798 60.0917C54.2786 65.7865 53.9282 71.497 55.1316 77.1877C55.5194 79.0214 55.3697 79.2206 53.543 79.0571C42.3006 78.0513 34.2405 72.2499 29.0625 62.1451C28.826 61.6837 28.6293 61.2012 28.3653 60.6205Z"
+				fill="#31D095"></path>
+		</svg>
+	</a>
 	<div class="flex sm:flex-col">
-		
 		<nav
 			aria-label="Main menu"
-			class="absolute 
-      -inset-x-4 
-      top-14 
-      hidden flex-col items-end gap-y-4 
-      rounded-md bg-bgColor/[.85] py-4 
-      text-accent shadow backdrop-blur 
-      group-[.menu-open]:z-50 
-      group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4 
-      sm:mt-1 sm:flex sm:flex-row sm:items-center 
-      
-      sm:rounded-none sm:bg-transparent 
-      sm:py-0 sm:shadow-none sm:backdrop-blur-none"
+			class="bg-bgColor/[.85]
+      text-accent
+      absolute
+      -inset-x-2 top-8 hidden flex-col
+      items-end gap-y-4 rounded-md
+      py-4 shadow backdrop-blur
+      group-[.menu-open]:z-50
+      group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4
+      sm:mt-1
+			sm:flex
+			sm:flex-row
+			sm:items-center
+      sm:rounded-none
+			sm:bg-transparent
+      sm:py-0 sm:shadow-none
+			sm:backdrop-blur-none"
 			id="navigation-menu"
 		>
-			{ 
+			{
 				menuLinks.map((link) => (
 					<a
 						aria-current={url.pathname === link.path ? "page" : false}
@@ -37,7 +64,7 @@ const url = new URL(Astro.request.url);
 			}
 		</nav>
 	</div>
-  <ThemeToggle/>
+	<ThemeToggle />
 	<mobile-button>
 		<button
 			aria-expanded="false"
@@ -63,7 +90,7 @@ const url = new URL(Astro.request.url);
 			</svg>
 			<svg
 				aria-hidden="true"
-				class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 text-accent opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
+				class="text-accent absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
 				class="text-accent"
 				fill="none"
 				focusable="false"
@@ -80,7 +107,7 @@ const url = new URL(Astro.request.url);
 </header>
 
 <script>
-  import { toggleClass } from "@/utils"
+	import { toggleClass } from "@/utils";
 
 	class MobileNavBtn extends HTMLElement {
 		private headerEl: HTMLElement;
@@ -88,7 +115,7 @@ const url = new URL(Astro.request.url);
 		private mobileButtonEl: HTMLButtonElement;
 
 		toggleMobileMenu = () => {
-      toggleClass(this.headerEl, "menu-open");
+			toggleClass(this.headerEl, "menu-open");
 			this.menuOpen = !this.menuOpen;
 			this.mobileButtonEl.setAttribute("aria-expanded", this.menuOpen.toString());
 		};

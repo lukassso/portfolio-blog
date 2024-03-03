@@ -3,21 +3,17 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import Hero from "@/components/layout/Hero.astro";
 ---
 
-<Hero/>
 <PageLayout meta={{ title: "Home" }}>
+	<Hero />
 	<section>
 		<h1 class="title mb-6">Hello World!</h1>
 	</section>
 	<section aria-label="Blog post list" class="mt-16">
 		<h2 class="title mb-4 text-xl">Posts</h2>
-		<ul class="space-y-4">
-			posts here
-		</ul>
+		<ul class="space-y-4">posts here</ul>
 	</section>
 	<section class="mt-16">
 		<h2 class="title mb-4 text-xl">Technologies</h2>
-		<dl class="space-y-4">
-			technologies here
-		</dl>
+		<dl class="space-y-4">technologies here</dl>
 	</section>
 </PageLayout>

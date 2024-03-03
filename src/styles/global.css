@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-	
 	html {
 		@apply scroll-smooth;
 	}
 }
 .gradient-text {
-  @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+	@apply bg-clip-text text-transparent;
+	@apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
 }

@@ -2,7 +2,6 @@
 import type { HTMLTag, Polymorphic } from "astro/types";
 import type { CollectionEntry } from "astro:content";
 
-
 type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 	post: CollectionEntry<"post">;
 	withDesc?: boolean;
@@ -13,7 +12,7 @@ const { as: Tag = "div", post, withDesc = false } = Astro.props;
 
 <Tag>
 	{post.data.draft && <span class="text-red-500">(Draft) </span>}
-	<a data-astro-prefetch href={`/blog/${post.slug}/`}>
+	<a data-astro-prefetch href={`/blog/${post.slug}`}>
 		{post.data.title}
 	</a>
 </Tag>
