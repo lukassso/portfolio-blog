@@ -3,20 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-	:root,
-	:root[data-theme="light"] {
-		color-scheme: light;
-	}
-
-	:root[data-theme="dark"] {
-		color-scheme: dark;
-	}
-
+	
 	html {
 		@apply scroll-smooth;
 	}
-
-	body {
-		@apply mx-auto flex min-h-screen max-w-3xl flex-col px-8 pt-16 font-sans text-sm font-normal antialiased;
-	}
+}
+.gradient-text {
+  @apply bg-clip-text text-transparent;
+  @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
 }
