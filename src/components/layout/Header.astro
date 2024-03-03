@@ -23,7 +23,7 @@ const url = new URL(Astro.request.url);
       sm:py-0 sm:shadow-none sm:backdrop-blur-none"
 			id="navigation-menu"
 		>
-			{
+			{ 
 				menuLinks.map((link) => (
 					<a
 						aria-current={url.pathname === link.path ? "page" : false}
