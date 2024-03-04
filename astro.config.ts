@@ -9,7 +9,11 @@ import { expressiveCodeOptions } from "./src/site.config";
 export default defineConfig({
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
-		icon(),
+		icon({
+			include: {
+				tabler: ["*"],
+			},
+		}),
 		tailwind({
 			applyBaseStyles: false,
 		}),
