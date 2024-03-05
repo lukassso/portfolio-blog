@@ -5,6 +5,9 @@
 <script>
 	import invariant from "tiny-invariant";
 
+	const root = document.documentElement;
+	const isDarkMode = root.getAttribute("data-theme") === "dark";
+
 	const COUNT = 800;
 	const SPEED = 0.1;
 
@@ -83,8 +86,23 @@
 		}
 
 		ctx.translate(width / 2, height / 2);
-		ctx.fillStyle = "rgba(17,24,39, 0.6)";
-		ctx.strokeStyle = "white";
+		const fillStyleColor = isDarkMode ? "rgba(17, 24, 39, 0.6)" : "rgba(249, 250, 251, 0.6)";
+		const strokeStyleColor = isDarkMode ? "rgba(249, 250, 251, 1)" : "rgba(17,24,39, 1)";
+
+		ctx.fillStyle = fillStyleColor;
+		ctx.strokeStyle = strokeStyleColor;
+
+		document.addEventListener("theme-change", (event) => {
+			const newTheme = event.detail.theme;
+			const isDarkMode = newTheme === "dark";
+			const updatedFillStyleColor = isDarkMode ? "rgba(17,24,39, 0.6)" : "rgba(249, 250, 251, 0.6)";
+			const updatedStrokeStyleColor = isDarkMode ? "rgba(249, 250, 251, 1)" : "rgba(17,24,39, 1)";
+
+			// Aktualizuj kolory w kontekście rysowania
+			ctx.fillStyle = updatedFillStyleColor;
+			ctx.strokeStyle = updatedStrokeStyleColor;
+		});
+
 		rafId = requestAnimationFrame(frame);
 	}
 
