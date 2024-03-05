@@ -3,12 +3,13 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import Hero from "@/components/layout/Hero.astro";
 import Note from "@/components/Note.astro";
 import SocialList from "@/components/SocialList.astro";
+import ContainerSection from "@/components/ContainerSection.astro";
 ---
 
 <PageLayout meta={{ title: "Home" }}>
 	<Hero />
 	<Note />
-	<section class="relative mx-auto max-w-6xl px-4 py-12 text-default md:px-6 md:py-16 lg:py-20">
+	<ContainerSection>
 		<h3 class="title mb-6 text-2xl">Greetings, World! 👋</h3>
 		<p class="mb-4">
 			Welcome to my digital realm where I weave captivating experiences through the marriage of code
@@ -29,5 +30,5 @@ import SocialList from "@/components/SocialList.astro";
 		<div class="mt-20 flex justify-center">
 			<SocialList />
 		</div>
-	</section>
+	</ContainerSection>
 </PageLayout>

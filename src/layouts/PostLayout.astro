@@ -1,4 +1,5 @@
 ---
+import ContainerSection from "@/components/ContainerSection.astro";
 import PageLayout from "./PageLayout.astro";
 import type { CollectionEntry } from "astro:content";
 
@@ -17,13 +18,20 @@ const socialImage = ogImage ?? `/og-image/${slug}.png`;
 ---
 
 <PageLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
-	<div class="gap-x-10 lg:flex lg:items-start">
+	<ContainerSection>
 		<article class="flex-grow break-words" data-pagefind-body>
 			<div
-				class="prose-cactus prose-headings:text-accent-2 prose-headings:before:text-accent prose-sm mt-12 prose-headings:font-semibold prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:content-['#'] prose-th:before:content-none"
+				class="prose-headings:text-accent-2
+				prose-headings:before:text-accent
+				prose-sm
+				mt-12
+				prose-headings:font-semibold
+				prose-headings:before:absolute
+				prose-headings:before:-ms-4
+				prose-th:before:content-none"
 			>
 				<slot />
 			</div>
 		</article>
-	</div>
+	</ContainerSection>
 </PageLayout>
