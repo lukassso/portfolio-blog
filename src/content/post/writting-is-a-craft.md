@@ -13,12 +13,12 @@ draft: true
 
 #Writting is a craft
 
-It starts at school where I told myself I don't have a "gift for words". I feel common affliction: fear of writting. In the other site after these all years I see that writing is a craft, and I can learn of it based on principles.
+It all began at school when I convinced myself that I didn't possess a 'gift for words.' I shared a common affliction: a fear of writing. However, over the years, I've come to realize that writing is a craft, something I can learn based on principles.
 
-From time when I shift to remote working, the ability to communicate clearly in written form becomes more essencial that ever. Writting has a two brilliant ways. It is building my personal brand, and in the process it forced me to learn and develop. Bingo!
+From time when I shift to remote working, the ability to communicate clearly in written form becomes more essencial than ever. Writing has a two brilliant ways. It is building my personal brand, and in the process it forced me to learn and develop. Isn't it beautiful? That's exactly what I needed.
 
-I would aspire to work in developer relations, to establish myself as a conference speaker or I don't know even dream of authoring a book for tech publisher one day, writing is crucial to achieving those ambition.
+I aspire to work in developer relations, establishing myself as a conference speaker. Perhaps, I might even dream of authoring a book for a tech publisher one day. Writing is crucial to achieving these ambitions.
 
-I think, as an engineer, I am drawn to challenging problems. Let me split it for small chunks as usuall. There are also some striking parallers between writing and programming. As with programming, I get better at writting with practice. As with programming I often learn new writing techniques through imitation. Similar with programming, writing has patterns that can be useful. Even though I can spend a whole day struggling with a problem in an article - or with a part of code, only to figure it out immediately after a break.
+I believe, as an engineer, I am naturally drawn to challenging problems. Let me break it down into smaller chunks, as usual. Interestingly, there are striking parallels between writing and programming. Similar to programming, my writing skills improve with practice. I often learn new writing techniques through imitation, just as I do with programming. Like programming, writing has observable patterns that can be quite useful. For example, when I spend an entire day struggling with a problem in an article or a section of code, I often find a solution immediately after taking a break.
 
-I frankly believe that I need to get better at sharing my knowledge, and writing articles is a key way to do this. Whith this in mind, I'll start by breaking down my writting process.
+I frankly believe that I need to get better at sharing my knowledge, and writing articles is a key way to do this. With this in mind, I'll start by breaking down my writing process.
