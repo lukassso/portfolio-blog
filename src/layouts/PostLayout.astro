@@ -19,12 +19,13 @@ const socialImage = ogImage ?? `/og-image/${slug}.png`;
 
 <PageLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
 	<ContainerSection>
-		<article class="flex-grow break-words" data-pagefind-body>
+		<article class="flex-grow flex justify-center break-words" data-pagefind-body>
 			<div
 				class="prose-headings:text-accent-2
 				prose-headings:before:text-accent
-				prose-sm
+				prose
 				mt-12
+				max-w-[750px]
 				prose-headings:font-semibold
 				prose-headings:before:absolute
 				prose-headings:before:-ms-4
