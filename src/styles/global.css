@@ -11,6 +11,15 @@
 	@apply bg-clip-text text-transparent;
 	@apply bg-gradient-to-br from-blue-600 via-green-300 to-green-500;
 }
+.post-preview-list {
+	z-index: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 80rem;
+	gap: 1rem;
+	padding: 1rem;
+}
 
 @layer components {
 	.btn {

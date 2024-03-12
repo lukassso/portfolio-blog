@@ -27,18 +27,22 @@ const { page } = Astro.props;
 <PageLayout meta={meta}>
 	<ContainerSection>
 		<h1 class="title mb-6">Posts</h1>
-		<div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8">
-			<section aria-label="Blog post list">
-				<ul class="space-y-8 text-start">
-					{
-						page.data.map((p) => (
-							<li class="flex flex-col flex-wrap gap-2 sm:flex-row [&_q]:basis-full">
-								<PostPreview as="h2" post={p} withDesc />
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</div>
+		<section aria-label="Blog post list">
+			<ul class="space-y-8 text-start">
+				{
+					page.data.map((post) => (
+						<PostPreview
+							title={post.data.title}
+							img={post.data.coverImage?.src}
+							desc={post.data.description}
+							target="_self"
+							alt={post.data.coverImage?.alt}
+							draft={post.data.draft}
+							url={`/blog/${post.slug}`}
+						/>
+					))
+				}
+			</ul>
+		</section>
 	</ContainerSection>
 </PageLayout>

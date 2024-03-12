@@ -2,7 +2,7 @@ import { z, defineCollection } from "astro:content";
 
 const post = defineCollection({
 	type: "content",
-	schema: () =>
+	schema: ({ image }) =>
 		z.object({
 			title: z.string().max(60),
 			description: z.string().min(50).max(160),
@@ -16,6 +16,13 @@ const post = defineCollection({
 				.transform((str) => (str ? new Date(str) : undefined)),
 			draft: z.boolean().default(false),
 			ogImage: z.string().optional(),
+			heroImage: z.string().optional(),
+			coverImage: z
+				.object({
+					src: image(),
+					alt: z.string(),
+				})
+				.optional(),
 		}),
 });
 

@@ -1,12 +1,24 @@
 ---
+title: "Demo Post 1"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+publishDate: "Sep 10 2022"
+heroImage: "../../assets/post_img.png"
+tags: ["tokio"]
+---
+
+### title
+
+> Blockquotes can also be nested...
+>
+> > ...by using additional greater-than signs right next to each other...
+
+---
+
 title: "Markdown elements"
 description: "This post with listing of different markdown elements"
 publishDate: "27 Feb 2024"
 updatedDate: 27 Feb 2024
-heroImage: "../../assets/post_img.png"
-coverImage:
-  src: "../../assets../../assets/post_img.png"
-  alt: "ddd"
+
 ---
 
 ## This is a H2 Heading
@@ -152,12 +164,6 @@ Right aligned columns
 |   data | path to data files to supply the data that will be passed into templates. |
 | engine |    engine to be used for processing templates. Handlebars is the default. |
 |    ext |                                      extension to be used for dest files. |
-
-## Images
-
-Image in the same folder: `src/content/post/markdown-elements/logo.png`
-
-![Astro theme logo](@/assets/logo-to-post.png)
 
 ## Links
 
