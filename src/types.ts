@@ -4,10 +4,6 @@ export type SiteConfig = {
 	description: string;
 	lang: string;
 	ogLocale: string;
-	date: {
-		locale: string | string[] | undefined;
-		options: Intl.DateTimeFormatOptions;
-	};
 };
 
 export type SiteMeta = {

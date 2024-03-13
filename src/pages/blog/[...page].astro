@@ -5,6 +5,8 @@ import type { GetStaticPaths, Page } from "astro";
 import { getAllPosts, sortMDByDate } from "../../utils/post.ts";
 import type { CollectionEntry } from "astro:content";
 import ContainerSection from "@/components/ContainerSection.astro";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getAllPosts();
@@ -22,6 +24,12 @@ interface Props {
 }
 
 const { page } = Astro.props;
+
+dayjs.extend(localizedFormat);
+
+const previewData = (a: Date) => {
+	return dayjs(a).format("ll");
+};
 ---
 
 <PageLayout meta={meta}>
@@ -39,6 +47,7 @@ const { page } = Astro.props;
 							alt={post.data.coverImage?.alt}
 							draft={post.data.draft}
 							url={`/blog/${post.slug}`}
+							publishDate={previewData(post.data.publishDate)}
 						/>
 					))
 				}

@@ -1,5 +1,5 @@
 ---
-const { title, img, desc, url, draft, alt, target = "_blank" } = Astro.props;
+const { title, img, desc, url, draft, alt, publishDate, target = "_blank" } = Astro.props;
 import { Image } from "astro:assets";
 import defaultImage from "@/assets/post_img.png";
 ---
@@ -25,6 +25,7 @@ import defaultImage from "@/assets/post_img.png";
 						)
 					}
 				</h1>
+				<p>{publishDate}</p>
 				<p class="text-1xl py-1">{desc}</p>
 			</div>
 		</div>

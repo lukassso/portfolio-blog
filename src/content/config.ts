@@ -6,14 +6,8 @@ const post = defineCollection({
 		z.object({
 			title: z.string().max(60),
 			description: z.string().min(50).max(160),
-			publishDate: z
-				.string()
-				.or(z.date())
-				.transform((val) => new Date(val)),
-			updatedDate: z
-				.string()
-				.optional()
-				.transform((str) => (str ? new Date(str) : undefined)),
+			publishDate: z.coerce.date(),
+			updatedDate: z.coerce.date(),
 			draft: z.boolean().default(false),
 			ogImage: z.string().optional(),
 			heroImage: z.string().optional(),

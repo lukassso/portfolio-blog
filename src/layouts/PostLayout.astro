@@ -2,6 +2,8 @@
 import ContainerSection from "@/components/ContainerSection.astro";
 import PageLayout from "./PageLayout.astro";
 import type { CollectionEntry } from "astro:content";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 
 interface Props {
 	post: CollectionEntry<"post">;
@@ -13,7 +15,10 @@ const {
 	slug,
 } = post;
 
-const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
+dayjs.extend(localizedFormat);
+const articleDate = dayjs(publishDate).format("ll");
+
+// const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 const socialImage = ogImage ?? `/og-image/${slug}.png`;
 ---
 
@@ -31,6 +36,7 @@ const socialImage = ogImage ?? `/og-image/${slug}.png`;
 				prose-headings:before:-ms-4
 				prose-th:before:content-none"
 			>
+				{publishDate && <time>{articleDate}</time>}
 				<slot />
 			</div>
 		</article>
