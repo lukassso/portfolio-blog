@@ -48,6 +48,7 @@ const previewData = (a: Date) => {
 							draft={post.data.draft}
 							url={`/blog/${post.slug}`}
 							publishDate={previewData(post.data.publishDate)}
+							tags={post.data.tags}
 						/>
 					))
 				}

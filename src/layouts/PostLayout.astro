@@ -4,6 +4,7 @@ import PageLayout from "./PageLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import { Image } from "astro:assets";
 
 interface Props {
 	post: CollectionEntry<"post">;
@@ -11,20 +12,51 @@ interface Props {
 
 const { post } = Astro.props;
 const {
-	data: { description, ogImage, publishDate, title, updatedDate },
+	data: { tags, draft, description, heroImage, ogImage, publishDate, title, updatedDate },
 	slug,
 } = post;
 
 dayjs.extend(localizedFormat);
 const articleDate = dayjs(publishDate).format("ll");
 
-// const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 const socialImage = ogImage ?? `/og-image/${slug}.png`;
 ---
 
 <PageLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
 	<ContainerSection>
 		<article class="flex flex-grow justify-center break-words" data-pagefind-body>
+			{
+				heroImage && (
+					<Image
+						width={750}
+						height={422}
+						format="webp"
+						src={heroImage}
+						alt={title}
+						class="mb-6 w-full"
+					/>
+				)
+			}
+			<h1 class="title my-2 text-4xl font-bold">{title}</h1>
+			{publishDate && <time>{articleDate}</time>}
+			<br />
+			{draft && <div class="badge badge-secondary my-1">{draft}</div>}
+			{
+				tags &&
+					tags.map((tag) => (
+						<a href={`/blog/tag/${tag}`} class="badge badge-outline ml-2 no-underline">
+							{tag}
+						</a>
+					))
+			}
+			{
+				updatedDate && (
+					<div>
+						{" "}
+						Last updated on <time>{updatedDate}</time>{" "}
+					</div>
+				)
+			}
 			<div
 				class="prose-headings:text-accent-2
 				prose-headings:before:text-accent

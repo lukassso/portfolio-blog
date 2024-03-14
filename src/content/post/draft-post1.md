@@ -2,7 +2,7 @@
 title: "A working draft title 222332"
 description: "This post is for testing the draft post functionality"
 publishDate: "30 January 2023"
-heroImage: "../../assets/post_img.png"
+heroImage: "/assets/images/post_img.webp"
 coverImage:
   src: "../../assets/post_img.png"
   alt: "ddd"
