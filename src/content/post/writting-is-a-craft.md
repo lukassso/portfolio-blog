@@ -1,12 +1,13 @@
 ---
 title: "Writting is a craft"
-publishDate: "27 January 2023"
+publishDate: "05 March 2024"
+updatedDate: "11 March 2024"
 description: "It all began at school when I convinced myself that I didn't possess a 'gift for words.' I shared a common affliction: a fear of writing."
 draft: true
-heroImage: "/assets/images/post_img.webp"
+heroImage: "/assets/images/post_img2.svg"
 
 coverImage:
-  src: "../../assets../../assets/logo-to-post.png"
+  src: "../../assets/post_img.png"
   alt: "ddd"
 tags: ["begginer", "writting"]
 ---

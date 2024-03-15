@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+/** @type {import('tailwindcss').Config} */
 
 export default {
 	content: ["./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}"],
@@ -34,5 +34,5 @@ export default {
 			},
 		},
 	},
-	plugins: [require("@tailwindcss/typography"), require("daisyui")],
+	plugins: [require("@tailwindcss/typography")],
 } satisfies Config;

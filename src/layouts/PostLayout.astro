@@ -18,6 +18,7 @@ const {
 
 dayjs.extend(localizedFormat);
 const articleDate = dayjs(publishDate).format("ll");
+const articleLastUpdate = dayjs(updatedDate).format("ll");
 
 const socialImage = ogImage ?? `/og-image/${slug}.png`;
 ---
@@ -25,50 +26,48 @@ const socialImage = ogImage ?? `/og-image/${slug}.png`;
 <PageLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
 	<ContainerSection>
 		<article class="flex flex-grow justify-center break-words" data-pagefind-body>
-			{
-				heroImage && (
-					<Image
-						width={750}
-						height={422}
-						format="webp"
-						src={heroImage}
-						alt={title}
-						class="mb-6 w-full"
-					/>
-				)
-			}
-			<h1 class="title my-2 text-4xl font-bold">{title}</h1>
-			{publishDate && <time>{articleDate}</time>}
-			<br />
-			{draft && <div class="badge badge-secondary my-1">{draft}</div>}
-			{
-				tags &&
-					tags.map((tag) => (
-						<a href={`/blog/tag/${tag}`} class="badge badge-outline ml-2 no-underline">
-							{tag}
-						</a>
-					))
-			}
-			{
-				updatedDate && (
-					<div>
-						{" "}
-						Last updated on <time>{updatedDate}</time>{" "}
-					</div>
-				)
-			}
 			<div
 				class="prose-headings:text-accent-2
-				prose-headings:before:text-accent
 				prose
 				mt-12
 				max-w-[750px]
 				prose-headings:font-semibold
 				prose-headings:before:absolute
 				prose-headings:before:-ms-4
+				prose-headings:before:text-accent
 				prose-th:before:content-none"
 			>
+				{
+					heroImage && (
+						<Image
+							width={750}
+							height={422}
+							format="webp"
+							src={heroImage}
+							alt={title}
+							class="mb-6 w-full"
+						/>
+					)
+				}
+				<h1 class="title my-2 text-4xl font-bold">{title}</h1>
 				{publishDate && <time>{articleDate}</time>}
+				<br />
+				{
+					draft && (
+						<div class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+							Draft
+						</div>
+					)
+				}
+				{tags && tags.map((tag) => <a class="badge badge-outline ml-2 no-underline">{tag}</a>)}
+				{
+					updatedDate && (
+						<div>
+							{" "}
+							Last updated on <time>{articleLastUpdate}</time>{" "}
+						</div>
+					)
+				}
 				<slot />
 			</div>
 		</article>

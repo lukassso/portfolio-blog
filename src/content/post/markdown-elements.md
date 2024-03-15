@@ -3,8 +3,9 @@ title: "Markdown elements"
 description: "This post with listing of different markdown elements"
 publishDate: "27 Feb 2024"
 updatedDate: "27 Feb 2024"
+heroImage: "/assets/images/post_img2.svg"
 coverImage:
-  src: "../../assets../../assets/post_img.png"
+  src: "../../assets/post_img2.svg"
   alt: "ddd"
 ---
 

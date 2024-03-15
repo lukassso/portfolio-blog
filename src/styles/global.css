@@ -38,4 +38,10 @@
 	.btn-secondary {
 		@apply btn;
 	}
+	.badge {
+		@apply inline-flex items-center rounded-md;
+	}
+	.badge-outline {
+		@apply badge border px-4 py-2 text-xs font-medium;
+	}
 }

@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import defaultImage from "@/assets/post_img.png";
 ---
 
-<div class="bg-base-100 rounded-lg transition ease-in-out hover:scale-[102%] hover:shadow-xl">
+<div class="rounded-lg bg-base-100 transition ease-in-out hover:scale-[102%] hover:shadow-xl">
 	<a href={url} target={target}>
 		<div class="post-preview-list flex-col md:flex-row">
 			<Image
@@ -27,7 +27,9 @@ import defaultImage from "@/assets/post_img.png";
 				</h1>
 				<p>{publishDate}</p>
 				<p class="text-1xl py-1">{desc}</p>
-				{tags && tags.map((tag) => <a class="badge badge-outline">{tag}</a>)}
+				<div class="card-actions justify-end mt-2">
+					{tags && tags.map((tag) => <a class="badge badge-outline">{tag}</a>)}
+				</div>
 			</div>
 		</div>
 	</a>
