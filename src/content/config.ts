@@ -20,7 +20,7 @@ const post = defineCollection({
 			heroImage: z.string().optional(),
 			coverImage: z
 				.object({
-					src: image(),
+					src: z.string(),
 					alt: z.string(),
 				})
 				.optional(),

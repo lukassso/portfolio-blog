@@ -4,7 +4,7 @@ description: "This post is for testing the draft post functionality"
 publishDate: "30 January 2023"
 heroImage: "/assets/images/post_img.webp"
 coverImage:
-  src: "../../assets/post_img.png"
+  src: "/assets/images/post_img2.svg"
   alt: "ddd"
 ---
 

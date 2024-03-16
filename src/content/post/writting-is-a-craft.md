@@ -7,7 +7,7 @@ draft: true
 heroImage: "/assets/images/post_img2.svg"
 
 coverImage:
-  src: "../../assets/post_img.png"
+  src: "/assets/images/post_img.webp"
   alt: "ddd"
 tags: ["begginer", "writting"]
 ---

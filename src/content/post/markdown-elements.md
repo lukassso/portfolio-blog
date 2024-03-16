@@ -5,7 +5,7 @@ publishDate: "27 Feb 2024"
 updatedDate: "27 Feb 2024"
 heroImage: "/assets/images/post_img2.svg"
 coverImage:
-  src: "../../assets/post_img2.svg"
+  src: "/assets/images/post_img2.svg"
   alt: "ddd"
 ---
 
