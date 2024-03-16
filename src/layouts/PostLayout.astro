@@ -25,49 +25,52 @@ const socialImage = ogImage ?? `/og-image/${slug}.png`;
 
 <PageLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
 	<ContainerSection>
+		{
+			heroImage && (
+				<Image
+					width={750}
+					height={422}
+					format="webp"
+					src={heroImage}
+					alt={title}
+					class="mb-6 w-full"
+				/>
+			)
+		}
 		<article class="flex flex-grow justify-center break-words" data-pagefind-body>
 			<div
 				class="prose-headings:text-accent-2
+				prose-headings:before:text-accent
 				prose
-				mt-12
+				mt-3
 				max-w-[750px]
 				prose-headings:font-semibold
 				prose-headings:before:absolute
 				prose-headings:before:-ms-4
-				prose-headings:before:text-accent
 				prose-th:before:content-none"
 			>
-				{
-					heroImage && (
-						<Image
-							width={750}
-							height={422}
-							format="webp"
-							src={heroImage}
-							alt={title}
-							class="mb-6 w-full"
-						/>
-					)
-				}
-				<h1 class="title my-2 text-4xl font-bold">{title}</h1>
-				{publishDate && <time>{articleDate}</time>}
-				<br />
-				{
-					draft && (
-						<div class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-							Draft
-						</div>
-					)
-				}
-				{tags && tags.map((tag) => <a class="badge badge-outline ml-2 no-underline">{tag}</a>)}
-				{
-					updatedDate && (
-						<div>
-							{" "}
-							Last updated on <time>{articleLastUpdate}</time>{" "}
-						</div>
-					)
-				}
+				<div class="pb-4">
+					<h1 class="title my-2 text-4xl font-bold">
+						{title}
+						{
+							draft && (
+								<span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+									Draft
+								</span>
+							)
+						}
+					</h1>
+					<div class="py-2">
+						{tags && tags.map((tag) => <a class="badge badge-outline mr-2 no-underline">{tag}</a>)}
+					</div>
+					{
+						updatedDate && (
+							<time class="text-xs">
+								Last updated on <time>{articleLastUpdate}</time>{" "}
+							</time>
+						)
+					}
+				</div>
 				<slot />
 			</div>
 		</article>

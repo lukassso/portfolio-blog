@@ -12,8 +12,6 @@ coverImage:
 tags: ["begginer", "writting"]
 ---
 
-# Writing is a craft
-
 It all began at school when I convinced myself that I didn't possess a 'gift for words.' I shared a common affliction: a fear of writing. However, over the years, I've come to realize that writing is a craft, something I can learn based on principles.
 
 From time when I shift to remote working, the ability to communicate clearly in written form becomes more essencial than ever. Writing has a two brilliant ways. It is building my personal brand, and in the process it forced me to learn and develop. Isn't it beautiful? That's exactly what I needed.
