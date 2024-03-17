@@ -7,8 +7,8 @@ const url = new URL(Astro.request.url);
 const { menuLinks } = Astro.props;
 ---
 
-<header class="relative
-flex" id="main-header">
+<header class="absolute top-0
+z-10 flex w-full bg-transparent" id="main-header">
 	<div class="mx-auto flex
 	w-full max-w-7xl items-center
 	justify-between p-3 md:px-6">
