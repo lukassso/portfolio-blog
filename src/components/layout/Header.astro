@@ -7,24 +7,19 @@ const url = new URL(Astro.request.url);
 const { menuLinks } = Astro.props;
 ---
 
-<header
-	class="group
-relative
-flex
-items-center
-justify-between
-ps-[2rem]
-sm:ps-[4.5rem]"
-	id="main-header"
->
-	<a class="flex items-center" href="/">
-		<Icon name="logo" class="h-16 w-8 sm:me-0 sm:h-20 sm:w-12" />
-	</a>
-	<div class="mr-[2rem] flex">
-		<div class="flex sm:flex-col">
-			<nav
-				aria-label="Main menu"
-				class="bg-bgColor/[.85]
+<header class="relative
+flex" id="main-header">
+	<div class="mx-auto flex
+	w-full max-w-7xl items-center
+	justify-between p-3 md:px-6">
+		<a class="flex items-center" href="/">
+			<Icon name="logo" class="h-16 w-8 sm:me-0 sm:h-20 sm:w-12" />
+		</a>
+		<div class="flex">
+			<div class="flex sm:flex-col">
+				<nav
+					aria-label="Main menu"
+					class="bg-bgColor/[.85]
 				text-accent
 				absolute
 				-inset-x-2
@@ -50,43 +45,44 @@ sm:ps-[4.5rem]"
 				sm:bg-transparent
 				sm:py-0 sm:shadow-none
 				sm:backdrop-blur-none"
-				id="navigation-menu"
-			>
-				{
-					menuLinks.map((link) => (
-						<a
-							aria-current={url.pathname === link.path ? "page" : false}
-							class="px-4 py-4 sm:py-0 sm:hover:underline"
-							data-astro-prefetch
-							href={link.path}
-						>
-							{link.title}
-						</a>
-					))
-				}
-			</nav>
-		</div>
-		<ThemeToggle />
+					id="navigation-menu"
+				>
+					{
+						menuLinks.map((link) => (
+							<a
+								aria-current={url.pathname === link.path ? "page" : false}
+								class="px-4 py-4 sm:py-0 sm:hover:underline"
+								data-astro-prefetch
+								href={link.path}
+							>
+								{link.title}
+							</a>
+						))
+					}
+				</nav>
+			</div>
+			<ThemeToggle />
 
-		<mobile-button>
-			<button
-				aria-expanded="false"
-				aria-haspopup="menu"
-				aria-label="Open main menu"
-				class="group relative ml-4 h-8 w-8 sm:invisible sm:hidden"
-				id="toggle-navigation-menu"
-				type="button"
-			>
-				<Icon
-					name="nav-line"
-					class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
-				/>
-				<Icon
-					name="nav-cross"
-					class="text-accent absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
-				/>
-			</button>
-		</mobile-button>
+			<mobile-button>
+				<button
+					aria-expanded="false"
+					aria-haspopup="menu"
+					aria-label="Open main menu"
+					class="group relative ml-4 h-8 w-8 sm:invisible sm:hidden"
+					id="toggle-navigation-menu"
+					type="button"
+				>
+					<Icon
+						name="nav-line"
+						class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
+					/>
+					<Icon
+						name="nav-cross"
+						class="text-accent absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
+					/>
+				</button>
+			</mobile-button>
+		</div>
 	</div>
 </header>
 
