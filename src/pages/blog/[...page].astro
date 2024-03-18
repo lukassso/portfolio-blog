@@ -7,11 +7,12 @@ import type { CollectionEntry } from "astro:content";
 import ContainerSection from "@/components/ContainerSection.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import Pagination from "@/components/Paginator.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getAllPosts();
 	const allPostsByDate = sortMDByDate(allPosts);
-	return paginate(allPostsByDate, { pageSize: 10 });
+	return paginate(allPostsByDate, { pageSize: 8 });
 }) satisfies GetStaticPaths;
 
 const meta = {
@@ -29,6 +30,21 @@ dayjs.extend(localizedFormat);
 
 const previewData = (a: Date) => {
 	return dayjs(a).format("ll");
+};
+
+const paginationProps = {
+	...(page.url.prev && {
+		prevUrl: {
+			text: `← Previous Posts`,
+			url: page.url.prev,
+		},
+	}),
+	...(page.url.next && {
+		nextUrl: {
+			text: `Next Posts →`,
+			url: page.url.next,
+		},
+	}),
 };
 ---
 
@@ -51,11 +67,12 @@ const previewData = (a: Date) => {
 								publishDate={previewData(post.data.publishDate)}
 								tags={post.data.tags}
 							/>
-							<div class="border-brcolor border border-y" />
+							<div class="border border-y border-brcolor" />
 						</>
 					))
 				}
 			</ul>
+			<Pagination {...paginationProps} />
 		</section>
 	</ContainerSection>
 </PageLayout>
