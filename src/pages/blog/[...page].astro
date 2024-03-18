@@ -39,17 +39,20 @@ const previewData = (a: Date) => {
 			<ul class="space-y-8 text-start">
 				{
 					page.data.map((post) => (
-						<PostPreview
-							title={post.data.title}
-							img={post.data.coverImage?.src}
-							desc={post.data.description}
-							target="_self"
-							alt={post.data.coverImage?.alt}
-							draft={post.data.draft}
-							url={`/blog/${post.slug}`}
-							publishDate={previewData(post.data.publishDate)}
-							tags={post.data.tags}
-						/>
+						<>
+							<PostPreview
+								title={post.data.title}
+								img={post.data.coverImage?.src}
+								desc={post.data.description}
+								target="_self"
+								alt={post.data.coverImage?.alt}
+								draft={post.data.draft}
+								url={`/blog/${post.slug}`}
+								publishDate={previewData(post.data.publishDate)}
+								tags={post.data.tags}
+							/>
+							<div class="border-brcolor border border-y" />
+						</>
 					))
 				}
 			</ul>

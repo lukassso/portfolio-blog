@@ -6,11 +6,14 @@ import lucasFace from "../../assets/lukas-face.png";
 
 <section class="relative h-screen">
 	<Starfield />
-	<div class="relative h-full flex-col place-items-center">
-		<div class="flex h-4/5 flex-1 flex-col items-center justify-center">
-			<div id="profile-image" class="cc-profile-image relative flex items-center justify-center">
+	<div class="z-5 relative h-full flex-col place-items-center">
+		<div class="z-5 flex h-full flex-1 flex-col items-center justify-center">
+			<div
+				id="profile-image"
+				class="cc-profile-image z-5 relative flex items-center justify-center"
+			>
 				<Image
-					class="h-44 w-44 rounded-full object-cover"
+					class="z-5 h-44 w-44 rounded-full object-cover"
 					src={lucasFace}
 					alt="lukas profile picture"
 				/>
@@ -70,6 +73,6 @@ import lucasFace from "../../assets/lukas-face.png";
 
 	.cc-profile-image img {
 		@apply relative;
-		z-index: 99;
+		z-index: 9;
 	}
 </style>

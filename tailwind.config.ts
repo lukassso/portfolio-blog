@@ -20,6 +20,8 @@ export default {
 			colors: {
 				primary: "var(--color-primary)",
 				secondary: "var(--color-secondary)",
+				bgcolor: "var(--color-background)",
+				brcolor: "var(--color-border)",
 			},
 			textColor: {
 				default: "var(--color-text)",
@@ -32,6 +34,21 @@ export default {
 			borderColor: {
 				default: "var(--color-border)",
 			},
+			typography: (theme) => ({
+				blog: {
+					css: {
+						"--tw-prose-body": theme("textColor.default"),
+						"--tw-prose-headings": theme("textColor.default"),
+						"--tw-prose-links": theme("color.primary"),
+						"--tw-prose-bold": theme("textColor.default"),
+						"--tw-prose-bullets": theme("textColor.default"),
+						"--tw-prose-quotes": theme("textColor.default"),
+						"--tw-prose-code": theme("textColor.default"),
+						"--tw-prose-hr": "0.5px dashed #666",
+						"--tw-prose-th-borders": "#666",
+					},
+				},
+			}),
 		},
 	},
 	plugins: [require("@tailwindcss/typography")],

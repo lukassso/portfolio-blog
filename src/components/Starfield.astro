@@ -8,8 +8,8 @@
 	const root = document.documentElement;
 	const isDarkMode = root.getAttribute("data-theme") === "dark";
 
-	const COUNT = 800;
-	const SPEED = 0.1;
+	const COUNT = 300;
+	const SPEED = Math.random() * 0.1 + 0.25;
 
 	class Star {
 		x: number;
@@ -98,7 +98,6 @@
 			const updatedFillStyleColor = isDarkMode ? "rgba(17,24,39, 0.6)" : "rgba(249, 250, 251, 0.6)";
 			const updatedStrokeStyleColor = isDarkMode ? "rgba(249, 250, 251, 1)" : "rgba(17,24,39, 1)";
 
-			// Aktualizuj kolory w kontekście rysowania
 			ctx.fillStyle = updatedFillStyleColor;
 			ctx.strokeStyle = updatedStrokeStyleColor;
 		});
