@@ -92,14 +92,19 @@
 		ctx.fillStyle = fillStyleColor;
 		ctx.strokeStyle = strokeStyleColor;
 
-		document.addEventListener("theme-change", (event) => {
-			const newTheme = event.detail.theme;
-			const isDarkMode = newTheme === "dark";
-			const updatedFillStyleColor = isDarkMode ? "rgba(17,24,39, 0.6)" : "rgba(249, 250, 251, 0.6)";
-			const updatedStrokeStyleColor = isDarkMode ? "rgba(249, 250, 251, 1)" : "rgba(17,24,39, 1)";
+		document.addEventListener("theme-change", (event: Event) => {
+			const customEvent = event as CustomEvent;
+			if (customEvent.detail) {
+				const newTheme = customEvent.detail.theme;
+				const isDarkMode = newTheme === "dark";
+				const updatedFillStyleColor = isDarkMode
+					? "rgba(17,24,39, 0.6)"
+					: "rgba(249, 250, 251, 0.6)";
+				const updatedStrokeStyleColor = isDarkMode ? "rgba(249, 250, 251, 1)" : "rgba(17,24,39, 1)";
 
-			ctx.fillStyle = updatedFillStyleColor;
-			ctx.strokeStyle = updatedStrokeStyleColor;
+				ctx.fillStyle = updatedFillStyleColor;
+				ctx.strokeStyle = updatedStrokeStyleColor;
+			}
 		});
 
 		rafId = requestAnimationFrame(frame);

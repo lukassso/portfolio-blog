@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from "tailwindcss";
 
 export default {
 	content: ["./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}"],
@@ -34,7 +34,7 @@ export default {
 			borderColor: {
 				default: "var(--color-border)",
 			},
-			typography: (theme) => ({
+			typography: (theme: any) => ({
 				blog: {
 					css: {
 						"--tw-prose-body": theme("textColor.default"),

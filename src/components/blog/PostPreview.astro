@@ -32,7 +32,7 @@ import defaultImage from "@/assets/post_img.png";
 						<span class="py-1 text-xs">{publishDate}</span>
 					</div>
 					<div class="justify-end">
-						{tags && tags.map((tag) => <a class="badge badge-outline ml-2">{tag}</a>)}
+						{tags && tags.map((tag:string) => <a class="badge badge-outline ml-2">{tag}</a>)}
 					</div>
 				</div>
 			</div>
