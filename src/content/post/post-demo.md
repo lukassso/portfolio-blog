@@ -1,10 +1,10 @@
 ---
-title: "Demo Post 3"
+title: "Demo Post"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-publishDate: "Sep 12 2022"
+publishDate: "Sep 12 2023"
+draft: true
 heroImage: "/assets/images/post_img.webp"
-badge: "Demo badge"
-tags: ["rust", "tokio"]
+tags: ["Demo"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

@@ -3,10 +3,11 @@ title: "Markdown elements"
 description: "This post with listing of different markdown elements"
 publishDate: "27 Feb 2024"
 updatedDate: "27 Feb 2024"
+draft: true
 heroImage: "/assets/images/post_img2.svg"
 coverImage:
   src: "/assets/images/post_img2.svg"
-  alt: "ddd"
+  alt: "markdown-elements"
 ---
 
 ## This is a H2 Heading
