@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { addTask } from "../../utils/taskSlice";
-import { useAppDispatch } from "../../stores/taskManagerStore";
-import { store } from "../../stores/taskManagerStore";
+import { addTask } from "../../features/task-manager/taskSlice";
+import { useAppDispatch } from "../../features/task-manager/store";
+import { store } from "../../features/task-manager/store";
 export function TaskForm() {
 	const [task, setTask] = useState("");
 	const dispatch = useAppDispatch();

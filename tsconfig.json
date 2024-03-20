@@ -1,5 +1,5 @@
 {
-	"extends": "astro/tsconfigs/strictest",
+	"extends": "astro/tsconfigs/strict",
 	"compilerOptions": {
 		"baseUrl": ".",
 		"lib": ["es2022", "dom", "dom.iterable"],
@@ -9,7 +9,8 @@
 			"@/layouts/*": ["src/layouts/*"],
 			"@/utils": ["src/utils/index.ts"],
 			"@/types": ["src/types.ts"],
-			"@/site-config": ["src/site.config.ts"]
+			"@/site-config": ["src/site.config.ts"],
+			"@/features": ["src/features/*"]
 		},
 		"jsx": "react-jsx",
 		"jsxImportSource": "react"
