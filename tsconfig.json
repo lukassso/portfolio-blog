@@ -11,7 +11,7 @@
 			"@/types": ["src/types.ts"],
 			"@/site-config": ["src/site.config.ts"]
 		},
-		"jsx": "preserve",
+		"jsx": "react-jsx",
 		"jsxImportSource": "react"
 	},
 	"exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]

@@ -7,7 +7,7 @@ export default {
 		// disable aspect ratio as per docs -> @tailwindcss/aspect-ratio
 		aspectRatio: false,
 		// disable some core plugins as they are included in the css, even when unused
-		touchAction: false,
+		touchAction: true,
 		ringOffsetWidth: false,
 		ringOffsetColor: false,
 		scrollSnapType: false,

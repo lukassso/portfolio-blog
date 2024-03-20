@@ -15,6 +15,7 @@
 		"@astrojs/sitemap": "^3.1.1",
 		"@astrojs/tailwind": "^5.1.0",
 		"@types/react": "^18.2.67",
+		"@types/react-dom": "^18.2.22",
 		"astro": "^4.3.5",
 		"astro-expressive-code": "^0.33.4",
 		"astro-icon": "^1.1.0",
