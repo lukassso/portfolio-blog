@@ -1,14 +1,13 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
-import { TaskForm, TaskList } from "@/components/task-manager";
-import AppHeader from "@/components/task-manager/AppHeader.astro";
 import ContainerSection from "@/components/ContainerSection.astro";
+import { TaskRoot } from "@/components/task-manager";
+import AppHeader from "@/components/task-manager/AppHeader.astro";
 ---
 
 <PageLayout meta={{ title: "Task Manager" }}>
 	<ContainerSection maxWidth="max-w-2xl">
 		<AppHeader />
-		<TaskForm client:visible />
-		<TaskList />
+		<TaskRoot client:visible />
 	</ContainerSection>
 </PageLayout>

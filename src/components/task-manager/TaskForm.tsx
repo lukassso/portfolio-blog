@@ -1,11 +1,24 @@
 import { useState } from "react";
-
+import { addTask } from "../../utils/taskSlice";
+import { useAppDispatch } from "../../stores/taskManagerStore";
+import { store } from "../../stores/taskManagerStore";
 export function TaskForm() {
 	const [task, setTask] = useState("");
+	const dispatch = useAppDispatch();
 
 	const handleSubmit = (e: any) => {
 		e.preventDefault();
 		console.log("task", task);
+
+		dispatch(
+			addTask({
+				id: new Date().getTime().toString(),
+				name: task,
+				isCompleted: false,
+			}),
+		);
+		console.log("tasks", store.getState().taskState.tasks);
+		setTask("");
 	};
 
 	return (
