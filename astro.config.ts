@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import expressiveCode from "astro-expressive-code";
 import { expressiveCodeOptions } from "./src/site.config";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,5 +19,6 @@ export default defineConfig({
 			applyBaseStyles: false,
 		}),
 		mdx(),
+		react(),
 	],
 });

@@ -10,7 +10,9 @@
 			"@/utils": ["src/utils/index.ts"],
 			"@/types": ["src/types.ts"],
 			"@/site-config": ["src/site.config.ts"]
-		}
+		},
+		"jsx": "preserve",
+		"jsxImportSource": "react"
 	},
 	"exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
 }
