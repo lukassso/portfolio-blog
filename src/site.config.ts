@@ -24,6 +24,10 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		title: "Blog",
 		path: "/blog",
 	},
+	{
+		title: "ToDos",
+		path: "/task-manager",
+	},
 ];
 
 // https://expressive-code.com/reference/configuration/
