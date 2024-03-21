@@ -35,7 +35,7 @@ const taskSlice = createSlice({
 			const task = state.tasks.find((task) => task.id === action.payload); // Finding the task by id
 			if (task) {
 				task.isCompleted = !task.isCompleted; // Toggling task completion status
-				taskSlice.caseReducers.saveTasks(state);  // Calling the saveTasks reducer to save tasks to local storage
+				taskSlice.caseReducers.saveTasks(state); // Calling the saveTasks reducer to save tasks to local storage
 			}
 		},
 		// Action to delete a task
@@ -79,5 +79,5 @@ const taskSlice = createSlice({
 export const { addTask, toggleTaskCompletion, deleteTask, filterTasks, deleteCompletedTasks } =
 	taskSlice.actions;
 
-	// Exporting reducer
+// Exporting reducer
 export default taskSlice.reducer;

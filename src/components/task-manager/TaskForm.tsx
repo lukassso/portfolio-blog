@@ -2,13 +2,13 @@ import { useState } from "react";
 import { addTask } from "../../features/task-manager/taskSlice";
 import { useAppDispatch } from "../../features/task-manager/store";
 import { store } from "../../features/task-manager/store";
-export function TaskForm() {
+
+function TaskForm() {
 	const [task, setTask] = useState("");
 	const dispatch = useAppDispatch();
 
 	const handleSubmit = (e: any) => {
 		e.preventDefault();
-		console.log("task", task);
 
 		dispatch(
 			addTask({
@@ -48,3 +48,5 @@ export function TaskForm() {
 		</form>
 	);
 }
+
+export default TaskForm;
