@@ -1,5 +1,6 @@
 import { useAppSelector } from "../../features/task-manager/hooks";
 import TaskComponent from "./components/TaskComponent";
+import TaskFilterBar from "./components/task-filter/TaskFilterBar";
 
 function TaskList() {
 	const { tasks, filteredTasks } = useAppSelector((state) => state.taskState);
@@ -16,6 +17,7 @@ function TaskList() {
 					})}
 				</ul>
 			)}
+			<TaskFilterBar/>
 		</section>
 	);
 }

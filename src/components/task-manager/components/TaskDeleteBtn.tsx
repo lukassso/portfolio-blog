@@ -9,7 +9,12 @@ function TaskDeleteBtn({ id }: { id: string }) {
 		dispatch(deleteTask(id));
 	};
 	return (
-		<button type="button" onClick={handleDelete} aria-label="delete task">
+		<button
+			type="button"
+			onClick={handleDelete}
+			aria-label="delete task"
+			className="hover:text-green-600"
+		>
 			<BsTrash />
 		</button>
 	);
