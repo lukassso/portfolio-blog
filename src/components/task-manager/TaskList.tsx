@@ -1,5 +1,5 @@
 import { useAppSelector } from "../../features/task-manager/hooks";
-import TaskComponent from "./components/TaskComponent";
+import TaskComponent from "./components/task-row/TaskComponent";
 import TaskFilterBar from "./components/task-filter/TaskFilterBar";
 
 function TaskList() {
@@ -17,7 +17,7 @@ function TaskList() {
 					})}
 				</ul>
 			)}
-			<TaskFilterBar/>
+			<TaskFilterBar />
 		</section>
 	);
 }

@@ -11,8 +11,8 @@ function TaskFilterBar() {
 
 	return (
 		<section className="mt-8 flex w-full flex-wrap items-center justify-between">
-			<span>{pluralize(filteredTasks.length, "task")}</span>
-			<div className="flex gap-3">
+			<span className="text-gray-700">{pluralize(filteredTasks.length, "task")}</span>
+			<div className="flex gap-3 text-gray-700">
 				<TaskFilterBtn filterValue="all" />
 				<TaskFilterBtn filterValue="active" />
 				<TaskFilterBtn filterValue="completed" />

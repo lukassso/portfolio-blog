@@ -1,6 +1,6 @@
-import { type Task } from "../../../features/task-manager/types";
-import TaskCompletionToggle from "./TaskCompletionToggle";
-import TaskDeleteBtn from "./TaskDeleteBtn";
+import { type Task } from "../../../../features/task-manager/types";
+import TaskCompletionToggle from "../TaskCompletionToggle";
+import TaskDeleteBtn from "../TaskDeleteBtn";
 
 function TaskComponent({ task }: { task: Task }) {
 	return (
