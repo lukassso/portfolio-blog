@@ -105,7 +105,7 @@ const RandomPersonComponent = (): JSX.Element => {
 				<div className="container mx-auto p-8 ">
 					<div className="relative mx-auto -mt-24 h-32 w-32 overflow-hidden rounded-full border-4 border-white">
 						<img
-							src={(state.person && state.person.image) || defaultImage}
+							src={state.person?.image || defaultImage}
 							alt="random user"
 							className="mx-auto h-32 w-32 rounded-full object-cover"
 						/>
