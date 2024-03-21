@@ -25,8 +25,12 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		path: "/blog",
 	},
 	{
-		title: "ToDos",
+		title: "Task Manager",
 		path: "/task-manager",
+	},
+	{
+		title: "Random Person",
+		path: "/random-person",
 	},
 ];
 
