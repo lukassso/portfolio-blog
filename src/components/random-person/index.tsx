@@ -51,7 +51,7 @@ const getPersonData = async (): Promise<Person> => {
 	return newPerson;
 };
 
-const RandomPerson = (): JSX.Element => {
+const RandomPersonComponent = (): JSX.Element => {
 	const [state, setState] = useState<State>({
 		loading: true,
 		person: null,
@@ -153,4 +153,4 @@ const getIcon = (label: string) => {
 	}
 };
 
-export default RandomPerson;
+export default RandomPersonComponent;
