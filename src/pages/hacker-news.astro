@@ -1,0 +1,11 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import ContainerSection from "@/components/ContainerSection.astro";
+import HackerNewsRoot from "@/components/hacker-news";
+---
+
+<PageLayout meta={{ title: "Task Manager" }}>
+	<ContainerSection maxWidth="max-w-2xl">
+		<HackerNewsRoot client:visible />
+	</ContainerSection>
+</PageLayout>
