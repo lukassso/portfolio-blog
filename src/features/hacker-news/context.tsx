@@ -1,21 +1,25 @@
-import React, { createContext, useContext, useReducer, useEffect } from "react";
-import { SET_LOADING, SET_STORIES } from "./actions";
+import React, { createContext, useContext, useReducer, useEffect, type ReactNode } from "react";
+import { SET_LOADING, SET_STORIES, HANDLE_PAGE } from "./actions";
 import reducer from "./reducer";
 import { type HackerNewsState } from "./types";
-import { type AppProviderProps } from "./types";
 
 const API_ENDPOINT = "https://hn.algolia.com/api/v1/search?";
 
-const initialState = {
+const initialState: HackerNewsState = {
 	isLoading: false,
 	page: 0,
 	hits: [],
 	nbPages: 0,
+	handlePage: (page: string) => {
+		page;
+	},
 };
 
-interface AppContextType extends HackerNewsState {}
+interface AppProviderProps {
+	children: ReactNode;
+}
 
-const AppContext = createContext(initialState);
+const AppContext = createContext<HackerNewsState>(initialState);
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -37,15 +41,19 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 		}
 	};
 
+	const handlePage = (value: string): void => {
+		dispatch({ type: HANDLE_PAGE, payload: value });
+	};
+
 	useEffect(() => {
 		fetchApiData(`${API_ENDPOINT}page=${state.page}`);
 	}, [state.page]);
 
-	return <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>;
+	return <AppContext.Provider value={{ ...state, handlePage }}>{children}</AppContext.Provider>;
 };
 
-const useGlobalContext = (): AppContextType => {
+const useGlobalContext = (): HackerNewsState => {
 	return useContext(AppContext);
 };
 
-export { AppContext, AppProvider, useGlobalContext };
+export { AppProvider, useGlobalContext };

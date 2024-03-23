@@ -1,5 +1,3 @@
-import { type ReactNode } from "react";
-
 interface Hit {
 	objectID: string;
 	title: string;
@@ -12,10 +10,13 @@ interface Hit {
 export interface HackerNewsState {
 	isLoading: boolean;
 	page: number;
+	handlePage: (page: string) => void;
 	hits: Hit[];
 	nbPages: number;
+	error?: string;
 }
 
-export interface AppProviderProps {
-	children: ReactNode;
+export interface Action {
+	type: string;
+	payload?: any;
 }
