@@ -1,5 +1,14 @@
 import { useGlobalContext } from "../../../features/hacker-news/context";
 import { useMemo } from "react";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
+dayjs.extend(relativeTime);
+
+function timeAgo(isoData: string) {
+	const createAt = dayjs(isoData);
+	return createAt.fromNow();
+}
 
 const HackerNewsStories = () => {
 	const { isLoading, hits } = useGlobalContext();
@@ -16,7 +25,6 @@ const HackerNewsStories = () => {
 		<div className="flex flex-col">
 			{hitsWithTitles.map((story) => {
 				const { objectID, title, num_comments, url, points, author, created_at } = story;
-				const created_at_field = created_at.slice(0, 10);
 				return (
 					<article
 						key={objectID}
@@ -27,7 +35,7 @@ const HackerNewsStories = () => {
 
 							<a href={url} target="_blank" rel="noopener noreferrer">
 								<button
-									className="block rounded-full bg-primary px-5 py-1 text-white transition duration-300 hover:bg-secondary"
+									className="ml-2 block rounded-full bg-primary px-5 py-1 text-white transition duration-300 hover:bg-secondary"
 									type="button"
 								>
 									Read more
@@ -35,9 +43,12 @@ const HackerNewsStories = () => {
 							</a>
 						</div>
 						<div>
-							<p className="pt-2 text-sm">Created at: {created_at_field}</p>
 							<p className="pt-2 text-sm">
-								{points} points by <span>{author} | </span> {num_comments} comments
+								{points} points by{" "}
+								<span>
+									{author} | {timeAgo(created_at)} |{" "}
+								</span>{" "}
+								{num_comments} comments
 							</p>
 						</div>
 					</article>
