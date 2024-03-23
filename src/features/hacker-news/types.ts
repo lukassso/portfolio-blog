@@ -5,6 +5,7 @@ interface Hit {
 	num_comments: number;
 	points: number;
 	author: string;
+	created_at: string;
 }
 
 export interface HackerNewsState {
