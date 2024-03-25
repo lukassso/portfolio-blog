@@ -1,7 +1,8 @@
-import { SET_LOADING, SET_STORIES, HANDLE_PAGE } from "./actions";
+import { SET_LOADING, SET_STORIES, HANDLE_PAGE, HANDLE_SEARCH } from "./actions";
 import { type HackerNewsState, type Action } from "./types";
+import { type Reducer } from "react";
 
-const reducer = (state: HackerNewsState, action: Action) => {
+const reducer: Reducer<HackerNewsState, Action> = (state, action) => {
 	switch (action.type) {
 		case SET_LOADING:
 			return {
@@ -30,6 +31,10 @@ const reducer = (state: HackerNewsState, action: Action) => {
 				}
 				return { ...state, page: prevPage };
 			}
+			return { ...state };
+		case HANDLE_SEARCH:
+			return { ...state, query: action.payload, page: 0 };
+
 		default:
 			throw new Error(`Unhandled action type: ${action.type}`);
 	}

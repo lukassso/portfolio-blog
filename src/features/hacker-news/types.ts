@@ -15,6 +15,8 @@ export interface HackerNewsState {
 	hits: Hit[];
 	nbPages: number;
 	error?: string;
+	handleSearch: (value: string) => void;
+	query?: string;
 }
 
 export interface Action {

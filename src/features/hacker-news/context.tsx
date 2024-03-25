@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, useEffect, type ReactNode } from "react";
-import { SET_LOADING, SET_STORIES, HANDLE_PAGE } from "./actions";
+import { SET_LOADING, SET_STORIES, HANDLE_PAGE, HANDLE_SEARCH } from "./actions";
 import reducer from "./reducer";
 import { type HackerNewsState } from "./types";
 
@@ -12,6 +12,9 @@ const initialState: HackerNewsState = {
 	nbPages: 0,
 	handlePage: (page: string) => {
 		page;
+	},
+	handleSearch: (query: string) => {
+		query;
 	},
 };
 
@@ -45,11 +48,19 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
 		dispatch({ type: HANDLE_PAGE, payload: value });
 	};
 
-	useEffect(() => {
-		fetchApiData(`${API_ENDPOINT}page=${state.page}`);
-	}, [state.page]);
+	const handleSearch = (query: string): void => {
+		dispatch({ type: HANDLE_SEARCH, payload: query });
+	};
 
-	return <AppContext.Provider value={{ ...state, handlePage }}>{children}</AppContext.Provider>;
+	useEffect(() => {
+		fetchApiData(`${API_ENDPOINT}query=${state.query}&page=${state.page}`);
+	}, [state.page, state.query]);
+
+	return (
+		<AppContext.Provider value={{ ...state, handlePage, handleSearch }}>
+			{children}
+		</AppContext.Provider>
+	);
 };
 
 const useGlobalContext = (): HackerNewsState => {
