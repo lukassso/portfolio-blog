@@ -22,13 +22,13 @@ const HackerNewsStories = () => {
 	}
 
 	return (
-		<div className="flex flex-col">
+		<div className="mb-20 flex flex-col">
 			{hitsWithTitles.map((story) => {
 				const { objectID, title, num_comments, url, points, author, created_at } = story;
 				return (
 					<article
 						key={objectID}
-						className="my-2 flex flex-col rounded border border-solid border-primary px-8 py-6 shadow-md"
+						className="my-2 flex flex-col overflow-hidden rounded border border-solid border-primary px-4 py-4 shadow-md md:px-6 md:py-6"
 					>
 						<div className="flex">
 							<h2 className="flex-1 font-bold">{title}</h2>

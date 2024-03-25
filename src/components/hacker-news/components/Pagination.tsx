@@ -3,7 +3,7 @@ import { useGlobalContext } from "../../../features/hacker-news/context";
 const Pagination = () => {
 	const { isLoading, page, nbPages, handlePage } = useGlobalContext();
 	return (
-		<div className="flex items-center justify-between">
+		<div className="sticky top-0 flex items-center justify-between bg-bgcolor py-2">
 			<div className="flex">
 				<a
 					onClick={() => handlePage("dec")}
