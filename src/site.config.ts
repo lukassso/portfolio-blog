@@ -32,6 +32,10 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		title: "Random Person",
 		path: "/random-person",
 	},
+	{
+		title: "Hacker News",
+		path: "/hacker-news",
+	},
 ];
 
 // https://expressive-code.com/reference/configuration/

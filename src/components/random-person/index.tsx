@@ -94,7 +94,7 @@ const RandomPersonComponent = (): JSX.Element => {
 
 	return (
 		<main>
-			<div className="mx-4 mb-20 mt-16 max-w-2xl overflow-hidden rounded-lg bg-white shadow-xl dark:bg-gray-900 sm:mx-auto sm:max-w-sm md:mx-auto md:max-w-sm lg:mx-auto lg:max-w-sm xl:mx-auto xl:max-w-sm">
+			<div className="mx-4 mb-20 mt-8 max-w-2xl overflow-hidden rounded-lg bg-white shadow-xl dark:bg-gray-900 sm:mx-auto sm:max-w-sm md:mx-auto md:max-w-sm lg:mx-auto lg:max-w-sm xl:mx-auto xl:max-w-sm">
 				<div className="h-32 overflow-hidden rounded-t-lg">
 					<img
 						className="w-full object-cover object-top"
