@@ -1,7 +1,7 @@
 import { type SVGProps } from "react";
-import PulseCircle from "./components/PulseCircle";
+import PulseCircle from "./PulseCircle";
 
-const HeaderAnimeRoot = (props: SVGProps<SVGSVGElement>) => {
+const HeroAnimeComponent = (props: SVGProps<SVGSVGElement>) => {
 	return (
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1776.29 683.36" {...props}>
 			<defs>
@@ -127,4 +127,4 @@ const HeaderAnimeRoot = (props: SVGProps<SVGSVGElement>) => {
 	);
 };
 
-export default HeaderAnimeRoot;
+export default HeroAnimeComponent;

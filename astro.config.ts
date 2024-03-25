@@ -16,7 +16,7 @@ export default defineConfig({
 			},
 		}),
 		tailwind({
-			applyBaseStyles: false,
+			applyBaseStyles: true,
 		}),
 		mdx(),
 		react(),
