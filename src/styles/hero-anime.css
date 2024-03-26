@@ -1,3 +1,36 @@
+.bg-gradient {
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background-size: 150% 150%;
+}
+.bg-gradient-mix {
+	background:
+		radial-gradient(
+				circle at -10% 120%,
+				var(--clr-radial-gradient-1-start) 0,
+				var(--clr-radial-gradient-1-mid) 10%,
+				var(--clr-radial-gradient-1-end) 20%,
+				var(--clr-radial-gradient-1-transparent) 40%
+			)
+			50% 50%,
+		radial-gradient(
+				circle at 100% -10%,
+				var(--clr-radial-gradient-2-start) 0,
+				var(--clr-radial-gradient-2-end) 40%
+			)
+			50% 50%,
+		radial-gradient(
+				circle at 50% 50%,
+				var(--clr-radial-gradient-3-start) 20%,
+				var(--clr-radial-gradient-3-end) 100%
+			)
+			50% 50%;
+}
+
 .heroWrapper {
 	margin: 0 auto;
 	padding: 0 24px;
@@ -36,45 +69,9 @@
 .imageHero {
 	margin: 50px auto 0;
 }
-.bcgColorAnimeHero {
-	top: calc(11vw + 50px);
-	background-repeat: no-repeat;
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	background-size: contain;
-	filter: drop-shadow(0px 25px 15px rgba(5, 7, 13, 0.08));
-	z-index: -1;
-}
 .bcgAnimeHero {
-	padding: 0;
-	position: relative;
-	display: block;
+	margin: 80px 0;
 }
-.bcgAnimeHero:before {
-	content: "";
-	position: absolute;
-	background-color: var(--clr-bcg-3);
-	top: 0;
-	left: 0;
-	height: calc(11vw + 50px);
-	width: 100%;
-	z-index: -1;
-}
-/* @keyframes pulse {
-	0% {
-		-moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
-		box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
-	}
-	70% {
-		-moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
-		box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
-	}
-	100% {
-		-moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
-		box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
-	}
-} */
 @media screen and (min-width: 900px) {
 	.heroWrapper {
 		margin: 0px auto;
@@ -171,6 +168,29 @@
 	--clr-red-light: #e66b6b;
 	--clr-black: rgba(24, 22, 22, 1);
 	--clr-blue: #6a8cb9;
+
+	/* radial gradient */
+	--clr-radial-gradient-1-start-dark: #6841be;
+	--clr-radial-gradient-1-mid-dark: #442980;
+	--clr-radial-gradient-1-end-dark: #241348;
+	--clr-radial-gradient-1-transparent-dark: rgba(1, 1, 2, 0);
+
+	--clr-radial-gradient-2-start-dark: #ae5a56;
+	--clr-radial-gradient-2-end-dark: rgba(5, 3, 3, 0);
+
+	--clr-radial-gradient-3-start-dark: #010102;
+	--clr-radial-gradient-3-end-dark: #010102;
+
+	--clr-radial-gradient-1-start-light: #f9f5ff;
+	--clr-radial-gradient-1-mid-light: #c4d3ff;
+	--clr-radial-gradient-1-end-light: #89a6ff;
+	--clr-radial-gradient-1-transparent-light: rgba(249, 245, 255, 0);
+
+	--clr-radial-gradient-2-start-light: #bafdc6;
+	--clr-radial-gradient-2-end-light: rgba(186, 253, 198, 0);
+
+	--clr-radial-gradient-3-start-light: #ffe0b5;
+	--clr-radial-gradient-3-end-light: #ffc784;
 }
 [data-theme="dark"] {
 	--clr-primary: var(--clr-primary-dark);
@@ -196,6 +216,17 @@
 	--clr-hero-image-3: #1f1f1f;
 	--clr-hero-image-4: #363636;
 	--clr-hero-image-5: #474747;
+	/* radial gradient */
+	--clr-radial-gradient-1-start: var(--clr-radial-gradient-1-start-dark);
+	--clr-radial-gradient-1-mid: var(--clr-radial-gradient-1-mid-dark);
+	--clr-radial-gradient-1-end: var(--clr-radial-gradient-1-end-dark);
+	--clr-radial-gradient-1-transparent: var(--clr-radial-gradient-1-transparent-dark);
+
+	--clr-radial-gradient-2-start: var(--clr-radial-gradient-2-start-dark);
+	--clr-radial-gradient-2-end: var(--clr-radial-gradient-2-end-dark);
+
+	--clr-radial-gradient-3-start: var(--clr-radial-gradient-3-start-dark);
+	--clr-radial-gradient-3-end: var(--clr-radial-gradient-3-end-dark);
 }
 [data-theme="dark"] h1 span,
 [data-theme="dark"] h2 span {
@@ -228,6 +259,17 @@
 	--clr-hero-image-3: #c7c7c7;
 	--clr-hero-image-4: #ebebeb;
 	--clr-hero-image-5: #dbdbdb;
+	/* radial gradient */
+	--clr-radial-gradient-1-start: var(--clr-radial-gradient-1-start-light);
+	--clr-radial-gradient-1-mid: var(--clr-radial-gradient-1-mid-light);
+	--clr-radial-gradient-1-end: var(--clr-radial-gradient-1-end-light);
+	--clr-radial-gradient-1-transparent: var(--clr-radial-gradient-1-transparent-light);
+
+	--clr-radial-gradient-2-start: var(--clr-radial-gradient-2-start-light);
+	--clr-radial-gradient-2-end: var(--clr-radial-gradient-2-end-light);
+
+	--clr-radial-gradient-3-start: var(--clr-radial-gradient-3-start-light);
+	--clr-radial-gradient-3-end: var(--clr-radial-gradient-3-end-light);
 }
 [data-theme="light"] h1 span,
 [data-theme="light"] h2 span {

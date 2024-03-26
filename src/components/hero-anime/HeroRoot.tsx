@@ -5,8 +5,7 @@ import HeroImageSvg from "./components/HeroImage.tsx";
 import { useMediaQuery } from "../../features/hooks/use-media-query.tsx";
 
 const HeroRoot = () => {
-	// const dark = window.localStorage.getItem("theme") === "dark";
-	const mobile = !useMediaQuery("(min-width: 900px)");
+	const mobile = useMediaQuery("(min-width: 900px)");
 	return (
 		<>
 			<div className={"heroWrapper"}>
@@ -40,20 +39,7 @@ const HeroRoot = () => {
 			</div>
 
 			<div className={"bcgAnimeHero"}>
-				<div
-					className={"bcgColorAnimeHero"}
-					style={{
-						backgroundRepeat: "no-repeat",
-						height: "100%",
-						width: "100%",
-						position: "absolute",
-						backgroundSize: "contain",
-						filter: "drop-shadow(0px 25px 15px rgba(5, 7, 13, 0.08))",
-					}}
-				/>
-				<div className="">
-					<HeroAnimeComponent />
-				</div>
+				<HeroAnimeComponent />
 			</div>
 		</>
 	);

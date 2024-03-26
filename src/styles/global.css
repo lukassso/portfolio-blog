@@ -21,6 +21,7 @@
 	padding: 1rem;
 }
 
+
 @layer components {
 	.btn {
 		@apply inline-flex cursor-pointer items-center justify-center rounded-full px-6 py-3.5 text-center text-base font-medium transition duration-300;

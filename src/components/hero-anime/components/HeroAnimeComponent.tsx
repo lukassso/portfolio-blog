@@ -3,7 +3,9 @@ import PulseCircle from "./PulseCircle";
 
 const HeroAnimeComponent = (props: SVGProps<SVGSVGElement>) => {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1776.29 683.36" {...props}>
+		<svg
+		className="heroAnimeComponent"
+		xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1776.29 683.36" {...props}>
 			<defs>
 				<style>{".e{fill:none;stroke:#ff4900;stroke-miterlimit:10}"}</style>
 			</defs>

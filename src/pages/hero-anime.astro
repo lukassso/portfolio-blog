@@ -1,10 +1,10 @@
 ---
-import PageLayout from "@/layouts/PageLayout.astro";
 import HeroRoot from "@/components/hero-anime/HeroRoot";
+import PageLayoutHeroAnime from "@/layouts/PageLayoutHeroAnime.astro";
 ---
 
-<PageLayout meta={{ title: "Hero Anime" }}>
+<PageLayoutHeroAnime meta={{ title: "Hero Anime", description: "Hero Anime nedds description" }}>
 	<div class="w-full overflow-hidden pb-20 pt-40">
-		<HeroRoot />
+		<HeroRoot client:visible />
 	</div>
-</PageLayout>
+</PageLayoutHeroAnime>
