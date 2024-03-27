@@ -8,10 +8,12 @@ import { siteConfig, menuLinks } from "@/site-config";
 
 interface Props {
 	meta: SiteMeta;
+	heroAnime?: boolean;
 }
 
 const {
 	meta: { articleDate, description = siteConfig.description, ogImage, title },
+	heroAnime,
 } = Astro.props;
 ---
 
@@ -22,6 +24,8 @@ const {
 	<body
 		class="relative h-full min-h-screen overflow-x-hidden bg-default text-base text-default selection:bg-secondary selection:text-white"
 	>
+		{heroAnime ? <div class="bg-gradient bg-gradient-mix" /> : undefined}
+
 		<ThemeProvider />
 		<Header menuLinks={menuLinks} />
 		<main>

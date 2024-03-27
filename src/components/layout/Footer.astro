@@ -7,11 +7,12 @@ const year = new Date().getFullYear();
 <footer
 	class="absolute bottom-0
 	left-1/2
-  w-full
-	max-w-6xl
+	w-full
+  max-w-6xl
 	-translate-x-1/2
-  -translate-y-1/2
+	-translate-y-1/2
   transform
+  overflow-x-hidden
 	text-gray-600 dark:text-gray-400 sm:bottom-8"
 >
 	<div
@@ -34,7 +35,7 @@ const year = new Date().getFullYear();
 			class="flex gap-x-2 sm:gap-x-0 sm:divide-x sm:divide-gray-500"
 		>
 			{
-				menuLinks.map((link) => (
+				menuLinks.slice(0, 2).map((link) => (
 					<a class="sm:hover:text-textColor px-4 py-2 sm:py-0 sm:hover:underline" href={link.path}>
 						{link.title}
 					</a>
