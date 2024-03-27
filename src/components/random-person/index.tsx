@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FaEnvelopeOpen, FaUser, FaCalendarTimes, FaMap, FaPhone, FaLock } from "react-icons/fa";
+import defaultFace from "../../assets/lukas-face.png";
 
 const url = "https://randomuser.me/api/";
-const defaultImage = "https://randomuser.me/api/portraits/men/46.jpg";
+const defaultImage = defaultFace;
 
 interface Person {
 	image: string;
@@ -25,7 +26,6 @@ const getPersonData = async (): Promise<Person> => {
 	const response = await fetch(url);
 	const data = await response.json();
 	const randomPerson = data.results[0];
-	console.log("randomPerson", randomPerson);
 
 	const { phone, email } = randomPerson;
 	const { large: image } = randomPerson.picture;
@@ -55,13 +55,13 @@ const RandomPersonComponent = (): JSX.Element => {
 	const [state, setState] = useState<State>({
 		loading: true,
 		person: null,
-		value: "random person",
+		value: "Lukasz Zatyka",
 		title: "name",
 	});
 
 	const handleValue = useCallback(
 		(e: React.MouseEvent<HTMLButtonElement>): void => {
-			const target = e.target as HTMLButtonElement;
+			const target = e.currentTarget as HTMLButtonElement;
 			const newValue = target.dataset.label;
 			if (newValue && state.person !== null) {
 				setState((prevState) => ({
@@ -105,17 +105,23 @@ const RandomPersonComponent = (): JSX.Element => {
 				<div className="container mx-auto p-8 ">
 					<div className="relative mx-auto -mt-24 h-32 w-32 overflow-hidden rounded-full border-4 border-white">
 						<img
-							src={state.person?.image || defaultImage}
+							src={state.person?.image || defaultImage.src}
 							alt="random user"
 							className="mx-auto h-32 w-32 rounded-full object-cover"
 						/>
 					</div>
 					<p className="mt-4 text-center font-bold">My {state.title} is</p>
 					<p className="mt-2 text-center text-xl md:text-2xl ">{state.value}</p>
-					<div className="my-10 flex flex-wrap justify-center gap-2">
+					<div className="my-10 flex flex-wrap justify-center gap-8 md:gap-2">
 						{usersData.map((label) => (
-							<button key={label} className="icon" data-label={label} onMouseOver={handleValue}>
-								{getIcon(label)}
+							<button
+								key={label}
+								className="icon"
+								data-label={label}
+								onMouseOver={handleValue}
+								onClick={handleValue}
+							>
+								{getIcon(label, state.title === label)}
 							</button>
 						))}
 					</div>
@@ -132,22 +138,30 @@ const RandomPersonComponent = (): JSX.Element => {
 	);
 };
 
-const faStyles = "mx-2 text-3xl hover:text-blue-500 transition duration-300";
+const faStyles = "mx-2 text-2xl md:text-3xl hover:text-blue-500 transition duration-300";
 
-const getIcon = (label: string) => {
+const getIconClasses = (isActive: boolean) => {
+	const classes = [faStyles];
+	if (isActive) {
+		classes.push("text-blue-500");
+	}
+	return classes.join(" ");
+};
+
+const getIcon = (label: string, isActive: boolean) => {
 	switch (label) {
 		case "name":
-			return <FaUser className={faStyles} />;
+			return <FaUser className={getIconClasses(isActive)} />;
 		case "email":
-			return <FaEnvelopeOpen className={faStyles} />;
+			return <FaEnvelopeOpen className={getIconClasses(isActive)} />;
 		case "age":
-			return <FaCalendarTimes className={faStyles} />;
+			return <FaCalendarTimes className={getIconClasses(isActive)} />;
 		case "street":
-			return <FaMap className={faStyles} />;
+			return <FaMap className={getIconClasses(isActive)} />;
 		case "phone":
-			return <FaPhone className={faStyles} />;
+			return <FaPhone className={getIconClasses(isActive)} />;
 		case "password":
-			return <FaLock className={faStyles} />;
+			return <FaLock className={getIconClasses(isActive)} />;
 		default:
 			return null;
 	}
