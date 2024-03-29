@@ -40,6 +40,10 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		title: "Hero Anime",
 		path: "/hero-anime",
 	},
+	{
+		title: "Dashboard",
+		path: "/dashboards/sample-1",
+	},
 ];
 
 // https://expressive-code.com/reference/configuration/
