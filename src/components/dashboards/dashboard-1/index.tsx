@@ -13,7 +13,13 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components-library/ui/avatar";
 import { Badge } from "@/components-library/ui/badge";
 import { Button } from "@/components-library/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components-library/ui/card";
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "@/components-library/ui/card";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -33,7 +39,7 @@ import {
 	TableRow,
 } from "@/components-library/ui/table";
 
-export function AdminDashboard() {
+export function Dashboard1() {
 	return (
 		<div className="flex min-h-screen w-full flex-col">
 			<header className="bg-background sticky top-0 flex h-16 items-center gap-4 border-b px-4 md:px-6">

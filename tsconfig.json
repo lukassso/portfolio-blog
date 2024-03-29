@@ -5,10 +5,11 @@
 		"lib": ["es2022", "dom", "dom.iterable"],
 		"paths": {
 			"@/*": ["./src/*"],
+			"@/components-library/*": ["src/components-library/*"],
 			"@/assets/*": ["src/assets/*"],
 			"@/components/*": ["src/components/*"],
 			"@/layouts/*": ["src/layouts/*"],
-			"@/utils": ["src/utils/index.ts"],
+			"@/utils/*": ["src/utils/*"],
 			"@/types": ["src/types.ts"],
 			"@/site-config": ["src/site.config.ts"],
 			"@/features": ["src/features/*"]

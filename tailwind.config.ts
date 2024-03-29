@@ -1,7 +1,10 @@
 import type { Config } from "tailwindcss";
 
 export default {
-	content: ["@/components-library/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}", "./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}"],
+	content: [
+		"@/components-library/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}",
+		"./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}",
+	],
 	darkMode: ["class", '[data-theme="dark"]'],
 	corePlugins: {
 		// disable aspect ratio as per docs -> @tailwindcss/aspect-ratio
