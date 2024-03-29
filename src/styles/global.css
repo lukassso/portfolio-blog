@@ -27,9 +27,9 @@
 	}
 
 	.btn-primary {
-		@apply btn border-primary bg-primary font-semibold text-white 
-		hover:border-secondary hover:bg-secondary hover:text-white 
-		dark:border-primary dark:bg-primary dark:text-white dark:hover:border-secondary dark:hover:bg-secondary;
+		@apply text-white 
+		 hover:text-white 
+		 dark:text-white;
 	}
 
 	.btn-secondary {
@@ -41,5 +41,8 @@
 	}
 	.badge-outline {
 		@apply badge border px-4 py-2 text-xs font-medium;
+	}
+	.border-primary {
+		border-color: "red";
 	}
 }

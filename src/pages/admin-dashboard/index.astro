@@ -1,7 +1,9 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
+import { AdminDashboard } from "@/components/admin-dashboard/AdminDashboard.tsx";
 ---
 
 <PageLayout meta={{ title: "Admin Page" }}>
-	<div>Admin Page</div>
+	<div class="pt-32"></div>
+	<AdminDashboard client:visible />
 </PageLayout>
