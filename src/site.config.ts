@@ -44,6 +44,10 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		title: "Dashboard",
 		path: "/dashboards/sample-1",
 	},
+	{
+		title: "Playground AI",
+		path: "/dashboards/sample-2",
+	},
 ];
 
 // https://expressive-code.com/reference/configuration/
