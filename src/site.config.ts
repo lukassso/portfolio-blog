@@ -15,7 +15,11 @@ export const siteConfig: SiteConfig = {
 };
 
 // Used to generate links in both the Header & Footer.
-export const menuLinks: Array<{ title: string; path: string }> = [
+export const menuLinks: Array<{
+	title: string;
+	path?: string;
+	subLinks?: Array<{ title: string; path: string }>;
+}> = [
 	{
 		title: "Home",
 		path: "/",
@@ -25,28 +29,33 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		path: "/blog",
 	},
 	{
-		title: "Task Manager",
-		path: "/task-manager",
-	},
-	{
-		title: "Random Person",
-		path: "/random-person",
-	},
-	{
-		title: "Hacker News",
-		path: "/hacker-news",
-	},
-	{
-		title: "Hero Anime",
-		path: "/hero-anime",
-	},
-	{
-		title: "Dashboard",
-		path: "/dashboards/sample-1",
-	},
-	{
-		title: "Playground AI",
-		path: "/dashboards/sample-2",
+		title: "Portfolio",
+		subLinks: [
+			{
+				title: "Task Manager",
+				path: "/task-manager",
+			},
+			{
+				title: "Random Person",
+				path: "/random-person",
+			},
+			{
+				title: "Hacker News",
+				path: "/hacker-news",
+			},
+			{
+				title: "Hero Anime",
+				path: "/hero-anime",
+			},
+			{
+				title: "Dashboard",
+				path: "/dashboards/sample-1",
+			},
+			{
+				title: "Playground AI",
+				path: "/dashboards/sample-2",
+			},
+		],
 	},
 ];
 

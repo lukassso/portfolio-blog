@@ -7,10 +7,37 @@
 		@apply scroll-smooth;
 	}
 }
+
+@layer components {
+	.btn {
+		@apply inline-flex cursor-pointer items-center justify-center rounded-full px-6 py-3.5 text-center text-base font-medium transition duration-300;
+	}
+
+	.btn-primary {
+		@apply bg-primary text-white 
+		 hover:bg-secondary
+		 hover:text-white dark:text-white;
+	}
+
+	.btn-secondary {
+		@apply btn border border-gray-400 bg-transparent 
+		ease-in hover:border-slate-800 hover:bg-slate-800 hover:text-slate-300 md:px-8;
+	}
+
+	.badge {
+		@apply inline-flex items-center rounded-md;
+	}
+
+	.badge-outline {
+		@apply badge border px-4 py-2 text-xs font-medium;
+	}
+}
+
 .gradient-text {
 	@apply bg-clip-text text-transparent;
 	@apply bg-gradient-to-br from-blue-600 via-green-300 to-green-500;
 }
+
 .post-preview-list {
 	z-index: 0;
 	display: flex;
@@ -21,28 +48,6 @@
 	padding: 1rem;
 }
 
-@layer components {
-	.btn {
-		@apply inline-flex cursor-pointer items-center justify-center rounded-full px-6 py-3.5 text-center text-base font-medium transition duration-300;
-	}
-
-	.btn-primary {
-		@apply text-white 
-		 hover:text-white 
-		 dark:text-white;
-	}
-
-	.btn-secondary {
-		@apply btn border border-gray-400 bg-transparent 
-		ease-in hover:border-slate-800 hover:bg-slate-800 hover:text-slate-300 md:px-8;
-	}
-	.badge {
-		@apply inline-flex items-center rounded-md;
-	}
-	.badge-outline {
-		@apply badge border px-4 py-2 text-xs font-medium;
-	}
-	.border-primary {
-		border-color: "red";
-	}
+.dropdown:hover .dropdown-menu {
+	display: block;
 }
