@@ -1,10 +1,10 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
-import { Dashboard1 } from "@/components/dashboards/dashboard-1";
+import { ChatApp } from "@/components/dashboards/chat-app"; 
 ---
 
 <PageLayout meta={{ title: "Admin Page" }}>
 	<div class="py-32">
-		<Dashboard1 client:visible />
+		<ChatApp client:visible />
 	</div>
 </PageLayout>

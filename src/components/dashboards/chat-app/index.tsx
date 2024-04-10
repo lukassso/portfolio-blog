@@ -38,8 +38,43 @@ import {
 	TableHeader,
 	TableRow,
 } from "@/components-library/ui/table";
+import { collection, query, onSnapshot, getDocs, addDoc } from "firebase/firestore";
+import db from "../../../common/services/firebase/client";
+import { useState, useEffect } from "react";
+import { getAuth } from "firebase/auth";
 
-export function Dashboard1() {
+export function ChatApp() {
+	const [messages, setMessages] = useState([]);
+
+	// const fetchMessages = async () => {
+	// 	try {
+	// 		const docRef = await addDoc(collection(db, "messages"), {
+	// 			first: "Ada",
+	// 			last: "Lovelace",
+	// 			born: 1815,
+	// 		});
+	// 		console.log("Document written with ID: ", docRef.id);
+	// 	} catch (e) {
+	// 		console.error("Error adding document: ", e);
+	// 	}
+	// };
+
+	const fetchMessages = async () => {
+		try {
+			const querySnapshot = await getDocs(collection(db, "contacts"));
+			querySnapshot.forEach((doc) => {
+				console.log("dupa", doc.data.name);
+			});
+		} catch (e) {
+			console.error("Error adding document: ", e);
+		}
+	};
+
+	useEffect(() => {
+		fetchMessages();
+		console.log("fetching messages");
+	}, []); // [] oznacza, że useEffect zostanie wykonany tylko raz przy montowaniu komponentu
+
 	return (
 		<div className="flex min-h-screen w-full flex-col">
 			<header className="bg-background sticky top-0 flex h-16 items-center gap-4 border-b px-4 md:px-6">

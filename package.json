@@ -11,6 +11,7 @@
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^2.1.1",
+		"@astrojs/node": "^8.2.5",
 		"@astrojs/react": "^3.1.0",
 		"@astrojs/sitemap": "^3.1.1",
 		"@astrojs/tailwind": "^5.1.0",
@@ -32,6 +33,8 @@
 		"clsx": "^2.1.0",
 		"daisyui": "^4.7.3",
 		"dayjs": "^1.11.10",
+		"firebase": "^10.10.0",
+		"firebase-admin": "^12.0.0",
 		"framer-motion": "^11.0.20",
 		"lucide-react": "^0.363.0",
 		"react": "^18.2.0",

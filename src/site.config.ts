@@ -52,7 +52,7 @@ export const menuLinks: Array<{
 				path: "/dashboards/sample-1",
 			},
 			{
-				title: "Playground AI",
+				title: "ChatApp",
 				path: "/dashboards/sample-2",
 			},
 		],
