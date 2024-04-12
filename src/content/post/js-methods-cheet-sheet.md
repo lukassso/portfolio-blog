@@ -19,7 +19,8 @@ JavaScript offers a robust set of methods that can be applied to arrays and stri
 
 JavaScript methods can be categorized into several groups based on their functionality and purpose:
 
-1. Mutating Array Methods
+1. **Mutating Array Methods**
+
    These methods directly modify the existing array:
 
 ```
@@ -31,9 +32,11 @@ splice()
 reverse()
 sort()
 fill()
+forEach()
 ```
 
-2. Non-Mutating Array Methods
+2. **Non-Mutating Array Methods**
+
    These methods create and return a new array without modifying the original array:
 
 ```
@@ -53,7 +56,8 @@ toString()
 valueOf()
 ```
 
-3. Element-Oriented Array Methods
+3. **Element-Oriented Array Methods**
+
    These methods operate on individual elements of an array or perform operations on each element:
 
 ```
@@ -68,7 +72,8 @@ every()
 some()
 ```
 
-4. String Methods
+4. **String Methods**
+
    These methods are specific to string manipulation:
 
 ```
@@ -83,7 +88,8 @@ toUpperCase()
 toLowerCase()
 ```
 
-5. Object Methods
+5. **Object Methods**
+
    These methods operate on JavaScript objects:
 
 ```
@@ -95,7 +101,8 @@ Object.freeze()
 Object.defineProperty()
 ```
 
-6. Checking Methods
+6. **Checking Methods**
+
    These methods are used for value or condition checks:
 
 ```
@@ -110,7 +117,8 @@ isNaN()
 isFinite()
 ```
 
-7. Transforming Methods
+7. **Transforming Methods**
+
    These methods transform data or content:
 
 ```
@@ -122,7 +130,8 @@ toUpperCase()
 toLowerCase()
 ```
 
-8. Setting Methods
+8. **Setting Methods**
+
    These methods modify or set data in arrays:
 
 ```
