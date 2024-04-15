@@ -4,7 +4,6 @@ publishDate: "11 April 2024"
 updatedDate: "11 April 2024"
 description: "JavaScript offers versatile methods for data manipulation, object interaction, and operations. Learn how these methods streamline development."
 heroImage: "/assets/images/js-methods-cheet-sheet.webp"
-
 coverImage:
   src: "/assets/images/js-methods-cheet-sheet.webp"
   alt: "ddd"
