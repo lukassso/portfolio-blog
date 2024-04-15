@@ -88,20 +88,8 @@ toUpperCase()
 toLowerCase()
 ```
 
-5. **Object Methods**
 
-   These methods operate on JavaScript objects:
-
-```
-Object.keys()
-Object.values()
-Object.entries()
-Object.assign()
-Object.freeze()
-Object.defineProperty()
-```
-
-6. **Checking Methods**
+5. **Checking Methods**
 
    These methods are used for value or condition checks:
 
@@ -166,20 +154,20 @@ Below is a table summarizing key JavaScript methods based on their functionality
 | map                   | Array        | Callback Function                | Array        | No                        | Transforms each element of an array.                                                                   | Returns a new array with transformed elements    | Transforming arrays using mapping functions         | Element-Oriented Array Methods, Transforming Methods |
 | flatMap               | Array        | Callback Function                | Array        | No                        | Maps each element of an array and flattens the result.                                                 | Returns a new array with flattened elements      | Flattening nested arrays                            | Element-Oriented Array Methods, Transforming Methods |
 | forEach               | Array        | Callback Function                | Array        | Yes                       | Executes a provided function for each element.                                                         | Returnes changed array                           | Iterating over arrays without returning a new array | Element-Oriented Array Methods                       |
+| toString              | Array        | None                             | String       | No                        | Returns a string representing the array elements.                                                      | -                                                | Converting array to string representation            | Array Methods                                        |
+| some                  | Array        | Callback Function                | Boolean      | No                        | Checks if at least one element in the array satisfies the condition specified by the callback.        | Returns true if any element satisfies the condition | Checking if any element meets a condition            | Element-Oriented Array Methods, Checking Methods     |
+| every                 | Array        | Callback Function                | Boolean      | No                        | Checks if all elements in the array satisfy the condition specified by the callback.                   | Returns true if all elements satisfy the condition | Checking if all elements meet a condition             | Element-Oriented Array Methods, Checking Methods     |
+| fill                  | Array        | Any and Optional Start/End Index | Array        | Yes                       | Fills elements of an array with a static value optionally within a specified range.                    | Returns the modified array                       | Filling array elements with a static value           | Mutating Array Methods                               |
 | charAt                | String       | Number                           | String       | No                        | Returns the character at a specified index.                                                            | Returns the character                            | Accessing characters in strings                     | String Methods                                       |
 | toUpperCase           | String       | None                             | String       | No                        | Converts a string to uppercase.                                                                        | -                                                | Converting strings to uppercase                     | String Methods, Transforming Methods                 |
 | toLowerCase           | String       | None                             | String       | No                        | Converts a string to lowercase.                                                                        | -                                                | Converting strings to lowercase                     | String Methods, Transforming Methods                 |
 | trim                  | String       | None                             | String       | No                        | Removes whitespace from both ends of a string.                                                         | -                                                | Removing leading and trailing whitespace            | String Methods                                       |
 | split                 | String       | Separator (String or RegExp)     | Array        | No                        | Splits a string into an array of substrings based on a specified separator.                            | Returns a new array of substrings                | Parsing string input, tokenizing text               | String Methods                                       |
-| Object.keys           | Object       | Object                           | Array        | No                        | Returns an array of a given object's keys.                                                             | -                                                | Getting keys of an object                           | Object Methods                                       |
-| Object.values         | Object       | Object                           | Array        | No                        | Returns an array of a given object's values.                                                           | -                                                | Getting values of an object                         | Object Methods                                       |
-| Object.entries        | Object       | Object                           | Array        | No                        | Returns an array of a given object's entries [key, value].                                             | -                                                | Iterating over key-value pairs of an object         | Object Methods                                       |
-| Object.hasOwnProperty | Object       | String                           | Boolean      | No                        | Checks if an object has a specific property.                                                           | -                                                | Checking for existence of own properties            | Object Methods                                       |
-| Object.assign         | Object       | Target Object and Source Objects | Object       | Yes                       | Copies the values of all enumerable own properties from one or more source objects to a target object. | -                                                | -                                                   | Object Methods                                       |
-| startsWith            | String       | Search String                    | Boolean      | No                        | Checks if a string starts with a specified substring.                                                  | Returns true or false                            | Checking the start of a string                      | Checking Methods                                     |
-| endsWith              | String       | Search String                    | Boolean      | No                        | Checks if a string ends with a specified substring.                                                    | Returns true or false                            | Checking the end of a string                        | Checking Methods                                     |
+| parseInt              | Number/String| String                           | Number       | No                        | Parses a string argument and returns an integer.                                                       | -                                                | Parsing strings to integers                         | Number/String Methods                                 |
 | isNaN                 | Number       | Any                              | Boolean      | No                        | Determines whether a value is NaN (Not-a-Number).                                                      | Returns true or false                            | Checking if a value is NaN                          | Checking Methods                                     |
 | isFinite              | Number       | Any                              | Boolean      | No                        | Checks if a value is a finite number.                                                                  | Returns true or false                            | Checking if a value is finite                       | Checking Methods                                     |
+
+
 ```
 ## Conclusion
 
