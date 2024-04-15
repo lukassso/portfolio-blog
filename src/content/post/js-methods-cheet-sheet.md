@@ -3,12 +3,12 @@ title: "Understanding JavaScript Methods (Cheat Sheet)"
 publishDate: "11 April 2024"
 updatedDate: "11 April 2024"
 description: "JavaScript offers versatile methods for data manipulation, object interaction, and operations. Learn how these methods streamline development."
-heroImage: "/assets/images/post_img2.svg"
+heroImage: "/assets/images/js-methods-cheet-sheet.webp"
 
 coverImage:
-  src: "/assets/images/post_img2.svg"
+  src: "/assets/images/js-methods-cheet-sheet.webp"
   alt: "ddd"
-tags: ["begginer", "methods", "Array Methods", "String Manipulation"]
+tags: ["begginer", "Array Methods", "String Manipulation"]
 ---
 
 # Your Go-To Resource for Everyday Coding
@@ -94,7 +94,6 @@ toUpperCase()
 toLowerCase()
 ```
 
-
 5. **Checking Methods**
 
    These methods are used for value or condition checks:
@@ -139,8 +138,9 @@ fill()
 
 ## Understanding the Table
 
- Whether you're debugging a complex algorithm or crafting elegant solutions, let this table serve as your trusted companion—a comprehensive resource tailored for everyday coding challenges.
+Whether you're debugging a complex algorithm or crafting elegant solutions, let this table serve as your trusted companion—a comprehensive resource tailored for everyday coding challenges.
 Below is a summarizing key JavaScript methods based on their functionality:
+
 ```
 | Method                | Type         | Arguments type                   | Returns      | Modifies Existing Object? | Description                                                                                            | In-Place Modification vs. Returning a New Object | Use Cases                                           | Tags                                                 |
 | --------------------- | ------------ | -------------------------------- | ------------ | ------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------ | --------------------------------------------------- | ---------------------------------------------------- |
@@ -176,6 +176,7 @@ Below is a summarizing key JavaScript methods based on their functionality:
 
 
 ```
+
 ## Conclusion
 
 Understanding JavaScript methods and their categorization is crucial for effectively leveraging the language's capabilities in data manipulation and transformation. Whether you're working with arrays, strings, or objects, knowing which methods to use based on specific requirements can greatly enhance your development workflow.
