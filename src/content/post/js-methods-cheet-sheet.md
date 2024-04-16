@@ -10,17 +10,17 @@ coverImage:
 tags: ["begginer", "Array Methods", "String Manipulation"]
 ---
 
-# Your Go-To Resource for Everyday Coding
+## Your Go-To Resource for Everyday Coding
 
 As developers immersed in the world of JavaScript, we often find ourselves navigating through an extensive toolkit of methods designed to streamline our coding tasks. From array manipulation to string operations and beyond, understanding these methods is not just a skill—it's a necessity for efficient development.
 
 In this comprehensive guide, we'll delve into the rich assortment of JavaScript methods, categorizing them based on functionality and purpose. Whether you're a seasoned coder looking for a quick refresher or a beginner eager to explore the possibilities, consider this article your go-to resource—a cheat sheet meticulously crafted for everyday use.
 
-# Exploring JavaScript Array and String Methods
+## Exploring JavaScript Array and String Methods
 
 JavaScript offers a robust set of methods that can be applied to arrays and strings, allowing developers to manipulate and transform data efficiently. Understanding these methods and how they can be categorized is essential for mastering JavaScript programming. In this article, we'll explore different groups of methods and provide insights into their usage.
 
-## Groups of Methods
+### Groups of Methods
 
 JavaScript methods can be categorized into several groups based on their functionality and purpose:
 
@@ -135,7 +135,7 @@ splice()
 fill()
 ```
 
-## Understanding the Table
+### Understanding the Table
 
 Whether you're debugging a complex algorithm or crafting elegant solutions, let this table serve as your trusted companion—a comprehensive resource tailored for everyday coding challenges.
 Below is a summarizing key JavaScript methods based on their functionality:
