@@ -18,7 +18,8 @@ const saveStateToLocalStorage = (state: TransactionsState) => {
 };
 
 const loadStateFromLocalStorage = (): TransactionsState | null => {
-	const savedState = localStorage.getItem("transactionsState");
+	const savedState =
+		typeof localStorage !== "undefined" && localStorage.getItem("transactionsState");
 	return savedState ? JSON.parse(savedState) : null;
 };
 
