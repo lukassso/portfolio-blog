@@ -45,7 +45,7 @@ const AppProvider: FC<AppProviderProps> = ({ children }) => {
 		try {
 			let transactions = [];
 
-			if (process.env.NODE_ENV !== "production") {
+			if (process.env.NODE_ENV !== "development") {
 				transactions = localTransactionsData.transactions || [];
 			} else {
 				const response = await fetch(API_ENDPOINT);
