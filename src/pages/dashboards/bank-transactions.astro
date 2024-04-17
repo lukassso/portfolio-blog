@@ -1,0 +1,10 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import { Dashboard3 } from "@/components/dashboards/dashboard-3";
+---
+
+<PageLayout meta={{ title: "Bank Transactions" }}>
+	<div class="py-32">
+		<Dashboard3 client:visible />
+	</div>
+</PageLayout>

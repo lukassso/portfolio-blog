@@ -32,6 +32,10 @@ export const menuLinks: Array<{
 		title: "Portfolio",
 		subLinks: [
 			{
+				title: "Bank Transactions",
+				path: "/dashboards/bank-transactions",
+			},
+			{
 				title: "Task Manager",
 				path: "/task-manager",
 			},

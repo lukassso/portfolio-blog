@@ -1,7 +1,5 @@
 // 57. Insert Interval
 
-import { number } from "astro/zod";
-
 function insert(intervals: number[][], newInterval: number[]): number[][] {
 	let result: number[][] = [];
 
