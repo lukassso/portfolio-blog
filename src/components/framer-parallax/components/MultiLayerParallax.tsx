@@ -13,13 +13,13 @@ export default function MultiLayerParallax() {
 		<div className="relative grid h-screen w-full place-items-center overflow-hidden">
 			<motion.h1
 				style={{ y: textY }}
-				className="relative z-10 text-7xl font-bold text-white md:text-9xl"
+				className="relative z-10 text-7xl font-bold text-dark dark:text-white md:text-9xl"
 			>
 				PARALLAX
 			</motion.h1>
 
 			<motion.div
-				className="absolute inset-0 z-0"
+				className="absolute inset-0 z-0 opacity-50"
 				style={{
 					backgroundImage: `url(assets/images/image-full.png)`,
 					backgroundPosition: "bottom",
@@ -28,7 +28,7 @@ export default function MultiLayerParallax() {
 				}}
 			/>
 			<div
-				className="absolute inset-0 z-20"
+				className="absolute inset-0 z-20 opacity-90"
 				style={{
 					backgroundImage: `url(assets/images/image-bottom.png)`,
 					backgroundPosition: "bottom",
