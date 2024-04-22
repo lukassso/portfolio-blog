@@ -1,11 +1,12 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
-import FramerParallaxComponent from '@/components/framer-parallax';
-
+import FramerParallaxComponent from "@/components/framer-parallax";
+import Content from "@/components/framer-parallax/components/Content.astro";
 ---
 
 <PageLayout meta={{ title: "Admin Page" }}>
-	<div class="py-32">
+	<div>
 		<FramerParallaxComponent client:visible />
+		<Content />
 	</div>
 </PageLayout>
