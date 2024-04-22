@@ -52,6 +52,10 @@ export const menuLinks: Array<{
 				path: "/hero-anime",
 			},
 			{
+				title: "Framer Parallax",
+				path: "/framer-parallax",
+			},
+			{
 				title: "Dashboard",
 				path: "/dashboards/sample-1",
 			},
