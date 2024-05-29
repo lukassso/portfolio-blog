@@ -1,10 +1,11 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
 import { Dashboard1 } from "@/components/dashboards/dashboard-1";
+import ContainerSection from "@/components/ContainerSection.astro";
 ---
 
 <PageLayout meta={{ title: "Admin Page" }}>
-	<div class="py-32">
+	<ContainerSection>
 		<Dashboard1 client:visible />
-	</div>
+	</ContainerSection>
 </PageLayout>

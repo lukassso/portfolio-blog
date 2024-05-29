@@ -288,10 +288,10 @@ export function Dashboard1() {
 						</CardContent>
 					</Card>
 					<Card>
-						<CardHeader>
+						<CardHeader className="xl:px-3">
 							<CardTitle>Recent Sales</CardTitle>
 						</CardHeader>
-						<CardContent className="grid gap-8">
+						<CardContent className="grid gap-8 xl:p-3">
 							<div className="flex items-center gap-4">
 								<Avatar className="hidden h-9 w-9 sm:flex">
 									<AvatarImage src="/avatars/01.png" alt="Avatar" />
@@ -301,7 +301,7 @@ export function Dashboard1() {
 									<p className="text-sm font-medium leading-none">Olivia Martin</p>
 									<p className="text-muted-foreground text-sm">olivia.martin@email.com</p>
 								</div>
-								<div className="ml-auto font-medium">+$1,999.00</div>
+								<div className="ml-auto text-sm font-medium">+$1,999.00</div>
 							</div>
 							<div className="flex items-center gap-4">
 								<Avatar className="hidden h-9 w-9 sm:flex">
@@ -312,7 +312,7 @@ export function Dashboard1() {
 									<p className="text-sm font-medium leading-none">Jackson Lee</p>
 									<p className="text-muted-foreground text-sm">jackson.lee@email.com</p>
 								</div>
-								<div className="ml-auto font-medium">+$39.00</div>
+								<div className="ml-auto text-sm font-medium">+$39.00</div>
 							</div>
 							<div className="flex items-center gap-4">
 								<Avatar className="hidden h-9 w-9 sm:flex">
@@ -323,7 +323,7 @@ export function Dashboard1() {
 									<p className="text-sm font-medium leading-none">Isabella Nguyen</p>
 									<p className="text-muted-foreground text-sm">isabella.nguyen@email.com</p>
 								</div>
-								<div className="ml-auto font-medium">+$299.00</div>
+								<div className="ml-auto text-sm font-medium">+$299.00</div>
 							</div>
 							<div className="flex items-center gap-4">
 								<Avatar className="hidden h-9 w-9 sm:flex">
@@ -334,7 +334,7 @@ export function Dashboard1() {
 									<p className="text-sm font-medium leading-none">William Kim</p>
 									<p className="text-muted-foreground text-sm">will@email.com</p>
 								</div>
-								<div className="ml-auto font-medium">+$99.00</div>
+								<div className="ml-auto text-sm font-medium">+$99.00</div>
 							</div>
 							<div className="flex items-center gap-4">
 								<Avatar className="hidden h-9 w-9 sm:flex">
@@ -345,7 +345,7 @@ export function Dashboard1() {
 									<p className="text-sm font-medium leading-none">Sofia Davis</p>
 									<p className="text-muted-foreground text-sm">sofia.davis@email.com</p>
 								</div>
-								<div className="ml-auto font-medium">+$39.00</div>
+								<div className="ml-auto text-sm font-medium">+$39.00</div>
 							</div>
 						</CardContent>
 					</Card>
