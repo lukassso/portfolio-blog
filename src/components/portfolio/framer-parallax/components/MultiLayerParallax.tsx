@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, type ReactNode } from "react";
+import { useRef } from "react";
 
 export default function MultiLayerParallax({
 	title,

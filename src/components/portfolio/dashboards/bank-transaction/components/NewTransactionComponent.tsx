@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useGlobalContext } from "@/features/dashboards/bank-transactions/context";
-import { type Transaction } from "@/features/dashboards/bank-transactions/types";
+import type { Transaction } from "@/features/dashboards/bank-transactions/types";
 import { useState } from "react";
 import { Notification } from "./Notification";
 
