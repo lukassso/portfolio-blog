@@ -3,7 +3,7 @@ import { NewTransactionComponent } from "./components/NewTransactionComponent";
 import { TableComponent } from "./components/TableComponent";
 import { AppProvider } from "@/features/dashboards/bank-transactions/context";
 
-export const Dashboard3 = () => (
+export const BankTransactionComponent = () => (
 	<AppProvider>
 		<div className="grid gap-4 p-4 md:gap-8 md:p-8">
 			<h2 className="text-3xl font-bold">Bank Transactions</h2>

@@ -1,0 +1,29 @@
+---
+const { title, description, chipsList } = Astro.props;
+---
+
+<div class="flex-1">
+	<section class="w-full py-12 md:py-24 lg:py-32">
+		<div
+			class="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10"
+		>
+			<div class="space-y-3">
+				<h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{title}</h2>
+				<p
+					class="mx-auto max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
+				>
+					{description}
+				</p>
+			</div>
+			<div class="flex items-center justify-center gap-2">
+				{
+					chipsList.map((chip: string) => (
+						<div class="rounded-full bg-gray-100 px-3 py-2 text-xs font-medium dark:bg-gray-800">
+							{chip}
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</div>

@@ -2,12 +2,16 @@
 import PageLayout from "@/layouts/PageLayout.astro";
 import ContainerSection from "@/components/ContainerSection.astro";
 import RandomPersonComponent from "../components/portfolio/random-person";
-import AppHeader from "../components/portfolio/random-person/AppHeader.astro";
+import HeaderPortfolio from "@/components/HeaderPortfolio.astro";
 ---
 
 <PageLayout meta={{ title: "Random Person" }}>
 	<ContainerSection maxWidth="max-w-2xl">
-		<AppHeader />
+		<HeaderPortfolio
+			title={"Random Person"}
+			description={"A random profile generator for testing purposes, complete with contact details and a photograph."}
+			chipsList={["React", "Typescript"]}
+		/>
 		<RandomPersonComponent client:visible />
 	</ContainerSection>
 </PageLayout>

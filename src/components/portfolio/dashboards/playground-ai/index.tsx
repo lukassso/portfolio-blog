@@ -1,11 +1,4 @@
-import {
-	Bird,
-	CornerDownLeft,
-	Mic,
-	Paperclip,
-	Rabbit,
-	Turtle,
-} from "lucide-react";
+import { Bird, CornerDownLeft, Mic, Paperclip, Rabbit, Turtle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,14 +11,9 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipTrigger,
-	TooltipProvider,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
 
-export function Dashboard2() {
+export function PlaygroundAiComponent() {
 	return (
 		<div className="grid w-full ">
 			<div className="flex flex-col">

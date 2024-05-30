@@ -1,11 +1,17 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
-import { Dashboard3 } from "@/components/portfolio/dashboards/dashboard-3";
+import { BankTransactionComponent } from "@/components/portfolio/dashboards/bank-transaction";
 import ContainerSection from "@/components/ContainerSection.astro";
+import HeaderPortfolio from "@/components/HeaderPortfolio.astro";
 ---
 
 <PageLayout meta={{ title: "Bank Transactions" }}>
 	<ContainerSection>
-		<Dashboard3 client:visible />
+		<HeaderPortfolio
+			title={"Bank Transaction"}
+			description={"An application for viewing bank transactions with options to add, delete, and search transactions."}
+			chipsList={["React", "Typescript"]}
+		/>
+		<BankTransactionComponent client:visible />
 	</ContainerSection>
 </PageLayout>
