@@ -4,7 +4,7 @@ import HeroAnimeComponent from "./components/HeroAnimeComponent.tsx";
 import HeroImageSvg from "./components/HeroImage.tsx";
 import { useMediaQuery } from "@/features/hooks/use-media-query.tsx";
 
-const HeroRoot = () => {
+const SvgAnimeUniverseRoot = () => {
 	const mobile = useMediaQuery("(min-width: 900px)");
 	return (
 		<>
@@ -45,4 +45,4 @@ const HeroRoot = () => {
 	);
 };
 
-export default HeroRoot;
+export default SvgAnimeUniverseRoot;
