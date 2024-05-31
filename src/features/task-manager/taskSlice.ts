@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { type Task, type TaskState, type TaskFilterValue } from "./types";
+import type { Task, TaskState, TaskFilterValue } from "./types";
 
 // Function to retrieve tasks from local storage
 const retrieveTasksFromLocalStorage = (): Task[] => {

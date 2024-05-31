@@ -1,5 +1,5 @@
-import { type Reducer } from "react";
-import { type TransactionsState, type Action } from "./types";
+import type { Reducer } from "react";
+import type { TransactionsState, Action } from "./types";
 import {
 	SET_LOADING,
 	SET_TRANSACTIONS,

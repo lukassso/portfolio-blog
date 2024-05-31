@@ -48,20 +48,16 @@ export const menuLinks: Array<{
 				path: "/hacker-news",
 			},
 			{
-				title: "Hero Anime",
-				path: "/hero-anime",
+				title: "SVG Anime Universe",
+				path: "/svg-anime-universe",
 			},
 			{
 				title: "Framer Parallax",
 				path: "/framer-parallax",
 			},
 			{
-				title: "Dashboard",
-				path: "/dashboards/sample-1",
-			},
-			{
 				title: "Playground AI",
-				path: "/dashboards/sample-2",
+				path: "/dashboards/playground-ai",
 			},
 		],
 	},
