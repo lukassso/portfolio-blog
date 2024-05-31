@@ -2,12 +2,13 @@
 import PageLayout from "@/layouts/PageLayout.astro";
 import { BankTransactionComponent } from "@/components/portfolio/dashboards/bank-transaction";
 import ContainerSection from "@/components/ContainerSection.astro";
-import HeaderPortfolio from "@/components/HeaderPortfolio.astro";
+import HeaderPortfolio from "@/components/portfolio/common/header-portfolio";
 ---
 
 <PageLayout meta={{ title: "Bank Transactions" }}>
 	<ContainerSection>
 		<HeaderPortfolio
+			client:visible
 			title={"Bank Transaction"}
 			description={"An application for viewing bank transactions with options to add, delete, and search transactions."}
 			chipsList={[
