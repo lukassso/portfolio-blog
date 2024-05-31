@@ -1,4 +1,4 @@
-import type { FC } from "React";
+import type { FC } from "react";
 import { motion } from "framer-motion";
 
 interface HeaderPorfolioTypes {
@@ -6,7 +6,8 @@ interface HeaderPorfolioTypes {
 	description: string;
 	chipsList: string[];
 }
-const HeaderPortfolio: FC<HeaderPorfolioTypes> = ({ title, description, chipsList }) => {
+const HeaderPortfolio: FC<HeaderPorfolioTypes> = (props) => {
+	const { title, description, chipsList } = props;
 	return (
 		<div className="flex-1">
 			<section className="w-full py-12 md:py-24 lg:py-32">
@@ -23,7 +24,7 @@ const HeaderPortfolio: FC<HeaderPorfolioTypes> = ({ title, description, chipsLis
 						</p>
 					</motion.div>
 					<div className="no-scrollbar flex items-center justify-start gap-2 space-x-2 overflow-x-auto scroll-smooth p-2 pl-4 pr-4 md:justify-center">
-						{chipsList.map((chip: string, index) => (
+						{chipsList.map((chip: string, index: number) => (
 							<motion.div
 								key={chip}
 								initial={{ x: -50, opacity: 0 }}
@@ -42,14 +43,3 @@ const HeaderPortfolio: FC<HeaderPorfolioTypes> = ({ title, description, chipsLis
 };
 
 export default HeaderPortfolio;
-
-{
-	/* <script>
-	document.addEventListener("DOMContentLoaded", () => {
-		const scrollContainer = document.querySelector(".no-scrollbar");
-		if (scrollContainer) {
-			scrollContainer.scrollLeft = 1; // Nieco przesunięcie na starcie
-		}
-	});
-</script> */
-}
