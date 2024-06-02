@@ -1,18 +1,16 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
 import Hero from "@/components/home/Hero.astro";
-import Note from "@/components/home/Note.astro";
 import SocialList from "@/components/common/SocialList.astro";
 import ContainerSection from "@/components/common/ContainerSection.astro";
-import PrimaryContentBlock from "@/components/home/PrimaryContentBlock.astro";
 import PortfolioSection from "@/components/home/portfolio-section";
+import GreetingsSection from "@/components/home/greetings-section";
 ---
 
 <PageLayout meta={{ title: "Home" }}>
 	<Hero />
-	<Note />
 	<ContainerSection>
-		<PrimaryContentBlock />
+		<GreetingsSection />
 		<PortfolioSection client:visible />
 		<SocialList />
 	</ContainerSection>
