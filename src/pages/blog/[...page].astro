@@ -4,10 +4,10 @@ import PostPreview from "@/components/blog/PostPreview.astro";
 import type { GetStaticPaths, Page } from "astro";
 import { getAllPosts, sortMDByDate } from "../../utils/post.ts";
 import type { CollectionEntry } from "astro:content";
-import ContainerSection from "@/components/ContainerSection.astro";
+import ContainerSection from "@/components/common/ContainerSection.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import Pagination from "@/components/Paginator.astro";
+import Pagination from "@/components/common/Paginator.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
 	const allPosts = await getAllPosts();

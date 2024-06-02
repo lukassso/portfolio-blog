@@ -1,5 +1,6 @@
 import type { SiteConfig } from "@/types";
 import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
+import type { PortfolioItem, MenuLink } from "@/types";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
@@ -14,12 +15,73 @@ export const siteConfig: SiteConfig = {
 	ogLocale: "en_GB",
 };
 
+export const portfolioItems: PortfolioItem[] = [
+	{
+		title: "Bank Transaction",
+		description:
+			"An application for viewing bank transactions with options to add, delete, and search transactions.",
+		technologies: [
+			"React",
+			"Typescript",
+			"Tailwind CSS",
+			"Radix UI",
+			"React Hook Form",
+			"Yup",
+			"useContext",
+			"useReducer",
+		],
+		imageUrl: "assets/images/portfolio-bank-transaction.png",
+		path: "/dashboards/bank-transactions",
+	},
+	{
+		title: "Task Manager",
+		description:
+			"Task management tool that simplifies daily organization and enhances productivity.",
+		technologies: ["React", "Typescript", "react-redux", "@reduxjs/toolkit", "Context API"],
+		imageUrl: "assets/images/portfolio-task-manager.png",
+		path: "/task-manager",
+	},
+	{
+		title: "Random Person",
+		description:
+			"A random profile generator for testing purposes, complete with contact details and a photograph.",
+		technologies: ["React", "Typescript", "react-icons", "Rest API", "Tailwind CSS"],
+		imageUrl: "assets/images/portfolio-random-person.png",
+		path: "/random-person",
+	},
+	{
+		title: "Hacker News",
+		description: "A minimalist Hacker News client that facilitates access to technological news.",
+		technologies: ["React", "Typescript", "Tailwind CSS", "Rest API", "Context API", "useReducer"],
+		imageUrl: "assets/images/portfolio-hacker-news.png",
+		path: "/hacker-news",
+	},
+	{
+		title: "SVG Anime Universe",
+		description: "Homepage view of an anime service with advanced SVG animation of moving circles.",
+		technologies: ["React", "Typescript", "SVG API", "CSS"],
+		imageUrl: "assets/images/portfolio-svg-anime.png",
+		path: "/svg-anime-universe",
+	},
+	{
+		title: "Framer Parallax",
+		description: "Homepage teaser with a parallax effect, showcasing dynamic scroll animations.",
+		technologies: ["React", "Typescript", "Framer Motion", "Tailwind CSS"],
+		imageUrl: "assets/images/portfolio-framer-parallax.png",
+		path: "/framer-parallax",
+	},
+	{
+		title: "Playground AI",
+		description:
+			"A responsive user interface for interacting with AI models or chatbots, intuitive and user-friendly. (in progress)",
+		technologies: ["React", "Typescript", "Tailwind CSS", "Shadcn UI", "Radix UI"],
+		imageUrl: "assets/images/portfolio-playground-ai.png",
+		path: "/dashboards/playground-ai",
+	},
+];
+
 // Used to generate links in both the Header & Footer.
-export const menuLinks: Array<{
-	title: string;
-	path?: string;
-	subLinks?: Array<{ title: string; path: string }>;
-}> = [
+export const menuLinks: MenuLink[] = [
 	{
 		title: "Home",
 		path: "/",
@@ -30,36 +92,11 @@ export const menuLinks: Array<{
 	},
 	{
 		title: "Portfolio",
-		subLinks: [
-			{
-				title: "Bank Transactions",
-				path: "/dashboards/bank-transactions",
-			},
-			{
-				title: "Task Manager",
-				path: "/task-manager",
-			},
-			{
-				title: "Random Person",
-				path: "/random-person",
-			},
-			{
-				title: "Hacker News",
-				path: "/hacker-news",
-			},
-			{
-				title: "SVG Anime Universe",
-				path: "/svg-anime-universe",
-			},
-			{
-				title: "Framer Parallax",
-				path: "/framer-parallax",
-			},
-			{
-				title: "Playground AI",
-				path: "/dashboards/playground-ai",
-			},
-		],
+		subLinks: portfolioItems.map((item) => ({
+			title: item.title,
+			path: item.path,
+			description: "fdf",
+		})),
 	},
 ];
 
