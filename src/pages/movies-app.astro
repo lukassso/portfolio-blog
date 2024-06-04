@@ -1,0 +1,18 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import ContainerSection from "@/components/common/ContainerSection.astro";
+import HeaderPortfolio from "@/components/portfolio/common/header-portfolio";
+import MoviesAppComponent from "@/components/portfolio/movie-app";
+---
+
+<PageLayout meta={{ title: "Playground AI" }}>
+	<ContainerSection>
+		<HeaderPortfolio
+			client:visible
+			title={"Movies app"}
+			description={"A responsive user interface and simple ReactJS application based on the OMDB API"}
+			chipsList={["Test", "Test"]}
+		/>
+		<MoviesAppComponent client:only />
+	</ContainerSection>
+</PageLayout>
