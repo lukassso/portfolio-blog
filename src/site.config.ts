@@ -36,9 +36,18 @@ export const portfolioItems: PortfolioItem[] = [
 	{
 		title: "Movie App",
 		description:
-			"An application for viewing bank transactions with options to add, delete, and search transactions.",
-		technologies: ["TEst", "Typescript"],
-		imageUrl: "assets/images/portfolio-bank-transaction.png",
+			"Introduced a new movie app with functionalities including home page, movie details, movie list, search bar, pagination, and loading overlay.",
+		technologies: [
+			"React",
+			"Typescript",
+			"Tailwind CSS",
+			"Radix UI",
+			"Rest API",
+			"React Query",
+			"React Router",
+			"Playwright",
+		],
+		imageUrl: "assets/images/portfolio-movie-app.png",
 		path: "/movie-app",
 	},
 	{

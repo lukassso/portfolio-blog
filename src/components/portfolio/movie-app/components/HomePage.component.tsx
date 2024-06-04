@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import MovieList from ".//MovieList";
-// import SearchBar from "./SearchBar";
+import SearchBar from "./SearchBar";
 import PaginationComponent from "./PaginationComponent";
 import LoadingOverlay from "./LoadingOverlay";
 
@@ -36,7 +36,7 @@ export default function HomePageComponent() {
 				<main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
 					<Tabs defaultValue="galery">
 						<div className="flex items-center">
-							{/* <SearchBar onSearch={handleSearch} defaultValue={query} /> */}
+							<SearchBar onSearch={handleSearch} defaultValue={query} />
 							<div className="ml-auto flex items-center gap-2">
 								<TabsList className="hidden sm:flex">
 									<TabsTrigger value="galery">Galery</TabsTrigger>

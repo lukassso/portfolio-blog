@@ -12,7 +12,7 @@ const MovieList = ({ data }: MovieListProps) => {
 					key={movie.imdbID}
 					className="movie-item flex flex-col items-center justify-between p-6"
 				>
-					<Link to={`/movie/${movie.imdbID}`}>
+					<Link to={`/movie-app/${movie.imdbID}`}>
 						<img
 							className="glow-wrapper rounded-lg"
 							src={(movie.Poster !== "N/A" ? movie.Poster : placeholderImage) as string}

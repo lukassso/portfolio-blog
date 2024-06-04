@@ -7,7 +7,7 @@ function AppRouting() {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/movie-app" element={<HomePage />} />
-				<Route path="/movie/:id" element={<MovieDetails />} />
+				<Route path="/movie-app/:id" element={<MovieDetails />} />
 			</Routes>
 		</BrowserRouter>
 	);

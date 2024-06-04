@@ -1,23 +1,24 @@
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { useState, useEffect } from "react";
-// import debounce from "lodash.debounce";
+import type { ChangeEvent } from "react";
+import { debounce } from "lodash";
 import { useRef } from "react";
 import type { SearchBarProps } from "@/features/movie-app/types";
 
 const SearchBar = ({ onSearch, defaultValue }: SearchBarProps) => {
 	const [inputValue, setInputValue] = useState(defaultValue);
 
-	// const debouncedSearch = useRef(
-	//   debounce((value: string) => {
-	//     onSearch(value);
-	//   }, 300)
-	// ).current;
+	const debouncedSearch = useRef(
+		debounce((value: string) => {
+			onSearch(value);
+		}, 300),
+	).current;
 
-	const handleChange = (e: HTMLInputElement) => {
-		// const value = e.target.value;
-		// setInputValue(value);
-		// debouncedSearch(value);
+	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+		const value = e.target.value;
+		setInputValue(value);
+		debouncedSearch(value);
 	};
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -25,11 +26,11 @@ const SearchBar = ({ onSearch, defaultValue }: SearchBarProps) => {
 		onSearch(inputValue);
 	};
 
-	// useEffect(() => {
-	//   return () => {
-	//     debouncedSearch.cancel();
-	//   };
-	// }, [debouncedSearch]);
+	useEffect(() => {
+		return () => {
+			debouncedSearch.cancel();
+		};
+	}, [debouncedSearch]);
 
 	return (
 		<form onSubmit={handleSubmit}>
@@ -40,7 +41,7 @@ const SearchBar = ({ onSearch, defaultValue }: SearchBarProps) => {
 					placeholder="Search for movies..."
 					className="bg-background w-full rounded-lg pl-8 md:w-[200px] lg:w-[336px]"
 					value={inputValue}
-					// onChange={handleChange}
+					onChange={handleChange}
 				/>
 			</div>
 		</form>
