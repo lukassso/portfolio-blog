@@ -15,10 +15,10 @@ const MovieList = ({ data }: MovieListProps) => {
 					<Link to={`/movie/${movie.imdbID}`}>
 						<img
 							className="glow-wrapper rounded-lg"
-							// src={movie.Poster !== "N/A" ? movie.Poster : placeholderImage}
+							src={(movie.Poster !== "N/A" ? movie.Poster : placeholderImage) as string}
 							width={300}
 							height={500}
-							alt="poster"
+							alt="Poster"
 						/>
 					</Link>
 					<div>

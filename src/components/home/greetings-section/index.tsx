@@ -2,9 +2,9 @@ import { HandIcon, ViewIcon } from "lucide-react";
 
 export default function GreetingsSection() {
 	return (
-		<section className="relative md:-mt-60 -mt-40  w-full rounded-2xl bg-gradient-to-b from-[#f8f8f8] to-[#f0f0f0] py-10 dark:from-gray-950 dark:to-gray-900 md:py-32">
+		<section className="relative -mt-40 w-full  rounded-2xl bg-gradient-to-b from-[#f8f8f8] to-[#f0f0f0] py-10 dark:from-gray-950 dark:to-gray-900 md:-mt-60 md:py-32">
 			<div className="container flex flex-col items-center px-4 text-center md:px-6">
-				<div className="inline-flex items-center gap-4 rounded-full bg-transparent px-4 py-2 mb-8 text-sm font-medium text-gray-900 dark:text-gray-50">
+				<div className="mb-8 inline-flex items-center gap-4 rounded-full bg-transparent px-4 py-2 text-sm font-medium text-gray-900 dark:text-gray-50">
 					<HandIcon className="animate-wave h-6 w-6" />
 					<span>Greetings</span>
 				</div>
@@ -24,7 +24,7 @@ export default function GreetingsSection() {
 								<ViewIcon className="h-8 w-8 text-white" />
 							</div>
 							<div>
-								<p className="text-sm text-left text-gray-600 dark:text-gray-400">
+								<p className="text-left text-sm text-gray-600 dark:text-gray-400">
 									Keep an eye on this space for updates on the latest trends in web technology. I am
 									constantly learning and adapting, committed to enhancing my skills and embracing
 									industry best practices.

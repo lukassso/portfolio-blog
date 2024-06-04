@@ -34,12 +34,12 @@ export const portfolioItems: PortfolioItem[] = [
 		path: "/dashboards/bank-transactions",
 	},
 	{
-		title: "Movies app",
+		title: "Movie App",
 		description:
 			"An application for viewing bank transactions with options to add, delete, and search transactions.",
 		technologies: ["TEst", "Typescript"],
 		imageUrl: "assets/images/portfolio-bank-transaction.png",
-		path: "/movies-app",
+		path: "/movie-app",
 	},
 	{
 		title: "Task Manager",

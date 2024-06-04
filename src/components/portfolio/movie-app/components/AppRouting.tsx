@@ -1,13 +1,13 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./HomePage.component";
-// import MoviePage from "./MoviePage";
+import MovieDetails from "./MovieDetails";
 
 function AppRouting() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/movies-app" element={<HomePage />} />
-				{/* <Route path="/movie/:id" element={<MoviePage />} /> */}
+				<Route path="/movie-app" element={<HomePage />} />
+				<Route path="/movie/:id" element={<MovieDetails />} />
 			</Routes>
 		</BrowserRouter>
 	);

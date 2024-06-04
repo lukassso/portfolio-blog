@@ -9,8 +9,7 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "http://localhost:4321",
-	base: "",
+	site: "https://zetkolek.netlify.app/",
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
 		icon({
@@ -24,8 +23,5 @@ export default defineConfig({
 		mdx(),
 		react(),
 	],
-	output: "server",
-	adapter: node({
-		mode: "standalone",
-	}),
+	prefetch: true,
 });
