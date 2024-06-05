@@ -62,7 +62,7 @@ export const NewTransactionComponent = () => {
 			<CardHeader>
 				<CardTitle>Add new Transaction</CardTitle>
 			</CardHeader>
-			<CardContent className="grid gap-8">
+			<CardContent className="grid gap-8 dark:text-gray-950">
 				<form onSubmit={handleSubmit(onSubmit)} className="grid gap-3">
 					<Input
 						type="text"

@@ -35,11 +35,11 @@ const SearchBar = ({ onSearch, defaultValue }: SearchBarProps) => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<div className="relative flex-1 pr-2 md:grow-0">
-				<Search className="text-muted-foreground absolute left-2.5 top-2.5 h-4 w-4" />
+				<Search className="text-muted-foreground absolute left-2.5 top-2.5 h-4 w-4 dark:text-gray-950" />
 				<Input
 					type="search"
 					placeholder="Search for movies..."
-					className="bg-background w-full rounded-lg pl-8 md:w-[200px] lg:w-[336px]"
+					className="bg-background w-full rounded-lg pl-8 md:w-[200px] lg:w-[336px] dark:text-gray-950"
 					value={inputValue}
 					onChange={handleChange}
 				/>
