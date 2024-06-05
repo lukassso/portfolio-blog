@@ -39,7 +39,7 @@ const SearchBar = ({ onSearch, defaultValue }: SearchBarProps) => {
 				<Input
 					type="search"
 					placeholder="Search for movies..."
-					className="bg-background w-full rounded-lg pl-8 md:w-[200px] lg:w-[336px] dark:text-gray-950"
+					className="bg-background w-full rounded-lg pl-8 dark:text-gray-950 md:w-[200px] lg:w-[336px]"
 					value={inputValue}
 					onChange={handleChange}
 				/>

@@ -18,7 +18,7 @@ const MovieList = ({ data }: MovieListProps) => {
 							src={(movie.Poster !== "N/A" ? movie.Poster : placeholderImage) as string}
 							width={300}
 							height={500}
-							alt="Poster"
+							alt={`${movie.Title} Poster`}
 						/>
 					</Link>
 					<div>

@@ -22,6 +22,7 @@ const {
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>
 	<body
+		aria-label={title}
 		class="relative h-full min-h-screen overflow-x-hidden bg-default text-base text-default selection:bg-secondary selection:text-white"
 	>
 		{heroAnime ? <div class="bg-gradient bg-gradient-mix" /> : undefined}
