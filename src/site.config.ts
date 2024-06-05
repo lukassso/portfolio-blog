@@ -34,6 +34,23 @@ export const portfolioItems: PortfolioItem[] = [
 		path: "/dashboards/bank-transactions",
 	},
 	{
+		title: "Movie App",
+		description:
+			"Introduced a new movie app with functionalities including home page, movie details, movie list, search bar, pagination, and loading overlay.",
+		technologies: [
+			"React",
+			"Typescript",
+			"Tailwind CSS",
+			"Radix UI",
+			"Rest API",
+			"React Query",
+			"React Router",
+			"Playwright",
+		],
+		imageUrl: "assets/images/portfolio-movie-app.png",
+		path: "/movie-app",
+	},
+	{
 		title: "Task Manager",
 		description:
 			"Task management tool that simplifies daily organization and enhances productivity.",
