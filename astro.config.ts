@@ -24,4 +24,9 @@ export default defineConfig({
 		react(),
 	],
 	prefetch: true,
+	vite: {
+		define: {
+			"process.env.PUBLIC_MOVIE_API_KEY": JSON.stringify(process.env.PUBLIC_MOVIE_API_KEY),
+		},
+	},
 });
