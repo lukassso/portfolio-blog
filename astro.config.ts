@@ -5,7 +5,6 @@ import mdx from "@astrojs/mdx";
 import expressiveCode from "astro-expressive-code";
 import { expressiveCodeOptions } from "./src/site.config";
 import react from "@astrojs/react";
-import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,10 +22,12 @@ export default defineConfig({
 		mdx(),
 		react(),
 	],
+	output: "server",
 	prefetch: true,
 	vite: {
 		define: {
 			"process.env.PUBLIC_MOVIE_API_KEY": JSON.stringify(process.env.PUBLIC_MOVIE_API_KEY),
+			"process.env.MOVIE_API_KEY": JSON.stringify(process.env.MOVIE_API_KEY),
 		},
 	},
 });

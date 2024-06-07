@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useMovies } from "@/features/movie-app/hooks/useMovies";
+import { useMovies } from "@/utils/hooks/useMovies";
 import {
 	Card,
 	CardContent,
@@ -9,22 +9,23 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import MovieList from ".//MovieList";
+import MovieList from "./MovieList";
 import SearchBar from "./SearchBar";
 import PaginationComponent from "./PaginationComponent";
 import LoadingOverlay from "./LoadingOverlay";
 
 export default function HomePageComponent() {
-	const [query, setQuery] = useState("Batman");
+	const [searchParam, setSearchParam] = useState("Batman");
 	const [currentPage, setCurrentPage] = useState(1);
-	const { data, error, isLoading } = useMovies(query, currentPage);
+	const { data, error, isLoading } = useMovies(searchParam, currentPage);
 
 	const handlePageChange = (page: number) => {
 		setCurrentPage(page);
 	};
 
 	const handleSearch = (searchQuery: string) => {
-		setQuery(searchQuery);
+		setSearchParam(searchQuery);
+		setCurrentPage(1);
 	};
 
 	const totalPages = data?.totalResults ? Math.ceil(data.totalResults / 10) : 0;
@@ -36,7 +37,7 @@ export default function HomePageComponent() {
 				<main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
 					<Tabs defaultValue="galery">
 						<div className="flex items-center">
-							<SearchBar onSearch={handleSearch} defaultValue={query} />
+							<SearchBar onSearch={handleSearch} defaultValue={searchParam} />
 							<div className="ml-auto flex items-center gap-2">
 								<TabsList className="hidden sm:flex">
 									<TabsTrigger value="galery">Galery</TabsTrigger>
@@ -51,7 +52,7 @@ export default function HomePageComponent() {
 									<CardDescription>Browse a galery of our movies.</CardDescription>
 								</CardHeader>
 								<CardContent>
-									{error ? <div>Error: {error.message}</div> : <MovieList data={data?.data} />}
+									{error ? <div>Error: {error.message}</div> : <MovieList data={data?.Search} />}
 								</CardContent>
 								<CardFooter>
 									<PaginationComponent

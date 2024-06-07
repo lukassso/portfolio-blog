@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import type { ChangeEvent } from "react";
 import { debounce } from "lodash";
 import { useRef } from "react";
-import type { SearchBarProps } from "@/features/movie-app/types";
+import type { SearchBarProps } from "@/components/portfolio/movie-app/types";
 
 const SearchBar = ({ onSearch, defaultValue }: SearchBarProps) => {
 	const [inputValue, setInputValue] = useState(defaultValue);

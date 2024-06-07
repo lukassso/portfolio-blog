@@ -1,4 +1,4 @@
-import { API_ENDPOINT } from "../const";
+import { API_ENDPOINT } from "../components/portfolio/movie-app/const";
 
 export const fetchMovieDetails = async (id: string) => {
 	try {

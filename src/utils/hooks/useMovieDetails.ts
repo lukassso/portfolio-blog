@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchMovieDetails } from "@/features/movie-app/api/fetchMovieDetails";
+import { fetchMovieDetails } from "@/utils/fetchMovieDetails";
 
 export const useMovieDetails = (id: string) => {
 	return useQuery({

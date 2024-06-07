@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { CollapsibleTrigger, Collapsible } from "@/components/ui/collapsible";
 import placeholderImage from "@/assets/placeholder.svg";
 import LoadingOverlay from "./LoadingOverlay";
-import { useMovieDetails } from "@/features/movie-app/hooks/useMovieDetails";
-import { DEFAULT_ID } from "@/features/movie-app/const";
+import { useMovieDetails } from "@/utils/hooks/useMovieDetails";
+import { DEFAULT_ID } from "@/components/portfolio/movie-app/const";
 
 const MovieDetails = () => {
 	const { id = `${DEFAULT_ID}` } = useParams<{ id: string }>();

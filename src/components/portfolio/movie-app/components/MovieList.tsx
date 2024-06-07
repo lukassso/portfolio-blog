@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import placeholderImage from "@/assets/placeholder.svg";
-import type { MovieListProps } from "@/features/movie-app/types/index";
+import type { MovieListProps } from "@/components/portfolio/movie-app/types/index";
 
 const MovieList = ({ data }: MovieListProps) => {
 	if (!data) return <div>No movies found</div>;
