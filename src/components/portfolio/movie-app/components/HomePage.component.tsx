@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useMovies } from "@/utils/hooks/useMovies";
+import { useMovies } from "@/features/movie-app/hooks";
 import {
 	Card,
 	CardContent,
@@ -10,9 +10,9 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import MovieList from "./MovieList";
-import SearchBar from "./SearchBar";
-import PaginationComponent from "./PaginationComponent";
-import LoadingOverlay from "./LoadingOverlay";
+import SearchBar from "./common/SearchBar";
+import PaginationComponent from "./common/PaginationComponent";
+import LoadingOverlay from "./common/LoadingOverlay";
 
 export default function HomePageComponent() {
 	const [searchParam, setSearchParam] = useState("Batman");
@@ -35,7 +35,7 @@ export default function HomePageComponent() {
 			{isLoading && <LoadingOverlay />}
 			<div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
 				<main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
-					<Tabs defaultValue="galery">
+					<Tabs defaultValue="galery" className="overflow-hidden">
 						<div className="flex items-center">
 							<SearchBar onSearch={handleSearch} defaultValue={searchParam} />
 							<div className="ml-auto flex items-center gap-2">

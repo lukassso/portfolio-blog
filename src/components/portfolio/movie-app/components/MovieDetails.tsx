@@ -3,9 +3,9 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CollapsibleTrigger, Collapsible } from "@/components/ui/collapsible";
 import placeholderImage from "@/assets/placeholder.svg";
-import LoadingOverlay from "./LoadingOverlay";
-import { useMovieDetails } from "@/utils/hooks/useMovieDetails";
-import { DEFAULT_ID } from "@/components/portfolio/movie-app/const";
+import LoadingOverlay from "./common/LoadingOverlay";
+import { useMovieDetails } from "@/features/movie-app/hooks";
+import { DEFAULT_ID } from "@/features/movie-app/const";
 
 const MovieDetails = () => {
 	const { id = `${DEFAULT_ID}` } = useParams<{ id: string }>();

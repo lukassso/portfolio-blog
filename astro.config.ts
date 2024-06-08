@@ -15,7 +15,7 @@ export default defineConfig({
 		icon({
 			include: {
 				tabler: ["*"],
-			}, 
+			},
 		}),
 		tailwind({
 			applyBaseStyles: true,
@@ -25,8 +25,8 @@ export default defineConfig({
 	],
 	output: "server",
 	adapter: netlify({
-    edgeMiddleware: true
-  }),
+		edgeMiddleware: true,
+	}),
 	prefetch: true,
 	vite: {
 		define: {

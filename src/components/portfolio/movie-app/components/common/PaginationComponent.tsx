@@ -7,7 +7,7 @@ import {
 	PaginationNext,
 	PaginationPrevious,
 } from "@/components/ui/pagination";
-import type { PaginationComponentProps } from "@/components/portfolio/movie-app/types";
+import type { PaginationComponentProps } from "@/features/movie-app/types";
 
 const PaginationComponent: React.FC<PaginationComponentProps> = ({
 	currentPage,
@@ -19,7 +19,7 @@ const PaginationComponent: React.FC<PaginationComponentProps> = ({
 	const endPage = Math.min(totalPages, startPage + maxPagesView - 1);
 
 	return (
-		<Pagination>
+		<Pagination className="no-scrollbar overflow-x-auto scroll-smooth py-4">
 			<PaginationContent>
 				<PaginationItem>
 					<PaginationPrevious

@@ -1,7 +1,8 @@
 import type { APIRoute } from "astro";
+import { API_ENDPOINT } from "@/features/movie-app/const";
 
 export const GET: APIRoute = async ({ url }) => {
-	const searchParam = url.searchParams.get("s") || "search movies";
+	const searchParam = url.searchParams.get("s") || "robot";
 	const page = url.searchParams.get("page") || "1";
 
 	if (!searchParam) {
@@ -14,7 +15,6 @@ export const GET: APIRoute = async ({ url }) => {
 		? import.meta.env.PUBLIC_MOVIE_API_KEY
 		: import.meta.env.MOVIE_API_KEY;
 
-	const API_ENDPOINT = "https://www.omdbapi.com/";
 	const apiUrl = `${API_ENDPOINT}?apikey=${apiKey}&s=${searchParam}&page=${page}`;
 
 	try {
