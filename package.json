@@ -11,11 +11,13 @@
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^2.1.1",
+		"@astrojs/netlify": "^5.2.1",
 		"@astrojs/node": "^8.2.5",
 		"@astrojs/react": "^3.1.0",
 		"@astrojs/sitemap": "^3.1.1",
 		"@astrojs/tailwind": "^5.1.0",
 		"@hookform/resolvers": "^3.3.4",
+		"@netlify/edge-functions": "^2.8.1",
 		"@radix-ui/react-avatar": "^1.0.4",
 		"@radix-ui/react-collapsible": "^1.0.3",
 		"@radix-ui/react-dialog": "^1.0.5",

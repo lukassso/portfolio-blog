@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async ({ url }) => {
-	const searchParam = url.searchParams.get("s") || "lolita";
+	const searchParam = url.searchParams.get("s") || "search movies";
 	const page = url.searchParams.get("page") || "1";
 
 	if (!searchParam) {

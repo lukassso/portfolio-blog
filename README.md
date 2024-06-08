@@ -15,6 +15,6 @@ Made with ❤️ to programming
 
 - Node.js and pnpm
 
-### Deploy to Netlify
+[![Netlify Status](https://api.netlify.com/api/v1/badges/36fc89c3-8170-4f88-985b-d2b60bf46c3f/deploy-status)](https://app.netlify.com/sites/zetkolek/deploys)
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://zetkolek.netlify.app/)
+
