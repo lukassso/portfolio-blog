@@ -1,6 +1,6 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import HomePage from "./HomePage.component";
-import MovieDetails from "./MovieDetails";
+import HomePage from "../HomePage.component";
+import MovieDetails from "../MovieDetails";
 
 function AppRouting() {
 	return (

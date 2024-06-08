@@ -1,4 +1,4 @@
-import { API_ENDPOINT } from "../const";
+import { API_ENDPOINT } from "./const";
 
 export const fetchMovieDetails = async (id: string) => {
 	try {

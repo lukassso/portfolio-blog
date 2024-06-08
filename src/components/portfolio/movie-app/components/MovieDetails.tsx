@@ -3,8 +3,8 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CollapsibleTrigger, Collapsible } from "@/components/ui/collapsible";
 import placeholderImage from "@/assets/placeholder.svg";
-import LoadingOverlay from "./LoadingOverlay";
-import { useMovieDetails } from "@/features/movie-app/hooks/useMovieDetails";
+import LoadingOverlay from "./common/LoadingOverlay";
+import { useMovieDetails } from "@/features/movie-app/hooks";
 import { DEFAULT_ID } from "@/features/movie-app/const";
 
 const MovieDetails = () => {
