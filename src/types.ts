@@ -18,3 +18,22 @@ export type PaginationLink = {
 	text?: string;
 	srLabel?: string;
 };
+
+export interface PortfolioItem {
+	title: string;
+	description?: string;
+	technologies?: string[];
+	imageUrl?: string;
+	path?: string;
+}
+
+export interface MenuSubLink {
+	title: string;
+	path?: string;
+}
+
+export interface MenuLink {
+	title: string;
+	path?: string;
+	subLinks?: MenuSubLink[];
+}

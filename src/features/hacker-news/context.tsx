@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer, useEffect, type ReactNode } from "react";
 import { SET_LOADING, SET_STORIES, HANDLE_PAGE, HANDLE_SEARCH } from "./actions";
 import reducer from "./reducer";
-import { type HackerNewsState } from "./types";
+import type { HackerNewsState } from "./types";
 
 const API_ENDPOINT = "https://hn.algolia.com/api/v1/search?";
 

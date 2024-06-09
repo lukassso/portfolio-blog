@@ -1,6 +1,6 @@
 import { SET_LOADING, SET_STORIES, HANDLE_PAGE, HANDLE_SEARCH } from "./actions";
-import { type HackerNewsState, type Action } from "./types";
-import { type Reducer } from "react";
+import type { HackerNewsState, Action } from "./types";
+import type { Reducer } from "react";
 
 const reducer: Reducer<HackerNewsState, Action> = (state, action) => {
 	switch (action.type) {
