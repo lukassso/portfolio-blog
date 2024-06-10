@@ -1,4 +1,4 @@
-import { Bird, CornerDownLeft, Mic, Paperclip, Rabbit, Turtle } from "lucide-react";
+import { Bird, CornerDownLeft, Mic, Paperclip, Rabbit, Turtle, Loader } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,17 +13,32 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
 import { useCallback, useState } from "react";
-import { DiscordLogoIcon } from "@radix-ui/react-icons";
+
+interface Message {
+	userMessage: string;
+	defaultAnswer?: string;
+	pending: boolean;
+}
 
 export function PlaygroundAiComponent() {
-	const [message, setMessage] = useState("");
-	const [displayedMessage, setDisplayedMessage] = useState("");
+	const [message, setMessage] = useState<string>("");
+	const [displayedMessages, setDisplayedMessages] = useState<Message[]>([]);
 
 	const handleSubmit = useCallback(
-		(e) => {
+		(e: React.FormEvent<HTMLFormElement>) => {
 			e.preventDefault();
-			setDisplayedMessage(message);
+			const newMessage: Message = { userMessage: message, pending: true };
+			setDisplayedMessages((prevMessages) => [...prevMessages, newMessage]);
 			setMessage("");
+
+			// Simulate API call with delay
+			setTimeout(() => {
+				setDisplayedMessages((prevMessages) =>
+					prevMessages.map((msg) =>
+						msg === newMessage ? { ...msg, defaultAnswer: "Default answer", pending: false } : msg,
+					),
+				);
+			}, 2000);
 		},
 		[message],
 	);
@@ -123,13 +138,15 @@ export function PlaygroundAiComponent() {
 						</form>
 					</div>
 					<div className="relative flex h-full min-h-[50vh] flex-col rounded-xl bg-slate-100 p-4 dark:bg-slate-800 lg:col-span-2">
-						<Badge variant="outline" className="absolute right-3 top-3">
-							Output
-						</Badge>
 						<div className="flex-1" />
-						{displayedMessage && (
-							<div className="rounded-md bg-blue-100 p-4 shadow-md">{displayedMessage}</div>
-						)}
+						{displayedMessages.map((msg, index) => (
+							<div key={index} className="mb-4">
+								<div className="mb-2 rounded-md bg-green-100 p-4 shadow-md">{msg.userMessage}</div>
+								<div className="rounded-md bg-gray-100 p-4 shadow-md">
+									{msg.pending ? <Loader className="animate-spin" /> : msg.defaultAnswer}
+								</div>
+							</div>
+						))}
 						<form
 							className="bg-background focus-within:ring-ring relative overflow-hidden rounded-lg border focus-within:ring-1"
 							onSubmit={handleSubmit}
