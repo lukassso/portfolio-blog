@@ -24,10 +24,7 @@ export default defineConfig({
 		react(),
 	],
 	output: "hybrid",
-	adapter: netlify({
-		edgeMiddleware: true,
-	}),
-	prefetch: false,
+	adapter: netlify(),
 	vite: {
 		define: {
 			"process.env.PUBLIC_MOVIE_API_KEY": JSON.stringify(process.env.PUBLIC_MOVIE_API_KEY),
