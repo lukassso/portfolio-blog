@@ -12,10 +12,24 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
+import { useCallback, useState } from "react";
+import { DiscordLogoIcon } from "@radix-ui/react-icons";
 
 export function PlaygroundAiComponent() {
+	const [message, setMessage] = useState("");
+	const [displayedMessage, setDisplayedMessage] = useState("");
+
+	const handleSubmit = useCallback(
+		(e) => {
+			e.preventDefault();
+			setDisplayedMessage(message);
+			setMessage("");
+		},
+		[message],
+	);
+
 	return (
-		<div className="grid w-full ">
+		<div className="grid w-full">
 			<div className="flex flex-col">
 				<main className="grid flex-1 gap-4 overflow-auto p-4 md:grid-cols-2 lg:grid-cols-3">
 					<div className="relative hidden flex-col items-start gap-8 md:flex">
@@ -113,13 +127,21 @@ export function PlaygroundAiComponent() {
 							Output
 						</Badge>
 						<div className="flex-1" />
-						<form className="bg-background focus-within:ring-ring relative overflow-hidden rounded-lg border focus-within:ring-1">
+						{displayedMessage && (
+							<div className="rounded-md bg-blue-100 p-4 shadow-md">{displayedMessage}</div>
+						)}
+						<form
+							className="bg-background focus-within:ring-ring relative overflow-hidden rounded-lg border focus-within:ring-1"
+							onSubmit={handleSubmit}
+						>
 							<Label htmlFor="message" className="sr-only">
 								Message
 							</Label>
 							<Textarea
 								id="message"
 								placeholder="Type your message here..."
+								value={message}
+								onChange={(e) => setMessage(e.target.value)}
 								className="min-h-12 resize-none border-0 p-3 shadow-none focus-visible:ring-0 dark:bg-slate-800"
 							/>
 							<div className="flex items-center bg-white p-3 pt-0 dark:bg-slate-800">
@@ -145,7 +167,7 @@ export function PlaygroundAiComponent() {
 										<TooltipContent side="top">Use Microphone</TooltipContent>
 									</Tooltip>
 								</TooltipProvider>
-								<Button type="submit" size="sm" className="ml-auto gap-1.5">
+								<Button size="sm" className="ml-auto gap-1.5" type="submit">
 									Send Message
 									<CornerDownLeft className="size-3.5" />
 								</Button>
