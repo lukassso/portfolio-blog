@@ -4,9 +4,9 @@ import ContainerSection from "@/components/common/ContainerSection.astro";
 import HeaderPortfolio from "@/components/portfolio/common/header-portfolio";
 import MoviesAppComponent from "@/components/portfolio/movie-app";
 
-// const {
-// 	geo: { city },
-// } = Astro.locals.netlify.context;
+const {
+	geo: { city },
+} = Astro.locals.netlify.context;
 
 export const prerender = false;
 ---
@@ -28,7 +28,7 @@ export const prerender = false;
 				"Playwright",
 			]}
 		/>
-		<!-- <p class="pb-6 text-center">Hello there, friendly visitor from {city || "Unknown City"}!</p> -->
+		<p class="pb-6 text-center">Hello there, friendly visitor from {city || "Unknown City"}!</p>
 		<MoviesAppComponent client:only />
 	</ContainerSection>
 </PageLayout>
