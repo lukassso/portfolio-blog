@@ -25,4 +25,10 @@ export default defineConfig({
 	],
 	output: "hybrid",
 	adapter: netlify(),
+	vite: {
+		define: {
+			"process.env.PUBLIC_MOVIE_API_KEY": JSON.stringify(process.env.PUBLIC_MOVIE_API_KEY),
+			"process.env.MOVIE_API_KEY": JSON.stringify(process.env.MOVIE_API_KEY),
+		},
+	},
 });
