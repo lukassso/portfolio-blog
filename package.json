@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro check && astro build",
+		"build": "astro build",
 		"preview": "astro preview",
 		"format": "prettier -w --cache . && prettier -w --cache **/*.astro",
 		"check": "astro check"
@@ -17,7 +17,7 @@
 		"@astrojs/sitemap": "^3.1.1",
 		"@astrojs/tailwind": "^5.1.0",
 		"@hookform/resolvers": "^3.3.4",
-		"@netlify/edge-functions": "^2.8.1",
+		"@netlify/functions": "^2.7.0",
 		"@radix-ui/react-avatar": "^1.0.4",
 		"@radix-ui/react-collapsible": "^1.0.3",
 		"@radix-ui/react-dialog": "^1.0.5",

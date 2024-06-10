@@ -7,6 +7,8 @@ import MoviesAppComponent from "@/components/portfolio/movie-app";
 const {
 	geo: { city },
 } = Astro.locals.netlify.context;
+
+export const prerender = false;
 ---
 
 <PageLayout meta={{ title: "Playground AI" }}>

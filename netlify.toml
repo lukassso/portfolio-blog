@@ -1,8 +1,4 @@
 [build]
-command = "pnpm run build"
-publish = "dist/"
-
-
-[[edge_functions]]
-path = "/netlify/edge-functions"
-function = "geolocation"
+command = "astro build"
+publish = "dist"
+functions = "netlify/functions"
