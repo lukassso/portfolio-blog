@@ -23,7 +23,6 @@ export const POST: APIRoute = async ({ request }) => {
 
 		const result = response.choices[0].message;
 		return new Response(JSON.stringify({ content: result.content }), { status: 200 });
-
 	} catch (error: unknown) {
 		let errorMessage = "Failed to fetch response from OpenAI";
 		let statusCode = 500;

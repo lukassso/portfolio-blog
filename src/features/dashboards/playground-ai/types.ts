@@ -1,9 +1,9 @@
 export interface OpenAiResponse {
-  content: string;
+	content: string;
 }
 
 export interface OpenAiRequest {
-  prompt: string;
+	prompt: string;
 }
 
 export interface Message {
