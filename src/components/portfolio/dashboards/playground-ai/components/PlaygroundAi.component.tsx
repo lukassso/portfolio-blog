@@ -13,12 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
 import { useState } from "react";
 import { useOpenAi } from "@/features/dashboards/playground-ai/hooks";
-
-interface Message {
-	userMessage: string;
-	answerAi?: string;
-	pending: boolean;
-}
+import type { Message } from "@/features/dashboards/playground-ai/types";
 
 export function PlaygroundAiComponent() {
 	const [message, setMessage] = useState<string>("");

@@ -5,3 +5,9 @@ export interface OpenAiResponse {
 export interface OpenAiRequest {
   prompt: string;
 }
+
+export interface Message {
+	userMessage: string;
+	answerAi?: string;
+	pending: boolean;
+}

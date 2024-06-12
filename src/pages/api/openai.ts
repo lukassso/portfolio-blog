@@ -7,7 +7,6 @@ const openai = new OpenAI({
 
 export const POST: APIRoute = async ({ request }) => {
 	const { message } = await request.json();
-	console.log("@@@@@@@@@@@@@@@Received message:", message);
 
 	if (!message) {
 		return new Response(JSON.stringify({ error: "Message is required" }), { status: 400 });
@@ -23,13 +22,16 @@ export const POST: APIRoute = async ({ request }) => {
 		});
 
 		const result = response.choices[0].message;
-		console.log("@@@@@@@@@@@@@@@@@@@@@@@OpenAI response:", result);
-
 		return new Response(JSON.stringify({ content: result.content }), { status: 200 });
-	} catch (error) {
-		console.error("@@@@@@@@@@@@@@@@@@@@Error fetching from OpenAI:", error);
-		return new Response(JSON.stringify({ error: "Failed to fetch response from OpenAI" }), {
-			status: 500,
-		});
+
+	} catch (error: unknown) {
+		let errorMessage = "Failed to fetch response from OpenAI";
+		let statusCode = 500;
+
+		if (error instanceof Error) {
+			errorMessage = error.message;
+		}
+
+		return new Response(JSON.stringify({ error: errorMessage }), { status: statusCode });
 	}
 };
