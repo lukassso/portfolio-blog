@@ -2,3 +2,8 @@
 command = "astro build"
 publish = "dist"
 functions = "netlify/functions"
+
+[[redirects]]
+from = "/api/openai"
+to = "/.netlify/functions/openai"
+status = 200
