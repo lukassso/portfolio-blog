@@ -2,7 +2,9 @@ import type { APIRoute } from "astro";
 import { OpenAI } from "openai";
 
 const openai = new OpenAI({
-	apiKey: import.meta.env.PUBLIC_OPENAI_API_KEY,
+	baseURL: "https://api.openai.com/v1",
+	organization: import.meta.env.ORGANIZATION_ID_OPENAI,
+	apiKey: import.meta.env.OPENAI_API_KEY,
 });
 
 export const POST: APIRoute = async ({ request }) => {
@@ -23,7 +25,7 @@ export const POST: APIRoute = async ({ request }) => {
 
 		const result = response.choices[0].message;
 		return new Response(JSON.stringify({ content: result.content }), { status: 200 });
-	} catch (error: unknown) {
+	} catch (error) {
 		let errorMessage = "Failed to fetch response from OpenAI";
 		let statusCode = 500;
 
