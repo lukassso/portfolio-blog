@@ -6,9 +6,10 @@ This project highlights a variety of web technologies and frameworks, demonstrat
 
 ### Philosophy
 
-- Scalability  - exploring the limits of how many different apps Astro can handle without losing performance.
+- Scalability - exploring the limits of how many different apps Astro can handle without losing performance.
 - SEO friendly - optimized for search engines to ensure your content is easily discoverable.
 - Production-ready - embracing a full-stack approach, testing serverless functions, and employing DevOps techniques.
+
 ### Requirements
 
 - Node.js and pnpm
@@ -20,14 +21,20 @@ This project highlights a variety of web technologies and frameworks, demonstrat
    ```bash
    git clone <repository-url>
    cd portfolio-blog
+   ```
+
 2. Install dependencies:
 
-    ```bash
-    pnpm install
+   ```bash
+   pnpm install
+   ```
+
 3. Run the development server:
 
-    ```bash
-    pnpm dev
+   ```bash
+   pnpm dev
+   ```
+
 ### Scripts
 
 `pnpm dev`: Start the development server.
@@ -41,10 +48,7 @@ This project highlights a variety of web technologies and frameworks, demonstrat
 `pnpm check`: Run Astro's checks.
 
 ### Deployment Status
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/36fc89c3-8170-4f88-985b-d2b60bf46c3f/deploy-status)](https://app.netlify.com/sites/zetkolek/deploys)
 
-
 <p align="center" style="padding-top: 50px;">Made with ❤️ for programming</p>
-
-
-
