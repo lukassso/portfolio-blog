@@ -16,7 +16,7 @@ import { useOpenAi } from "@/features/dashboards/playground-ai/hooks";
 
 interface Message {
 	userMessage: string;
-	defaultAnswer?: string;
+	answerAi?: string;
 	pending: boolean;
 }
 
@@ -35,7 +35,7 @@ export function PlaygroundAiComponent() {
 			onSuccess: (data) => {
 				setDisplayedMessages((prevMessages) =>
 					prevMessages.map((msg) =>
-						msg === newMessage ? { ...msg, defaultAnswer: data.content, pending: false } : msg,
+						msg === newMessage ? { ...msg, answerAi: data.content, pending: false } : msg,
 					),
 				);
 			},
@@ -43,12 +43,16 @@ export function PlaygroundAiComponent() {
 				setDisplayedMessages((prevMessages) =>
 					prevMessages.map((msg) =>
 						msg === newMessage
-							? { ...msg, defaultAnswer: "Error fetching the answer", pending: false }
+							? { ...msg, answerAi: "Error fetching the answer", pending: false }
 							: msg,
 					),
 				);
 			},
 		});
+	};
+
+	const formatText = (text: string | undefined) => {
+		return text?.split("\n\n").map((paragraph, index) => <p key={index}>{paragraph}</p>);
 	};
 
 	return (
@@ -151,7 +155,7 @@ export function PlaygroundAiComponent() {
 							<div key={index} className="flex flex-col">
 								<div className="flex justify-start">
 									<div
-										className="mb-2 max-w-full rounded-md bg-green-100 p-4 shadow-md"
+										className="mb-2 max-w-full rounded-md bg-green-100 p-4 text-sm shadow-sm dark:bg-green-700"
 										style={{ marginRight: "auto" }}
 									>
 										{msg.userMessage}
@@ -159,16 +163,16 @@ export function PlaygroundAiComponent() {
 								</div>
 								<div className="flex justify-end">
 									<div
-										className="max-w-full rounded-md bg-gray-100 p-4 shadow-md"
+										className="mb-2 max-w-full rounded-md bg-gray-100 p-4 text-sm shadow-sm dark:bg-gray-700"
 										style={{ marginLeft: "auto" }}
 									>
-										{msg.pending ? <Loader className="animate-spin" /> : msg.defaultAnswer}
+										{msg.pending ? <Loader className="animate-spin" /> : formatText(msg.answerAi)}
 									</div>
 								</div>
 							</div>
 						))}
 						<form
-							className="bg-background focus-within:ring-ring relative overflow-hidden rounded-lg border focus-within:ring-1"
+							className="bg-background focus-within:ring-ring relative mt-2 overflow-hidden rounded-lg border focus-within:ring-1"
 							onSubmit={handleSubmit}
 						>
 							<Label htmlFor="message" className="sr-only">
@@ -185,7 +189,7 @@ export function PlaygroundAiComponent() {
 								<TooltipProvider>
 									<Tooltip>
 										<TooltipTrigger asChild>
-											<Button variant="ghost" size="icon">
+											<Button disabled variant="ghost" size="icon">
 												<Paperclip className="size-4" />
 												<span className="sr-only">Attach file</span>
 											</Button>
@@ -196,7 +200,7 @@ export function PlaygroundAiComponent() {
 								<TooltipProvider>
 									<Tooltip>
 										<TooltipTrigger asChild>
-											<Button variant="ghost" size="icon">
+											<Button disabled variant="ghost" size="icon">
 												<Mic className="size-4" />
 												<span className="sr-only">Use Microphone</span>
 											</Button>
