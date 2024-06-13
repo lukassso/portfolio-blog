@@ -47,6 +47,8 @@ This project highlights a variety of web technologies and frameworks, demonstrat
 
 `pnpm check`: Run Astro's checks.
 
+`netlify dev`: Run the entire Netlify platform right from your terminal (Nelify CLI).
+
 ### Deployment Status
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/36fc89c3-8170-4f88-985b-d2b60bf46c3f/deploy-status)](https://app.netlify.com/sites/zetkolek/deploys)
