@@ -1,5 +1,9 @@
 export interface OpenAiResponse {
-	content: string;
+	choices: Array<{
+		message: {
+			content: string;
+		};
+	}>;
 }
 
 export interface OpenAiRequest {
