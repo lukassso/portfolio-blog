@@ -30,7 +30,9 @@ export function PlaygroundAiComponent() {
 			onSuccess: (data) => {
 				setDisplayedMessages((prevMessages) =>
 					prevMessages.map((msg) =>
-						msg === newMessage ? { ...msg, answerAi: data.content, pending: false } : msg,
+						msg === newMessage
+							? { ...msg, answerAi: data.choices[0].message.content, pending: false }
+							: msg,
 					),
 				);
 			},
