@@ -91,7 +91,7 @@ export const portfolioItems: PortfolioItem[] = [
 		title: "Playground AI",
 		description:
 			"A responsive user interface for interacting with AI models or chatbots, intuitive and user-friendly. (in progress)",
-		technologies: ["React", "Typescript", "Tailwind CSS", "Shadcn UI", "Radix UI"],
+		technologies: ["React", "Typescript", "Tailwind CSS", "Shadcn UI", "Radix UI", "OpenAI API"],
 		imageUrl: "assets/images/portfolio-playground-ai.png",
 		path: "/dashboards/playground-ai",
 	},
@@ -112,7 +112,7 @@ export const menuLinks: MenuLink[] = [
 		subLinks: portfolioItems.map((item) => ({
 			title: item.title,
 			path: item.path,
-			description: "fdf",
+			description: "Portfolio item",
 		})),
 	},
 ];
