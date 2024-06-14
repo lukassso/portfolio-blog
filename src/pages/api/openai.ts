@@ -1,20 +1,23 @@
-import type { OpenAiResponse } from "@/features/dashboards/playground-ai/types";
+import type { APIRoute } from "astro";
 
-export async function fetchOpenAiResponse(message: string) {
-	if (!message) {
-		throw new Error("Message is required");
-	}
+const API_URL = "https://api.openai.com/v1/chat/completions";
 
-	const apiKey = import.meta.env.PROD
-		? import.meta.env.OPENAI_API_KEY
-		: import.meta.env.PUBLIC_OPENAI_API_KEY;
+export const POST: APIRoute = async ({ request }) => {
+	const apiKey = import.meta.env.DEV
+		? import.meta.env.PUBLIC_OPENAI_API_KEY
+		: import.meta.env.OPENAI_API_KEY;
 
 	try {
-		const response = await fetch("https://api.openai.com/v1/chat/completions", {
+		const { message } = await request.json();
+
+		if (!message) {
+			return new Response(JSON.stringify({ error: "Message is required" }), { status: 400 });
+		}
+
+		const response = await fetch(API_URL, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-
 				Authorization: `Bearer ${apiKey}`,
 			},
 			body: JSON.stringify({
@@ -27,17 +30,13 @@ export async function fetchOpenAiResponse(message: string) {
 		});
 
 		if (!response.ok) {
-			// Handle HTTP response errors
 			throw new Error(`HTTP error! Status: ${response.status}`);
 		}
 
-		return (await response.json()) as OpenAiResponse;
+		const data = await response.json();
+		return new Response(JSON.stringify(data), { status: 200 });
 	} catch (error) {
-		// Handle network or unexpected parsing errors
-		if (error instanceof Error) {
-			throw new Error(`Network error: ${error.message}`);
-		} else {
-			throw new Error("Unknown error occurred");
-		}
+		console.error(error);
+		return new Response(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });
 	}
-}
+};
