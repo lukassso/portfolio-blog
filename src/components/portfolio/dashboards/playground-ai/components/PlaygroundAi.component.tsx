@@ -31,6 +31,7 @@ import {
 	DrawerTitle,
 	DrawerTrigger,
 } from "@/components/ui/drawer";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function PlaygroundAiComponent() {
 	const [message, setMessage] = useState<string>("");
@@ -189,7 +190,7 @@ export function PlaygroundAiComponent() {
 						</DrawerContent>
 					</Drawer>
 				</header>
-				<main className="grid flex-1 gap-4 overflow-auto p-4 md:grid-cols-2 lg:grid-cols-3">
+				<main className="grid flex-1 gap-4 overflow-auto py-4 md:grid-cols-2 lg:grid-cols-3">
 					<div className="relative hidden flex-col items-start gap-8 md:flex">
 						<form className="grid w-full items-start gap-6">
 							<fieldset className="grid gap-6 rounded-lg border p-4">
@@ -280,7 +281,7 @@ export function PlaygroundAiComponent() {
 							</fieldset>
 						</form>
 					</div>
-					<div className="relative flex h-full min-h-[50vh] flex-col rounded-xl bg-slate-100 p-4 dark:bg-slate-800 lg:col-span-2">
+					<div className="relative mt-2 flex h-full min-h-[50vh] flex-col rounded-xl bg-slate-100 p-4 dark:bg-slate-800 lg:col-span-2">
 						<div className="flex-1" />
 						{displayedMessages.map((msg, index) => (
 							<div key={index} className="flex flex-col">
@@ -293,12 +294,19 @@ export function PlaygroundAiComponent() {
 									</div>
 								</div>
 								<div className="flex justify-end">
-									<div
-										className="mb-2 max-w-full rounded-md bg-gray-100 p-4 text-sm shadow-sm dark:bg-gray-700"
-										style={{ marginLeft: "auto" }}
-									>
-										{msg.pending ? <Loader className="animate-spin" /> : formatText(msg.answerAi)}
-									</div>
+									{msg.pending ? (
+										<Skeleton
+											className="mb-2 min-h-[50px] min-w-[100%] max-w-full rounded-md bg-gray-100 p-4 text-sm shadow-sm dark:bg-gray-700"
+											style={{ marginLeft: "auto" }}
+										/>
+									) : (
+										<div
+											className="mb-2 max-w-full rounded-md bg-gray-100 p-4 text-sm shadow-sm dark:bg-gray-700"
+											style={{ marginLeft: "auto" }}
+										>
+											{formatText(msg.answerAi)}
+										</div>
+									)}
 								</div>
 							</div>
 						))}
