@@ -65,6 +65,15 @@ export function PlaygroundAiComponent() {
 		});
 	};
 
+	const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+		if (e.key === "Enter") {
+			e.preventDefault();
+			if (e.ctrlKey) {
+				setMessage((prevMessage) => prevMessage + "\n");
+			} else return handleSubmit(e as unknown as React.FormEvent<HTMLFormElement>);
+		}
+	};
+
 	const formatText = (text: string | undefined) => {
 		return text?.split("\n\n").map((paragraph, index) => <p key={index}>{paragraph}</p>);
 	};
@@ -305,6 +314,7 @@ export function PlaygroundAiComponent() {
 								placeholder="Type your message here..."
 								value={message}
 								onChange={(e) => setMessage(e.target.value)}
+								onKeyDown={handleKeyDown}
 								className="textarea-playground min-h-12 resize-none border-0 p-3 shadow-none focus-visible:ring-0 dark:bg-slate-800"
 							/>
 							<div className="flex items-center bg-white p-3 pt-0 dark:bg-slate-800">
