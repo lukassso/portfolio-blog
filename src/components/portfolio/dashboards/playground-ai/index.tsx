@@ -1,7 +1,7 @@
 import { QueryClientProvider } from "@tanstack/react-query";
 import queryClient from "@/utils/queryClient";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { PlaygroundAiComponent } from "./components/PlaygroundAi.component";
+import { PlaygroundAiComponent } from "./PlaygroundAi.component";
 
 const PlaygroundAiAppComponent = () => {
 	return (
