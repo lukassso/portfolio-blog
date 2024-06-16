@@ -1,95 +1,145 @@
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Rabbit, Bird, Turtle } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
+import { Slider } from "@/components/ui/slider";
+import { useState } from "react";
 
-export const SettingsFormComponent = () => (
-  <form className="grid w-full items-start gap-6 overflow-auto p-4 pt-0">
-    <fieldset className="grid gap-6 rounded-lg border p-4">
-      <legend className="-ml-1 px-1 text-sm font-medium">Settings</legend>
-      <div className="grid gap-3">
-        <Label htmlFor="model">Model</Label>
-        <Select>
-          <SelectTrigger id="model" className="items-start [&_[data-description]]:hidden">
-            <SelectValue placeholder="Select a model" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="genesis">
-              <div className="text-muted-foreground flex items-start gap-3">
-                <Rabbit className="size-5" />
-                <div className="grid gap-0.5">
-                  <p>
-                    Neural <span className="text-foreground font-medium">Genesis</span>
-                  </p>
-                  <p className="text-xs" data-description>
-                    Our fastest model for general use cases.
-                  </p>
-                </div>
-              </div>
-            </SelectItem>
-            <SelectItem value="explorer">
-              <div className="text-muted-foreground flex items-start gap-3">
-                <Bird className="size-5" />
-                <div className="grid gap-0.5">
-                  <p>
-                    Neural <span className="text-foreground font-medium">Explorer</span>
-                  </p>
-                  <p className="text-xs" data-description>
-                    Performance and speed for efficiency.
-                  </p>
-                </div>
-              </div>
-            </SelectItem>
-            <SelectItem value="quantum">
-              <div className="text-muted-foreground flex items-start gap-3">
-                <Turtle className="size-5" />
-                <div className="grid gap-0.5">
-                  <p>
-                    Neural <span className="text-foreground font-medium">Quantum</span>
-                  </p>
-                  <p className="text-xs" data-description>
-                    The most powerful model for complex computations.
-                  </p>
-                </div>
-              </div>
-            </SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-      <div className="grid gap-3">
-        <Label htmlFor="temperature">Temperature</Label>
-        <Input id="temperature" type="number" placeholder="0.4" />
-      </div>
-      <div className="grid gap-3">
-        <Label htmlFor="top-p">Top P</Label>
-        <Input id="top-p" type="number" placeholder="0.7" />
-      </div>
-      <div className="grid gap-3">
-        <Label htmlFor="top-k">Top K</Label>
-        <Input id="top-k" type="number" placeholder="0.0" />
-      </div>
-    </fieldset>
-    <fieldset className="grid gap-6 rounded-lg border p-4">
-      <legend className="-ml-1 px-1 text-sm font-medium">Messages</legend>
-      <div className="grid gap-3">
-        <Label htmlFor="role">Role</Label>
-        <Select defaultValue="system">
-          <SelectTrigger>
-            <SelectValue placeholder="Select a role" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="system">System</SelectItem>
-            <SelectItem value="user">User</SelectItem>
-            <SelectItem value="assistant">Assistant</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-      <div className="grid gap-3">
-        <Label htmlFor="content">Instruction</Label>
-        <Textarea id="content" placeholder="You are a..." />
-      </div>
-    </fieldset>
-  </form>
-);
+export const SettingsFormComponent = () => {
+	const [temperature, setTemperature] = useState<number>(1);
+	const [topP, setTopP] = useState<number>(0.5);
 
+	return (
+		<form className="grid w-full items-start gap-6 overflow-auto p-4 pt-0 md:p-0">
+			<fieldset className="grid gap-6 rounded-lg border p-4">
+				<legend className="-ml-1 px-1 text-sm font-medium">Settings</legend>
+				<div className="grid gap-3">
+					<Label htmlFor="model">Model</Label>
+					<Select>
+						<SelectTrigger id="model" className="items-start [&_[data-description]]:hidden">
+							<SelectValue placeholder="Select a model" />
+						</SelectTrigger>
+						<SelectContent>
+							<SelectItem value="genesis">
+								<div className="text-muted-foreground flex items-start gap-3">
+									<Rabbit className="size-5" />
+									<div className="grid gap-0.5">
+										<p>
+											Neural <span className="text-foreground font-medium">Genesis</span>
+										</p>
+										<p className="text-xs" data-description>
+											Our fastest model for general use cases.
+										</p>
+									</div>
+								</div>
+							</SelectItem>
+							<SelectItem value="explorer">
+								<div className="text-muted-foreground flex items-start gap-3">
+									<Bird className="size-5" />
+									<div className="grid gap-0.5">
+										<p>
+											Neural <span className="text-foreground font-medium">Explorer</span>
+										</p>
+										<p className="text-xs" data-description>
+											Performance and speed for efficiency.
+										</p>
+									</div>
+								</div>
+							</SelectItem>
+							<SelectItem value="quantum">
+								<div className="text-muted-foreground flex items-start gap-3">
+									<Turtle className="size-5" />
+									<div className="grid gap-0.5">
+										<p>
+											Neural <span className="text-foreground font-medium">Quantum</span>
+										</p>
+										<p className="text-xs" data-description>
+											The most powerful model for complex computations.
+										</p>
+									</div>
+								</div>
+							</SelectItem>
+						</SelectContent>
+					</Select>
+				</div>
+				<div className="realative grid gap-3">
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger asChild>
+								<Label htmlFor="temperature" className="item-start flex">
+									Temperature <span className="w-full text-end">{temperature.toFixed(2)} </span>
+								</Label>
+							</TooltipTrigger>
+							<TooltipTrigger asChild>
+								<Slider
+									defaultValue={[1]}
+									name="temperature"
+									min={0}
+									max={2}
+									step={0.01}
+									onValueChange={(value) => setTemperature(value[0])}
+								/>
+							</TooltipTrigger>
+							<TooltipContent side="top" className="max-w-[300px] bg-default " sideOffset={34}>
+								Controls randomness: Lowering results in less random completions. As the temperature
+								approaches zero, the model will become deterministic and repetitivee
+							</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+				</div>
+				<div className="grid gap-3">
+					<TooltipProvider>
+						<Tooltip>
+							<TooltipTrigger asChild>
+								<Label htmlFor="topP" className="item-start flex">
+									TopP<span className="w-full text-end">{topP.toFixed(2)} </span>
+								</Label>
+							</TooltipTrigger>
+							<TooltipTrigger asChild>
+								<Slider
+									defaultValue={[0.5]}
+									name="top P"
+									min={0}
+									max={1}
+									step={0.01}
+									onValueChange={(value) => setTopP(value[0])}
+								/>
+							</TooltipTrigger>
+							<TooltipContent side="top" className="max-w-[300px] bg-default " sideOffset={34}>
+								Controls diversity via nucleus sampling: 0.5 means half of all likelihood-weighted
+								options are considered.
+							</TooltipContent>
+						</Tooltip>
+					</TooltipProvider>
+				</div>
+			</fieldset>
+			<fieldset className="grid gap-6 rounded-lg border p-4">
+				<legend className="-ml-1 px-1 text-sm font-medium">Messages</legend>
+				<div className="grid gap-3">
+					<Label htmlFor="role">Role</Label>
+					<Select disabled defaultValue="system">
+						<SelectTrigger>
+							<SelectValue placeholder="Select a role" />
+						</SelectTrigger>
+						<SelectContent>
+							<SelectItem value="system">System</SelectItem>
+							<SelectItem value="user">User</SelectItem>
+							<SelectItem value="assistant">Assistant</SelectItem>
+						</SelectContent>
+					</Select>
+				</div>
+				<div className="grid gap-3">
+					<Label htmlFor="content">Instruction</Label>
+					<Textarea disabled id="content" placeholder="You are a..." />
+				</div>
+			</fieldset>
+		</form>
+	);
+};

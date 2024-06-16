@@ -3,7 +3,6 @@ import { useOpenAi } from "@/features/dashboards/playground-ai/hooks";
 import type { Message } from "@/features/dashboards/playground-ai/types";
 import {
 	HeaderComponent,
-	DrawerComponent,
 	MessageListComponent,
 	MessageInputComponent,
 	SettingsFormComponent,
@@ -63,7 +62,7 @@ export function PlaygroundAiComponent() {
 					<div className="relative hidden flex-col items-start gap-8 md:flex">
 						<SettingsFormComponent />
 					</div>
-					<div className="relative mt-2 flex h-full min-h-[50vh] flex-col rounded-xl bg-slate-100 p-4 dark:bg-slate-800 lg:col-span-2">
+					<div className="relative mt-2 flex min-h-[40vh] flex-col rounded-xl bg-slate-100 p-4 dark:bg-slate-800 lg:col-span-2">
 						<div className="flex-1" />
 						<MessageListComponent messages={displayedMessages} formatText={formatText} />
 						<MessageInputComponent
