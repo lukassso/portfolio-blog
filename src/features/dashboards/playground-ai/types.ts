@@ -15,3 +15,12 @@ export interface Message {
 	answerAi?: string;
 	pending: boolean;
 }
+
+export interface SettingsStoreType {
+	temperature: number;
+	maxTokens: number;
+	stopSequences: string[];
+	topP: number;
+	frequencyPenalty: number;
+	presencePenalty: number;
+}

@@ -1,3 +1,5 @@
+import React from "react";
+import { useSettings } from "@/features/dashboards/playground-ai/SettingsContext";
 import { Label } from "@/components/ui/label";
 import {
 	Select,
@@ -10,11 +12,19 @@ import { Textarea } from "@/components/ui/textarea";
 import { Rabbit, Bird, Turtle } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip";
 import { Slider } from "@/components/ui/slider";
-import { useState } from "react";
+import { observer } from "mobx-react-lite";
 
-export const SettingsFormComponent = () => {
-	const [temperature, setTemperature] = useState<number>(1);
-	const [topP, setTopP] = useState<number>(0.5);
+export const SettingsFormComponent: React.FC = observer(() => {
+	const settings = useSettings();
+	const { temperature, topP } = settings;
+
+	const handleTemperatureChange = (value: number[]) => {
+		settings.temperature = value[0];
+	};
+
+	const handleTopPChange = (value: number[]) => {
+		settings.topP = value[0];
+	};
 
 	return (
 		<form className="grid w-full items-start gap-6 overflow-auto p-4 pt-0 md:p-0">
@@ -69,7 +79,7 @@ export const SettingsFormComponent = () => {
 						</SelectContent>
 					</Select>
 				</div>
-				<div className="realative grid gap-3">
+				<div className="relative grid gap-3">
 					<TooltipProvider>
 						<Tooltip>
 							<TooltipTrigger asChild>
@@ -79,17 +89,17 @@ export const SettingsFormComponent = () => {
 							</TooltipTrigger>
 							<TooltipTrigger asChild>
 								<Slider
-									defaultValue={[1]}
+									defaultValue={[temperature]}
 									name="temperature"
 									min={0}
 									max={2}
 									step={0.01}
-									onValueChange={(value) => setTemperature(value[0])}
+									onValueChange={handleTemperatureChange}
 								/>
 							</TooltipTrigger>
 							<TooltipContent side="top" className="max-w-[300px] bg-default " sideOffset={34}>
 								Controls randomness: Lowering results in less random completions. As the temperature
-								approaches zero, the model will become deterministic and repetitivee
+								approaches zero, the model will become deterministic and repetitive
 							</TooltipContent>
 						</Tooltip>
 					</TooltipProvider>
@@ -104,12 +114,12 @@ export const SettingsFormComponent = () => {
 							</TooltipTrigger>
 							<TooltipTrigger asChild>
 								<Slider
-									defaultValue={[0.5]}
-									name="top P"
+									defaultValue={[topP]}
+									name="topP"
 									min={0}
 									max={1}
 									step={0.01}
-									onValueChange={(value) => setTopP(value[0])}
+									onValueChange={handleTopPChange}
 								/>
 							</TooltipTrigger>
 							<TooltipContent side="top" className="max-w-[300px] bg-default " sideOffset={34}>
@@ -142,4 +152,4 @@ export const SettingsFormComponent = () => {
 			</fieldset>
 		</form>
 	);
-};
+});
