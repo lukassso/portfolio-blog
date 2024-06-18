@@ -9,10 +9,11 @@ const handler: Handler = async (event: HandlerEvent) => {
 	const apiUrl = "https://api.openai.com/v1/chat/completions";
 
 	try {
-		const { message } = JSON.parse(event.body || "{}");
+		const { messages, temperature, max_tokens, top_p, frequency_penalty, presence_penalty } =
+			JSON.parse(event.body || "{}");
 
-		if (!message) {
-			throw new Error("Message is required");
+		if (!messages || !Array.isArray(messages) || messages.length === 0) {
+			return { statusCode: 400, body: JSON.stringify({ error: "Messages are required" }) };
 		}
 
 		const response = await fetch(apiUrl, {
@@ -23,10 +24,15 @@ const handler: Handler = async (event: HandlerEvent) => {
 			},
 			body: JSON.stringify({
 				model: "gpt-3.5-turbo",
-				messages: [
-					{ role: "system", content: "Ask me anything" },
-					{ role: "user", content: message },
-				],
+				messages: messages.map((msg) => ({
+					role: msg.role,
+					content: msg.userMessage,
+				})),
+				temperature,
+				max_tokens,
+				top_p,
+				frequency_penalty,
+				presence_penalty,
 			}),
 		});
 
