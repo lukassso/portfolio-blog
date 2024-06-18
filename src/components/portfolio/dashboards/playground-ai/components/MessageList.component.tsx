@@ -27,7 +27,7 @@ export const MessageListComponent: React.FC<{
 							className="mb-2 max-w-full rounded-md bg-gray-100 p-4 text-sm shadow-sm dark:bg-gray-700"
 							style={{ marginLeft: "auto" }}
 						>
-							{formatText(msg.answerAi)}
+							{formatText(msg.aiMessage)}
 						</div>
 					)}
 				</div>

@@ -11,15 +11,15 @@ export interface OpenAiRequest {
 }
 
 export interface Message {
+	role: "system" | "user" | "assistant";
 	userMessage: string;
-	answerAi?: string;
+	aiMessage?: string;
 	pending: boolean;
 }
 
 export interface SettingsStoreType {
 	temperature: number;
 	maxTokens: number;
-	stopSequences: string[];
 	topP: number;
 	frequencyPenalty: number;
 	presencePenalty: number;

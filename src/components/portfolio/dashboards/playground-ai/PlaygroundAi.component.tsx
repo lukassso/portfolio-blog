@@ -7,6 +7,7 @@ import {
 	MessageInputComponent,
 	SettingsFormComponent,
 } from "./components";
+import settingsStore from "@/features/dashboards/playground-ai/SettingsStore";
 
 export function PlaygroundAiComponent() {
 	const [message, setMessage] = useState<string>("");
@@ -15,30 +16,49 @@ export function PlaygroundAiComponent() {
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		const newMessage: Message = { userMessage: message, pending: true };
-		setDisplayedMessages((prevMessages) => [...prevMessages, newMessage]);
+		const newMessage: Message = {
+			role: "user",
+			userMessage: message,
+			pending: true,
+		};
+		const messages = [...displayedMessages, newMessage];
+		setDisplayedMessages(messages);
 		setMessage("");
 
-		mutation.mutate(message, {
-			onSuccess: (data) => {
-				setDisplayedMessages((prevMessages) =>
-					prevMessages.map((msg) =>
-						msg === newMessage
-							? { ...msg, answerAi: data.choices[0].message.content, pending: false }
-							: msg,
-					),
-				);
+		const config = settingsStore.config;
+
+		mutation.mutate(
+			{ messages, settings: { ...config } },
+			{
+				onSuccess: (data) => {
+					setDisplayedMessages((prevMessages) =>
+						prevMessages.map((msg) =>
+							msg === newMessage
+								? {
+										...msg,
+										aiMessage: data.choices[0].message.content,
+										role: "assistant",
+										pending: false,
+									}
+								: msg,
+						),
+					);
+				},
+				onError: () => {
+					setDisplayedMessages((prevMessages) =>
+						prevMessages.map((msg) =>
+							msg === newMessage
+								? {
+										...msg,
+										aiMessage: "Error fetching the answer",
+										pending: false,
+									}
+								: msg,
+						),
+					);
+				},
 			},
-			onError: () => {
-				setDisplayedMessages((prevMessages) =>
-					prevMessages.map((msg) =>
-						msg === newMessage
-							? { ...msg, answerAi: "Error fetching the answer", pending: false }
-							: msg,
-					),
-				);
-			},
-		});
+		);
 	};
 
 	const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {

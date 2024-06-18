@@ -5,7 +5,6 @@ class SettingsStore {
 	private state: SettingsStoreType = {
 		temperature: 1,
 		maxTokens: 256,
-		stopSequences: [],
 		topP: 0.5,
 		frequencyPenalty: 0,
 		presencePenalty: 0,
@@ -17,16 +16,22 @@ class SettingsStore {
 	}
 
 	// Getters
+	get config() {
+		return {
+			temperature: this.state.temperature,
+			maxTokens: this.state.maxTokens,
+			topP: this.state.topP,
+			frequencyPenalty: this.state.frequencyPenalty,
+			presencePenalty: this.state.presencePenalty,
+		};
+	}
+
 	get temperature() {
 		return this.state.temperature;
 	}
 
 	get maxTokens() {
 		return this.state.maxTokens;
-	}
-
-	get stopSequences() {
-		return this.state.stopSequences;
 	}
 
 	get topP() {
@@ -49,11 +54,6 @@ class SettingsStore {
 
 	set maxTokens(value: number) {
 		this.state.maxTokens = value;
-		this.saveSettings();
-	}
-
-	set stopSequences(value: string[]) {
-		this.state.stopSequences = value;
 		this.saveSettings();
 	}
 
@@ -83,7 +83,6 @@ class SettingsStore {
 			const settings = JSON.parse(savedSettings);
 			this.state.temperature = settings.temperature;
 			this.state.maxTokens = settings.maxTokens;
-			this.state.stopSequences = settings.stopSequences;
 			this.state.topP = settings.topP;
 			this.state.frequencyPenalty = settings.frequencyPenalty;
 			this.state.presencePenalty = settings.presencePenalty;

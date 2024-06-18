@@ -32,7 +32,7 @@ export const SettingsFormComponent: React.FC = observer(() => {
 				<legend className="-ml-1 px-1 text-sm font-medium">Settings</legend>
 				<div className="grid gap-3">
 					<Label htmlFor="model">Model</Label>
-					<Select>
+					<Select defaultValue="genesis">
 						<SelectTrigger id="model" className="items-start [&_[data-description]]:hidden">
 							<SelectValue placeholder="Select a model" />
 						</SelectTrigger>
