@@ -8,10 +8,11 @@ export const POST: APIRoute = async ({ request }) => {
 		: import.meta.env.OPENAI_API_KEY;
 
 	try {
-		const { message } = await request.json();
+		const { messages, temperature, max_tokens, top_p, frequency_penalty, presence_penalty } =
+			await request.json();
 
-		if (!message) {
-			return new Response(JSON.stringify({ error: "Message is required" }), { status: 400 });
+		if (!messages || !Array.isArray(messages) || messages.length === 0) {
+			return new Response(JSON.stringify({ error: "Messages are required" }), { status: 400 });
 		}
 
 		const response = await fetch(API_URL, {
@@ -22,10 +23,15 @@ export const POST: APIRoute = async ({ request }) => {
 			},
 			body: JSON.stringify({
 				model: "gpt-3.5-turbo",
-				messages: [
-					{ role: "system", content: "Ask me anything" },
-					{ role: "user", content: message },
-				],
+				messages: messages.map((msg) => ({
+					role: msg.role,
+					content: msg.userMessage,
+				})),
+				temperature,
+				max_tokens,
+				top_p,
+				frequency_penalty,
+				presence_penalty,
 			}),
 		});
 
