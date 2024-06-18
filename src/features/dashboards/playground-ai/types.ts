@@ -26,8 +26,8 @@ export interface SettingsStoreType {
 }
 
 export interface MessageInputProps {
-  message: string;
-  setMessage: React.Dispatch<React.SetStateAction<string>>;
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  handleKeyDown: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
+	message: string;
+	setMessage: React.Dispatch<React.SetStateAction<string>>;
+	handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+	handleKeyDown: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
 }

@@ -40,6 +40,7 @@ export const portfolioItems: PortfolioItem[] = [
 		technologies: [
 			"React",
 			"Typescript",
+			"MobX",
 			"Tailwind CSS",
 			"Radix UI",
 			"Rest API",
@@ -49,6 +50,14 @@ export const portfolioItems: PortfolioItem[] = [
 		],
 		imageUrl: "assets/images/portfolio-movie-app.png",
 		path: "/movie-app",
+	},
+	{
+		title: "Playground AI",
+		description:
+			"A user-friendly interface integrating OpenAI's ChatGPT, allowing interactive AI model settings and responses",
+		technologies: ["React", "Typescript", "Tailwind CSS", "Shadcn UI", "Radix UI", "OpenAI API"],
+		imageUrl: "assets/images/portfolio-playground-ai.png",
+		path: "/dashboards/playground-ai",
 	},
 	{
 		title: "Task Manager",
@@ -86,14 +95,6 @@ export const portfolioItems: PortfolioItem[] = [
 		technologies: ["React", "Typescript", "Framer Motion", "Tailwind CSS"],
 		imageUrl: "assets/images/portfolio-framer-parallax.png",
 		path: "/framer-parallax",
-	},
-	{
-		title: "Playground AI",
-		description:
-			"A responsive user interface for interacting with AI models or chatbots, intuitive and user-friendly. (in progress)",
-		technologies: ["React", "Typescript", "Tailwind CSS", "Shadcn UI", "Radix UI", "OpenAI API"],
-		imageUrl: "assets/images/portfolio-playground-ai.png",
-		path: "/dashboards/playground-ai",
 	},
 ];
 
