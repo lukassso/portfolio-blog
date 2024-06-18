@@ -13,6 +13,22 @@ export function PlaygroundAiComponent() {
 	const [message, setMessage] = useState<string>("");
 	const [displayedMessages, setDisplayedMessages] = useState<Message[]>([]);
 	const mutation = useOpenAi();
+	const config = settingsStore.config;
+
+	const addMessage = (newMessage: Message, isPending: boolean, aiMessage: string) => {
+		setDisplayedMessages((prevMessages) =>
+			prevMessages.map((msg) =>
+				msg === newMessage
+					? {
+							...msg,
+							aiMessage: aiMessage || msg.aiMessage,
+							pending: isPending,
+							role: isPending ? "user" : "assistant",
+						}
+					: msg,
+			),
+		);
+	};
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -25,38 +41,11 @@ export function PlaygroundAiComponent() {
 		setDisplayedMessages(messages);
 		setMessage("");
 
-		const config = settingsStore.config;
-
 		mutation.mutate(
 			{ messages, settings: { ...config } },
 			{
-				onSuccess: (data) => {
-					setDisplayedMessages((prevMessages) =>
-						prevMessages.map((msg) =>
-							msg === newMessage
-								? {
-										...msg,
-										aiMessage: data.choices[0].message.content,
-										role: "assistant",
-										pending: false,
-									}
-								: msg,
-						),
-					);
-				},
-				onError: () => {
-					setDisplayedMessages((prevMessages) =>
-						prevMessages.map((msg) =>
-							msg === newMessage
-								? {
-										...msg,
-										aiMessage: "Error fetching the answer",
-										pending: false,
-									}
-								: msg,
-						),
-					);
-				},
+				onSuccess: (data) => addMessage(newMessage, false, data.choices[0].message.content),
+				onError: () => addMessage(newMessage, false, "Error fetching the answer"),
 			},
 		);
 	};

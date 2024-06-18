@@ -24,3 +24,10 @@ export interface SettingsStoreType {
 	frequencyPenalty: number;
 	presencePenalty: number;
 }
+
+export interface MessageInputProps {
+  message: string;
+  setMessage: React.Dispatch<React.SetStateAction<string>>;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  handleKeyDown: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
+}
