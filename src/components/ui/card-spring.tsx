@@ -12,7 +12,7 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
 			mouseX.set(clientX - left);
 			mouseY.set(clientY - top);
 		}
-		let maskImage = useMotionTemplate`radial-gradient(240px at ${mouseX}px ${mouseY}px, rgba(255, 255, 255, 0.6), transparent)`;
+		let maskImage = useMotionTemplate`radial-gradient(440px at ${mouseX}px ${mouseY}px, rgba(255, 255, 255, 0.5), transparent)`;
 		let style = { maskImage, WebkitMaskImage: maskImage };
 
 		return (
@@ -20,15 +20,15 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
 				ref={ref}
 				onMouseMove={onMouseMove}
 				className={cn(
-					"group relative overflow-hidden rounded-xl border border-slate-200 bg-white text-slate-950 shadow duration-700 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-50 md:gap-8",
+					"group relative overflow-hidden rounded-xl border border-slate-200 bg-white text-slate-950 shadow duration-700 dark:border-slate-800  dark:text-slate-50 md:gap-8",
 					className,
 				)}
 				{...props}
 			>
 				<div className="pointer-events-none">
-					<div className="[mask-image:linear-gradient(rgba(0, 0, 0, 0.9), transparent)] absolute inset-0 z-0 transition duration-1000" />
+					<div className="[mask-image:linear-gradient(rgba(0, 0, 0, 0.5), transparent)] duration-800 absolute inset-0 z-0 transition" />
 					<motion.div
-						className="via-white-80 absolute inset-0 z-10 bg-gradient-to-br from-gray-300 to-transparent opacity-100 transition duration-1000 group-hover:opacity-50"
+						className="via-white-80 absolute inset-0 z-10 bg-gradient-to-br from-slate-400 to-transparent opacity-100 transition duration-1000 group-hover:opacity-50"
 						style={style}
 					/>
 					<motion.div

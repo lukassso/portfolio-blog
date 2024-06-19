@@ -28,7 +28,7 @@ const year = new Date().getFullYear();
     sm:text-xs
     sm:font-semibold"
 	>
-		<div class="order-2 mt-5 sm:order-none sm:mt-0 text-xs">
+		<div class="order-2 mt-5 text-xs sm:order-none sm:mt-0">
 			&copy; {siteConfig.author}
 			{year}
 		</div>
@@ -36,10 +36,7 @@ const year = new Date().getFullYear();
 		<nav aria-label="More on this site" class="flex gap-x-2 sm:gap-x-4">
 			{
 				menuLinks.slice(0, 2).map((link) => (
-					<a
-						class="hover:text-textColor px-2 py-1 sm:py-0 sm:hover:underline"
-						href={link.path}
-					>
+					<a class="hover:text-textColor px-2 py-1 sm:py-0 sm:hover:underline" href={link.path}>
 						{link.title}
 					</a>
 				))

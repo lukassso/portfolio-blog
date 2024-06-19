@@ -9,7 +9,7 @@ interface PortfolioCardProps {
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({ app, technologies }) => {
 	return (
-		<Card>
+		<Card className="dark:bg-slate-950">
 			<CardHeader>
 				<img
 					src={app.imageUrl}
@@ -31,7 +31,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ app, technologies }) => {
 					))}
 				</div>
 				<h3 className="text-lg font-bold">{app.title}</h3>
-				<div className="flex justify-center">
+				<div className="flex justify-center py-2">
 					<Button variant="outline" className="w-full sm:w-1/2">
 						<a href={app.path}>View App</a>
 					</Button>
