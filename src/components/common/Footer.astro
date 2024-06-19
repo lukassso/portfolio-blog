@@ -1,5 +1,6 @@
 ---
 import { menuLinks, siteConfig } from "@/site.config";
+import ThemeToggle from "../common/ThemeToggle.astro";
 
 const year = new Date().getFullYear();
 ---
@@ -30,6 +31,7 @@ const year = new Date().getFullYear();
 			&copy; {siteConfig.author}
 			{year}<span class="inline-block"></span>
 		</div>
+		<ThemeToggle />
 		<nav
 			aria-label="More on this site"
 			class="flex gap-x-2 sm:gap-x-0 sm:divide-x sm:divide-gray-500"
