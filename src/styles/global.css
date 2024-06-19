@@ -55,6 +55,9 @@
 .dropdown:hover .dropdown-menu {
 	display: block;
 }
+.dropdown:hover .icon-chevron {
+	transform: rotate(180deg);
+}
 
 @layer utilities {
 	/* Hide scrollbar for Chrome, Safari and Opera */
