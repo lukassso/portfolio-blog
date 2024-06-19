@@ -1,7 +1,6 @@
 ---
 import PageLayout from "@/layouts/PageLayout.astro";
 import Hero from "@/components/home/Hero.astro";
-import SocialList from "@/components/common/SocialList.astro";
 import ContainerSection from "@/components/common/ContainerSection.astro";
 import PortfolioSection from "@/components/home/portfolio-section";
 import GreetingsSection from "@/components/home/greetings-section";
@@ -10,8 +9,7 @@ import GreetingsSection from "@/components/home/greetings-section";
 <PageLayout meta={{ title: "Home" }}>
 	<Hero />
 	<ContainerSection>
-		<GreetingsSection />
+		<GreetingsSection client:visible />
 		<PortfolioSection client:visible />
-		<SocialList />
 	</ContainerSection>
 </PageLayout>

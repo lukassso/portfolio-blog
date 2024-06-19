@@ -6,9 +6,9 @@ export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
 	author: "Lukasz Zatyka",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: "My personal website",
+	title: "Astro-Trek",
 	// Meta property used as the default description meta property
-	description: "Website with my thoughts and skills",
+	description: "Showcasing the versatility of web development",
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: "en-GB",
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -68,13 +68,13 @@ export const portfolioItems: PortfolioItem[] = [
 		path: "/task-manager",
 	},
 	{
-		title: "Random Person",
-		description:
-			"A random profile generator for testing purposes, complete with contact details and a photograph.",
-		technologies: ["React", "Typescript", "react-icons", "Rest API", "Tailwind CSS"],
-		imageUrl: "assets/images/portfolio-random-person.png",
-		path: "/random-person",
+		title: "SVG Anime Universe",
+		description: "Homepage view of an anime service with advanced SVG animation of moving circles.",
+		technologies: ["React", "Typescript", "SVG API", "CSS"],
+		imageUrl: "assets/images/portfolio-svg-anime.png",
+		path: "/svg-anime-universe",
 	},
+
 	{
 		title: "Hacker News",
 		description: "A minimalist Hacker News client that facilitates access to technological news.",
@@ -83,12 +83,14 @@ export const portfolioItems: PortfolioItem[] = [
 		path: "/hacker-news",
 	},
 	{
-		title: "SVG Anime Universe",
-		description: "Homepage view of an anime service with advanced SVG animation of moving circles.",
-		technologies: ["React", "Typescript", "SVG API", "CSS"],
-		imageUrl: "assets/images/portfolio-svg-anime.png",
-		path: "/svg-anime-universe",
+		title: "Random Person",
+		description:
+			"A random profile generator for testing purposes, complete with contact details and a photograph.",
+		technologies: ["React", "Typescript", "react-icons", "Rest API", "Tailwind CSS"],
+		imageUrl: "assets/images/portfolio-random-person.png",
+		path: "/random-person",
 	},
+
 	{
 		title: "Framer Parallax",
 		description: "Homepage teaser with a parallax effect, showcasing dynamic scroll animations.",
@@ -109,11 +111,11 @@ export const menuLinks: MenuLink[] = [
 		path: "/blog",
 	},
 	{
-		title: "Portfolio",
+		title: "App Suite",
 		subLinks: portfolioItems.map((item) => ({
 			title: item.title,
 			path: item.path,
-			description: "Portfolio item",
+			description: item.title,
 		})),
 	},
 ];

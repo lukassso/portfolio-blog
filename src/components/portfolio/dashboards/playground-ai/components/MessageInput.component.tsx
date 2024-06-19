@@ -12,7 +12,7 @@ export const MessageInputComponent: React.FC<MessageInputProps> = ({
 	handleKeyDown,
 }) => (
 	<form
-		className="bg-background focus-within:ring-ring relative mt-2 overflow-hidden rounded-lg border focus-within:ring-1"
+		className="bg-background focus-within:ring-ring relative mt-2 overflow-hidden rounded-lg border focus-within:border-lime-600"
 		onSubmit={handleSubmit}
 	>
 		<Label htmlFor="message" className="sr-only">
