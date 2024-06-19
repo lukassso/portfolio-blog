@@ -7,14 +7,16 @@ import MoviesAppComponent from "@/components/portfolio/movie-app";
 const {
 	geo: { city },
 } = Astro.locals.netlify.context;
+
+export const prerender = false;
 ---
 
-<PageLayout meta={{ title: "Playground AI" }}>
+<PageLayout meta={{ title: "Movie App" }}>
 	<ContainerSection>
 		<HeaderPortfolio
 			client:visible
 			title={"Movie App"}
-			description={"A simple ReactTS movies app based on OMDb API"}
+			description={"Dynamic Movie App using OMDb API, includes catalog, detail pages, search functionality."}
 			chipsList={[
 				"React",
 				"Typescript",

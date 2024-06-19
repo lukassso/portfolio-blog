@@ -6,9 +6,9 @@ export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
 	author: "Lukasz Zatyka",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: "My personal website",
+	title: "Astro-Trek",
 	// Meta property used as the default description meta property
-	description: "Website with my thoughts and skills",
+	description: "Showcasing the versatility of web development",
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: "en-GB",
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -40,6 +40,7 @@ export const portfolioItems: PortfolioItem[] = [
 		technologies: [
 			"React",
 			"Typescript",
+			"MobX",
 			"Tailwind CSS",
 			"Radix UI",
 			"Rest API",
@@ -51,12 +52,35 @@ export const portfolioItems: PortfolioItem[] = [
 		path: "/movie-app",
 	},
 	{
+		title: "Playground AI",
+		description:
+			"A user-friendly interface integrating OpenAI's ChatGPT, allowing interactive AI model settings and responses",
+		technologies: ["React", "Typescript", "Tailwind CSS", "Shadcn UI", "Radix UI", "OpenAI API"],
+		imageUrl: "assets/images/portfolio-playground-ai.png",
+		path: "/dashboards/playground-ai",
+	},
+	{
 		title: "Task Manager",
 		description:
 			"Task management tool that simplifies daily organization and enhances productivity.",
 		technologies: ["React", "Typescript", "react-redux", "@reduxjs/toolkit", "Context API"],
 		imageUrl: "assets/images/portfolio-task-manager.png",
 		path: "/task-manager",
+	},
+	{
+		title: "SVG Anime Universe",
+		description: "Homepage view of an anime service with advanced SVG animation of moving circles.",
+		technologies: ["React", "Typescript", "SVG API", "CSS"],
+		imageUrl: "assets/images/portfolio-svg-anime.png",
+		path: "/svg-anime-universe",
+	},
+
+	{
+		title: "Hacker News",
+		description: "A minimalist Hacker News client that facilitates access to technological news.",
+		technologies: ["React", "Typescript", "Tailwind CSS", "Rest API", "Context API", "useReducer"],
+		imageUrl: "assets/images/portfolio-hacker-news.png",
+		path: "/hacker-news",
 	},
 	{
 		title: "Random Person",
@@ -66,34 +90,13 @@ export const portfolioItems: PortfolioItem[] = [
 		imageUrl: "assets/images/portfolio-random-person.png",
 		path: "/random-person",
 	},
-	{
-		title: "Hacker News",
-		description: "A minimalist Hacker News client that facilitates access to technological news.",
-		technologies: ["React", "Typescript", "Tailwind CSS", "Rest API", "Context API", "useReducer"],
-		imageUrl: "assets/images/portfolio-hacker-news.png",
-		path: "/hacker-news",
-	},
-	{
-		title: "SVG Anime Universe",
-		description: "Homepage view of an anime service with advanced SVG animation of moving circles.",
-		technologies: ["React", "Typescript", "SVG API", "CSS"],
-		imageUrl: "assets/images/portfolio-svg-anime.png",
-		path: "/svg-anime-universe",
-	},
+
 	{
 		title: "Framer Parallax",
 		description: "Homepage teaser with a parallax effect, showcasing dynamic scroll animations.",
 		technologies: ["React", "Typescript", "Framer Motion", "Tailwind CSS"],
 		imageUrl: "assets/images/portfolio-framer-parallax.png",
 		path: "/framer-parallax",
-	},
-	{
-		title: "Playground AI",
-		description:
-			"A responsive user interface for interacting with AI models or chatbots, intuitive and user-friendly. (in progress)",
-		technologies: ["React", "Typescript", "Tailwind CSS", "Shadcn UI", "Radix UI"],
-		imageUrl: "assets/images/portfolio-playground-ai.png",
-		path: "/dashboards/playground-ai",
 	},
 ];
 
@@ -108,39 +111,11 @@ export const menuLinks: MenuLink[] = [
 		path: "/blog",
 	},
 	{
-		title: "Portfolio",
-<<<<<<< HEAD
-		subLinks: [
-			{
-				title: "Task Manager",
-				path: "/task-manager",
-			},
-			{
-				title: "Random Person",
-				path: "/random-person",
-			},
-			{
-				title: "Hacker News",
-				path: "/hacker-news",
-			},
-			{
-				title: "Hero Anime",
-				path: "/hero-anime",
-			},
-			{
-				title: "Dashboard",
-				path: "/dashboards/sample-1",
-			},
-			{
-				title: "ChatApp",
-				path: "/dashboards/sample-2",
-			},
-		],
-=======
+		title: "App Suite",
 		subLinks: portfolioItems.map((item) => ({
 			title: item.title,
 			path: item.path,
-			description: "fdf",
+			description: item.title,
 		})),
 >>>>>>> f6e86117867d96146ee6f64f3dfe10e809fb5ede
 	},

@@ -1,6 +1,8 @@
 import type { APIRoute } from "astro";
 import { API_ENDPOINT } from "@/features/movie-app/const";
 
+export const prerender = false;
+
 export const GET: APIRoute = async ({ url }) => {
 	const searchParam = url.searchParams.get("s") || "robot";
 	const page = url.searchParams.get("page") || "1";

@@ -1,8 +1,9 @@
 [build]
-command = "pnpm run build"
-publish = "dist/"
+command = "astro build"
+publish = "dist"
+functions = "netlify/functions"
 
-
-[[edge_functions]]
-path = "/netlify/edge-functions"
-function = "geolocation"
+[[redirects]]
+from = "/api/openai"
+to = "/.netlify/functions/openai"
+status = 200

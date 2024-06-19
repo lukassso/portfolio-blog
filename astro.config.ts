@@ -23,15 +23,14 @@ export default defineConfig({
 		mdx(),
 		react(),
 	],
-	output: "server",
-	adapter: netlify({
-		edgeMiddleware: true,
-	}),
-	prefetch: true,
+	output: "hybrid",
+	adapter: netlify(),
 	vite: {
 		define: {
 			"process.env.PUBLIC_MOVIE_API_KEY": JSON.stringify(process.env.PUBLIC_MOVIE_API_KEY),
 			"process.env.MOVIE_API_KEY": JSON.stringify(process.env.MOVIE_API_KEY),
+			"process.env.PUBLIC_OPENAI_API_KEY": JSON.stringify(process.env.PUBLIC_OPENAI_API_KEY),
+			"process.env.OPENAI_API_KEY": JSON.stringify(process.env.OPENAI_API_KEY),
 		},
 	},
 });

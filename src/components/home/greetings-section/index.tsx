@@ -1,8 +1,9 @@
 import { HandIcon, ViewIcon } from "lucide-react";
+import { Card } from "@/components/ui/card-spring";
 
 export default function GreetingsSection() {
 	return (
-		<section className="relative -mt-40 w-full  rounded-2xl bg-gradient-to-b from-[#f8f8f8] to-[#f0f0f0] py-10 dark:from-gray-950 dark:to-gray-900 md:-mt-60 md:py-32">
+		<Card className="-mt-40 w-full rounded-2xl bg-gradient-to-b from-[#f8f8f8] to-[#f0f0f0] py-10 dark:from-gray-950 dark:to-gray-700 md:-mt-60 md:py-32">
 			<div className="container flex flex-col items-center px-4 text-center md:px-6">
 				<div className="mb-8 inline-flex items-center gap-4 rounded-full bg-transparent px-4 py-2 text-sm font-medium text-gray-900 dark:text-gray-50">
 					<HandIcon className="animate-wave h-6 w-6" />
@@ -34,6 +35,6 @@ export default function GreetingsSection() {
 					</div>
 				</div>
 			</div>
-		</section>
+		</Card>
 	);
 }

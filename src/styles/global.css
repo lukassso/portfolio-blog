@@ -33,6 +33,10 @@
 	}
 }
 
+.textarea-playground {
+	field-sizing: content;
+}
+
 .gradient-text {
 	@apply bg-clip-text text-transparent;
 	@apply bg-gradient-to-br from-blue-600 via-green-300 to-green-500;
@@ -50,6 +54,9 @@
 
 .dropdown:hover .dropdown-menu {
 	display: block;
+}
+.dropdown:hover .icon-chevron {
+	transform: rotate(180deg);
 }
 
 @layer utilities {
