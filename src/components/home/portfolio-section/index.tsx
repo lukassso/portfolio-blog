@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import PortfolioCard from "./components/PortfolioCard";
 import ButtonLoading from "./components/ButtonLoading";
 import { Button } from "@/components/ui/button";
@@ -55,7 +55,7 @@ export default function PortfolioSection() {
 			<div className="grid items-center justify-center gap-4 text-center lg:gap-10">
 				<div className="space-y-3">
 					<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-						My Simple Apps
+						The App Suite
 					</h2>
 					<p className="mx-auto max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 						Check out some of the simple apps I've built to showcase my skills.
