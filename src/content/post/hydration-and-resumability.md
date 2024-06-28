@@ -1,13 +1,13 @@
 ---
 title: "A Deep Dive into Hydration and Resumability"
-description: "In the early days of web development, rendering and interactivity were handled separately. Server-side technologies like.."
+description: "In the dynamic world of web development, the drive for better performance has led to significant changes in how we build and deliver web applications."
 publishDate: "June 12 2024"
 draft: true
 coverImage:
   src: "/assets/images/hydration-and-resumability.svg"
   alt: "hydration"
 heroImage: "/assets/images/hydration-and-resumability.svg"
-tags: ["Hydration", "Resumability", "Performance"]
+tags: ["Hydration", "Performance"]
 ---
 
 In the dynamic world of web development, the drive for better performance has led to significant changes in how we build and deliver web applications. This article explores the evolution from past methods to current practices, and how new technologies like "resumability" are shaping the future. We will refer to visual comparisons to better understand these concepts.
@@ -91,6 +91,19 @@ As the quest for performance continues, a new approach known as "resumability" i
 - New approach may require adaptation and learning for developers accustomed to traditional hydration methods.
 
 Resumability addresses the drawbacks of hydration by ensuring that only essential interactivity code is executed on the client, leading to significantly faster startup times.
+
+## Comparison of Architectures
+
+To better understand the differences between these approaches, here's a comparison:
+
+| Aspect                     | Past (Separate) | Current (Hydration)       | Future (Resumability) |
+| -------------------------- | --------------- | ------------------------- | --------------------- |
+| **Rendering**              | Server-side     | Server-side & Client-side | Primarily Server-side |
+| **Interactivity**          | Client-side     | Unified in Framework      | Minimal Client-side   |
+| **Initial Load Time**      | Fast            | Slower due to hydration   | Fast                  |
+| **Data Transmission**      | Less            | Redundant                 | Reduced               |
+| **Development Complexity** | Higher          | Moderate                  | Lower                 |
+| **User Experience**        | Inconsistent    | Improved                  | Optimal               |
 
 ## Conclusion
 
