@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 
-const prefix = import.meta.env.DEV ? "PUBLIC_" : "";
+export const prefix = import.meta.env.DEV ? "PUBLIC_" : "";
 
 const firebaseConfig = {
 	apiKey: import.meta.env[`${prefix}FIREBASE_API_KEY`],
