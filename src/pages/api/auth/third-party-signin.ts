@@ -10,12 +10,10 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
 		return new Response("No token found", { status: 401 });
 	}
 
-	/* Verify id token */
 	try {
 		const decodedToken = await auth.verifyIdToken(idToken);
-		const user = await auth.getUser(decodedToken.uid);
+		await auth.getUser(decodedToken.uid);
 
-		/* Create and set session cookie */
 		const fiveDays = 60 * 60 * 24 * 5 * 1000;
 		const sessionCookie = await auth.createSessionCookie(idToken, {
 			expiresIn: fiveDays,
