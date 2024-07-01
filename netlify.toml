@@ -5,5 +5,25 @@ functions = "netlify/functions"
 
 [[redirects]]
 from = "/api/openai"
-to = "/.netlify/functions/openai"
+to = "netlify/functions/openai"
 status = 200
+
+[[redirects]]
+  from = "/api/auth/register"
+  to = "netlify/functions/register"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/signin"
+  to = "netlify/functions/signin"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/signout"
+  to = "netlify/functions/signout"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/third-party-signin"
+  to = "netlify/functions/third-party-signin"
+  status = 200
