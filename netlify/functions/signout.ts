@@ -1,21 +1,23 @@
-import type { Handler } from '@netlify/functions';
-import { getAuth } from 'firebase-admin/auth';
-import { app } from '../../src/firebase/server';
+import type { Handler } from "@netlify/functions";
 
-const handler: Handler = async (event) => {
-  const auth = getAuth(app);
+const handler: Handler = async () => {
+	try {
+		const clearCookie = "__session=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly";
 
-  try {
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: 'Successfully signed out' }),
-    };
-  } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: error.message }),
-    };
-  }
+		return {
+			statusCode: 302,
+			headers: {
+				"Set-Cookie": clearCookie,
+				Location: "/signin",
+			},
+			body: JSON.stringify({ message: "Successfully signed out" }),
+		};
+	} catch (error) {
+		return {
+			statusCode: 500,
+			body: JSON.stringify({ error: error.message }),
+		};
+	}
 };
 
 export { handler };
